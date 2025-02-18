@@ -5,7 +5,7 @@
     <x:Property sap2010:Annotation.AnnotationText="This is optional argument. Enter the name of the config Asset to be used instead of main config asset" Name="in_ConfigAssetName" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>969,911</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>699,911</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -13,7 +13,6 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>System</x:String>
       <x:String>System.Activities</x:String>
-      <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Collections.Generic</x:String>
@@ -834,9 +833,7 @@
                           <InArgument x:TypeArguments="x:String" x:Key="in_Comments">
                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_420">exception.Message</CSharpValue>
                           </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_SplitCommentLength">
-                            <Literal x:TypeArguments="x:Int32" Value="512" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_SplitCommentLength">512</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_ProjectFolderPath">
                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_450">GlobalVariables.g_ProjectFolderPath</CSharpValue>
                           </InArgument>
@@ -1784,9 +1781,7 @@
                                           <InArgument x:TypeArguments="x:String" x:Key="in_Comments">
                                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_430">Exception.Message</CSharpValue>
                                           </InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_SplitCommentLength">
-                                            <Literal x:TypeArguments="x:Int32" Value="512" />
-                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_SplitCommentLength">512</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_ProjectFolderPath">
                                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_451">GlobalVariables.g_ProjectFolderPath</CSharpValue>
                                           </InArgument>
