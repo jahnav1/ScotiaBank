@@ -1,0 +1,60 @@
+﻿{
+"OrchestratorQueueName":"TestQ",
+"CredentialTrackerQueueName":"405-Intralink-Canada-CredTracker",
+"HashiCorpSharedFolderPath":"Shared",
+"HashiCorpSecretEndPointURL":"https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/IntralinkSecret",
+"IsDryRun":"True",
+"KillAppNames":"msedge,notepad",
+"CookiesJournalFilePath":"Google\\Chrome\\User Data\\Default\\Network\\Cookies-journal",
+"CookiesFilePath":"Google\\Chrome\\User Data\\Default\\Network\\Cookies",
+"CacheFolderPath":"Google\\Chrome\\User Data\\Default\\Cache",
+"Delay":"00:00:02",
+"MinTimeOut":"30000",
+"MediumTimeOut":"60000",
+"MaxTimeOut":"120000",
+"MaxRetryNumber":"0",
+"MaxConsecutiveSystemExceptions":"3",
+"RetryNumberGetTransactionItem":"2",
+"RetryNumberSetTransactionStatus":"2",
+"Schedule": 
+[
+{
+	"Day": "Sunday","StartTime": "00:01","EndTime": "23:59"
+},
+{
+	"Day": "Saturday","StartTime": "00:01","EndTime": "23:59"
+},
+{
+	"Day": "Tuesday","StartTime": "00:01","EndTime": "23:00"
+},
+{
+	"Day": "Wednesday","StartTime": "00:01","EndTime": "23:59"
+},
+{
+	"Day": "Thursday","StartTime": "19:19","EndTime": "08:15"
+},
+{
+	"Day": "Friday","StartTime": "00:01","EndTime": "23:59"
+},
+{
+	"Day": "Monday","StartTime": "00:01","EndTime": "23:59"
+}   
+],
+"Email": 
+[
+{
+	"EmailType":"SystemException",
+	"EmailToAddress": "xxx@scotiabank.com",
+	"EmailSubject": "[Performer Bot]: RPA Support Investigation Required SE",
+	"EmailBody": "<html><BODY><p><i>Hello,</i><br/><i>The bot has shutdown due to a fatal technical exception.Kindly see errors below.</i><br/><i> Failure type: {0} </i><br/><i> Failure reason: {1} </b></i><br/><br/>The bot will continue to shutdown each day until the issue has been resolved</i><br/><br/><i>Do not reply to this message. This mailbox is not monitored. Thank you. </i></p></BODY></font></html>"
+},
+{
+    "EmailType":"BusinessException",
+    "EmailToAddress": "xxx@scotiabank.com",
+	"EmailSubject": "[Performer Bot]: Input File Not Found",
+	"EmailBody": "<html><BODY><p><i>Hello,</i><br/><br/><i>The bot encountered an error and was unable to complete your request.Kindly see errors below.</i><br/><br/><i>More information about this error may be seen below:</i><br/><br/><i>{0}</i><br/><br/><i>Regards,</i><br/><i>Smart Automation Team</i><br/><br/><i><br/><br/><i>Do not reply to this message. This mailbox is not monitored. Thank you. </i></i></p></BODY></font></html>"
+} 
+]
+
+
+}	
