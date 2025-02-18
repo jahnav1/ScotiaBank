@@ -1,0 +1,101 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+# this Pipeline template last updated on 2024-11-01
+
+trigger:
+  branches:
+    include:
+    - develop
+    - hotfix/*
+    - release/*
+
+
+# 
+# Manual set Pipeline variables
+# BNS.SkipCleanWorkspace = true
+# EPM = BJ68
+# UiPathServiceConnection-PackageToNuGet = UiPath Orchestrator Connection-SCORE (IST)
+# Get Sources --> On Success --> Tag Format --> $(Build.DefinitionName)_$(System.DefinitionId)_$(Build.DefinitionVersion)_$(Build.BuildId)_$(Build.BuildNumber)
+#
+
+variables:
+  - name: TargetVersion
+    value: 1.0.0
+  - name: SourceBranchNameDevelop
+    value: $(TargetVersion)-alpha.$(Build.BuildId)
+  - name: SourceBranchNameRelease
+    value: $(TargetVersion).$(Build.BuildId)
+  - name: ProjectName
+    value: $(Build.Repository.Name) 
+    
+pool:
+  name: CB-CB-04-pool
+
+steps:
+
+- script:  |
+    echo SourceBranchNameDevelop='$(SourceBranchNameDevelop)'
+    echo SourceBranchNameRelease='$(SourceBranchNameRelease)'
+    echo Build.Repository.Name=’$(Build.Repository.Name)’
+    echo Build.SourceBranch='$(Build.SourceBranch)'
+    echo Build.SourceBranchName='$(Build.SourceBranchName)'
+    echo Build.SourceVersion=’$(Build.SourceVersion)’
+    echo EPM=’$(EPM)’
+    echo ProjectName='$(ProjectName)'
+    echo CheckmarxProjectName='AD::$(BNS.CollectionName).$(system.teamProject)::$(Build.Repository.Name)'
+
+- task: UiPathPack@4
+  condition: or(eq(variables['Build.SourceBranchName'], 'develop'),
+                startswith(variables['Build.SourceBranch'], 'refs/heads/hotfix/'))
+  displayName: 'UiPathPack for develop/hotfix'
+  inputs:
+    version: $(SourceBranchNameDevelop)
+    versionType: 'ManualVersion'
+    projectJsonPath: '$(Build.SourcesDirectory)\$(ProjectName)'
+    orchestratorConnection: '$(UiPathServiceConnection-PackageToNuGet)'
+    outputPath: '$(Build.ArtifactStagingDirectory)\output'
+    traceLevel: 'Verbose'
+
+- task: UiPathPack@4
+  condition: and(ne(variables['Build.SourceBranchName'], 'develop'),
+                 not(startswith(variables['Build.SourceBranch'], 'refs/heads/hotfix/')))
+  displayName: 'UiPathPack for release'
+  inputs:
+    version: $(SourceBranchNameRelease)
+    versionType: 'ManualVersion'
+    projectJsonPath: '$(Build.SourcesDirectory)\$(ProjectName)'
+    orchestratorConnection: '$(UiPathServiceConnection-PackageToNuGet)'
+    outputPath: '$(Build.ArtifactStagingDirectory)\output'
+  
+- task: CmdLine@2
+  displayName: 'Rename .nupkg file'
+  inputs:
+    script:
+      ren $(build.artifactstagingdirectory)\output\*.nupkg $(EPM)-$(ProjectName)-$(Build.BuildNumber)-$(Build.BuildId).nupkg
+
+- task: Checkmarx AST@2
+  inputs:
+    CheckmarxService: 'CheckmarxOne-SCORE'
+    projectName: 'AD::$(BNS.CollectionName).$(system.teamProject)::$(Build.Repository.Name)'
+    branchName: '$(Build.SourceBranchName)'
+    tenantName: 'bns'
+    additionalParams: '--tags COMMIT:$(Build.SourceVersion) --project-tags PIPELINE:AD,EPM:$(EPM)'
+  continueOnError: true
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)\output'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(EPM)-$(ProjectName)-$(Build.BuildNumber)-$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifactsToArtifactory@1
+  inputs:
+    FiletoPublish: '$(Build.ArtifactStagingDirectory)/$(EPM)-$(ProjectName)-$(Build.BuildNumber)-$(Build.BuildId).zip'
+    ArtifactName: '$(ProjectName)'
+    artifactoryService: 'JFrogArtifactory-SCORE'
+    targetRepo: 'local-release-tfs'
+    TargetPath: '$(System.TeamProject)/$(EPM)/$(ProjectName)/$(Build.BuildNumber)/$(Build.BuildId)'
