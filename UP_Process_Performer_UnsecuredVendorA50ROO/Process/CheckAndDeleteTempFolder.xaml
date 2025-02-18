@@ -1,4 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CheckAndDeleteTempFolder" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="699,1226" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckAndDeleteTempFolder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TempFolderPath" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>699,1800</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -74,9 +80,10 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow is used to check Whether Temp Folder Exist. Delete the Folder If Exist." DisplayName="CheckAndDeleteTempFolder" sap:VirtualizedContainerService.HintSize="512,1161" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow is used to check Whether Temp Folder Exist. Delete the Folder If Exist." DisplayName="CheckAndDeleteTempFolder" sap:VirtualizedContainerService.HintSize="512,1735" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsTempFolderExist" />
     </Sequence.Variables>
@@ -112,11 +119,11 @@
       </ui:FolderExistsX.Exists>
       <ui:FolderExistsX.Path>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">GlobalVariables.g_Config["TempPath"].ToString().Replace("*",Environment.UserName)</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">in_TempFolderPath</CSharpValue>
         </InArgument>
       </ui:FolderExistsX.Path>
     </ui:FolderExistsX>
-    <If DisplayName="If - IsTempFolderExist == true" sap:VirtualizedContainerService.HintSize="450,478" sap2010:WorkflowViewState.IdRef="If_1">
+    <If DisplayName="If - IsTempFolderExist == true" sap:VirtualizedContainerService.HintSize="450,1052" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">IsTempFolderExist == true</CSharpValue>
@@ -129,10 +136,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then - Temp Folder Exist" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Then - Temp Folder Exist" sap:VirtualizedContainerService.HintSize="416,599" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -157,7 +164,7 @@
           <ui:DeleteFolderX DisplayName="Delete Temp Folder" sap:VirtualizedContainerService.HintSize="354,112" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Recursive="True">
             <ui:DeleteFolderX.Path>
               <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">GlobalVariables.g_Config["TempPath"].ToString().Replace("*",Environment.UserName)</CSharpValue>
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">in_TempFolderPath</CSharpValue>
               </InArgument>
             </ui:DeleteFolderX.Path>
           </ui:DeleteFolderX>
@@ -210,7 +217,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage sap2010:Annotation.AnnotationText="Log Message For End CheckAndDeleteTempFolder" DisplayName="Log Message End" sap:VirtualizedContainerService.HintSize="450,195" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+    <ui:LogMessage sap2010:Annotation.AnnotationText="Log Message For End CheckAndDeleteTempFolder" DisplayName="Log Message End CheckAndDeleteTempFolder" sap:VirtualizedContainerService.HintSize="450,195" sap2010:WorkflowViewState.IdRef="LogMessage_2">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
