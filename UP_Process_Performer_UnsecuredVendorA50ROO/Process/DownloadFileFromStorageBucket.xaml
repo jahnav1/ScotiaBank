@@ -5,7 +5,7 @@
     <x:Property Name="in_TempFolderPath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>635,1528</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>635,1012</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -92,7 +92,7 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This Workflow Used To Download The Status File From Storage Bucket.&#xD;&#xA;&#xD;&#xA;Arguments:&#xD;&#xA;in_SBName = Storage Bucket Name.&#xD;&#xA;in_SBFilePath = Storage Bucket Status File Path.&#xD;&#xA;in_TempFolderPath = Temp (Local) Folder Path." DisplayName="DownloadFileFromStorageBucket" sap:VirtualizedContainerService.HintSize="564,1463" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This Workflow Used To Download The Status File From Storage Bucket.&#xD;&#xA;&#xD;&#xA;Arguments:&#xD;&#xA;in_SBName = Storage Bucket Name.&#xD;&#xA;in_SBFilePath = Storage Bucket Status File Path.&#xD;&#xA;in_TempFolderPath = Temp (Local) Folder Path." DisplayName="DownloadFileFromStorageBucket" sap:VirtualizedContainerService.HintSize="564,947" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -131,7 +131,13 @@
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <TryCatch DisplayName="Try Catch - Check For Storage Bucket Name And FilePath. Download File From SB" sap:VirtualizedContainerService.HintSize="502,573" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch - Check For Storage Bucket Name And FilePath. Download File From SB" sap:VirtualizedContainerService.HintSize="502,57" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
         <ui:IfElseIf DisplayName="Else If -  Storage Bucket Name And FilePath is Not Empty" sap:VirtualizedContainerService.HintSize="467,1177" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
           <ui:IfElseIf.ConditionBlocks>
