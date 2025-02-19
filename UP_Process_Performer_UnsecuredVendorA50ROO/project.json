@@ -18,7 +18,7 @@
       "serviceDocument": ".entities/EntitiesStore.json",
       "tenantName": "CAN_IST",
       "namespace": "UP_Process_Performer_UnsecuredVendorA50ROO",
-      "uniqueReference": "yXKA+6B/yGFmGPnoMrtN5steP+qyAjBRB87pX9gTYRw="
+      "uniqueReference": "uTeg7+smaHYUId4EkeCwFB3IYZzZ9zsLOfuzYKE1Zv4="
     }
   ],
   "schemaVersion": "4.0",
@@ -96,7 +96,6 @@
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
       }
     ],
-    "modernBehavior": true,
     "saveToCloud": false
   },
   "expressionLanguage": "CSharp",

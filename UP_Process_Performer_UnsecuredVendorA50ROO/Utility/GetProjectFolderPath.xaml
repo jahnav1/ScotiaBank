@@ -1,9 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetProjectFolderPath" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:u="clr-namespace:UP_Template_BNS_REFramework;assembly=DataService.UP_Template_BNS_REFramework" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetProjectFolderPath" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:u="clr-namespace:UP_Process_Performer_UnsecuredVendorA50ROO;assembly=DataService.UP_Process_Performer_UnsecuredVendorA50ROO" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_AthenaId" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>969,1988</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1002,2370</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -36,8 +36,8 @@
       <x:String>UiPath.DataService.Activities</x:String>
       <x:String>UiPath.DataService.Definition</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
-      <x:String>UP_Template_BNS_REFramework</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UP_Process_Performer_UnsecuredVendorA50ROO</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -93,11 +93,13 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>DataService.UP_Process_Performer_UnsecuredVendorA50ROO</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Get Project Folder Path by Querying Master Proejct Settings Entity from Data Service " DisplayName="GetProjectFolderPath" sap:VirtualizedContainerService.HintSize="622,1923" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Get Project Folder Path by Querying Master Proejct Settings Entity from Data Service " DisplayName="GetProjectFolderPath" sap:VirtualizedContainerService.HintSize="700,2305" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="scg:IList(u:MasterProjectSettings)" Name="ListQueryOutput" />
+      <Variable x:TypeArguments="scg:IList(u:MasterProjectSettings)" sap2010:Annotation.AnnotationText="Type 'u:MasterProjectSettings' ('clr-namespace:UP_Template_BNS_REFramework;assembly=DataService.UP_Template_BNS_REFramework') could not be resolved and was automatically replaced with 'UnknownType'" Name="ListQueryOutput" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="QueryTimeOutInMilliSeconds" />
       <Variable x:TypeArguments="x:Int32" Default="1" Name="RetryNumber" />
     </Sequence.Variables>
@@ -107,8 +109,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment DisplayName="Comment Project Folder Path Retrieval" sap:VirtualizedContainerService.HintSize="560,107" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Gets Project Folder Path from Master Project Settings Entity in Data Service " />
-    <ui:LogMessage DisplayName="Log message for GetProjectFolderPath" sap:VirtualizedContainerService.HintSize="560,173" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+    <ui:Comment DisplayName="Comment Project Folder Path Retrieval" sap:VirtualizedContainerService.HintSize="638,107" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Gets Project Folder Path from Master Project Settings Entity in Data Service " />
+    <ui:LogMessage DisplayName="Log message for GetProjectFolderPath" sap:VirtualizedContainerService.HintSize="638,173" sap2010:WorkflowViewState.IdRef="LogMessage_1">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">
@@ -126,16 +128,16 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:RetryScope DisplayName="Retry Scope - GetProjectFolderPath" sap:VirtualizedContainerService.HintSize="560,924" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
+    <ui:RetryScope DisplayName="Retry Scope - GetProjectFolderPath" sap:VirtualizedContainerService.HintSize="638,1306" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="518,717" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="596,1099" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch GetProjectFolderPath" sap:VirtualizedContainerService.HintSize="456,629" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch GetProjectFolderPath" sap:VirtualizedContainerService.HintSize="534,1011" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -143,7 +145,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence DisplayName="Try Sequence - GetProjectFolderPath" sap:VirtualizedContainerService.HintSize="496,759" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Try Sequence - GetProjectFolderPath" sap:VirtualizedContainerService.HintSize="496,760" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,8 +194,8 @@
                       </InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:Comment DisplayName="Query Master Project Settings" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Query Master Project Settings Entity with Athena Id to get Project Folder Path" />
-                  <uda:QueryEntityRecords x:TypeArguments="u:MasterProjectSettings" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records based on AthenaID filter." EntityId="b9770ff6-b0e7-ee11-85f9-6045bd5e9248" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="434,163" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" QueriedEntityId="b9770ff6-b0e7-ee11-85f9-6045bd5e9248" Skip="0" SortAscending="True" SortByField="Id" Top="100">
+                  <ui:Comment DisplayName="Query Master Project Settings" sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Query Master Project Settings Entity with Athena Id to get Project Folder Path" />
+                  <uda:QueryEntityRecords x:TypeArguments="u:MasterProjectSettings" OutputRecords="{x:Null}" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records based on AthenaID filter. (QueryEntityRecords)" EntityId="b9770ff6-b0e7-ee11-85f9-6045bd5e9248" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="434,163" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" QueriedEntityId="b9770ff6-b0e7-ee11-85f9-6045bd5e9248" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
                     <uda:QueryEntityRecords.FilterArguments>
                       <uda:FilterArgument FilterActivityType="{x:Null}">
                         <uda:FilterArgument.Filter>
@@ -213,37 +215,18 @@
                     <uda:QueryEntityRecords.FilterValues>
                       <scg:List x:TypeArguments="InArgument" Capacity="4">
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">
-                            <CSharpValue.Result>
-                              <OutArgument x:TypeArguments="x:String" />
-                            </CSharpValue.Result>in_AthenaId</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">in_AthenaId</CSharpValue>
                         </InArgument>
                       </scg:List>
                     </uda:QueryEntityRecords.FilterValues>
-                    <uda:QueryEntityRecords.OutputRecords>
-                      <OutArgument x:TypeArguments="scg:IList(u:MasterProjectSettings)">
-                        <CSharpReference x:TypeArguments="scg:IList(u:MasterProjectSettings)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">
-                          <CSharpReference.Result>
-                            <OutArgument x:TypeArguments="Location(scg:IList(u:MasterProjectSettings))" />
-                          </CSharpReference.Result>ListQueryOutput</CSharpReference>
-                      </OutArgument>
-                    </uda:QueryEntityRecords.OutputRecords>
-                    <uda:QueryEntityRecords.TimeoutInMs>
-                      <InArgument x:TypeArguments="x:Int32">
-                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">
-                          <CSharpValue.Result>
-                            <OutArgument x:TypeArguments="x:Int32" />
-                          </CSharpValue.Result>QueryTimeOutInMilliSeconds</CSharpValue>
-                      </InArgument>
-                    </uda:QueryEntityRecords.TimeoutInMs>
                   </uda:QueryEntityRecords>
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,444" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -284,8 +267,8 @@
         <ActivityFunc x:TypeArguments="x:Boolean" />
       </ui:RetryScope.Condition>
     </ui:RetryScope>
-    <ui:Comment DisplayName="Assign Project Folder Path" sap:VirtualizedContainerService.HintSize="560,107" sap2010:WorkflowViewState.IdRef="Comment_4" Text="//  Assign Project Folder Path to Global Variable GlobalVariables.g_ProjectFolderPath" />
-    <Assign sap2010:Annotation.AnnotationText="Assign Project Folder Path to GlobalVariables.g_ProjectFolderPath&#xA;" DisplayName="Assign - g_ProjectFolderPath" sap:VirtualizedContainerService.HintSize="560,156" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <ui:Comment DisplayName="Assign Project Folder Path" sap:VirtualizedContainerService.HintSize="638,107" sap2010:WorkflowViewState.IdRef="Comment_4" Text="//  Assign Project Folder Path to Global Variable GlobalVariables.g_ProjectFolderPath" />
+    <Assign sap2010:Annotation.AnnotationText="Assign Project Folder Path to GlobalVariables.g_ProjectFolderPath&#xA;" DisplayName="Assign - g_ProjectFolderPath" sap:VirtualizedContainerService.HintSize="638,156" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">GlobalVariables.g_ProjectFolderPath</CSharpReference>
@@ -302,7 +285,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:LogMessage DisplayName="Log project folder path information" sap:VirtualizedContainerService.HintSize="560,173" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+    <ui:LogMessage DisplayName="Log project folder path information" sap:VirtualizedContainerService.HintSize="638,173" sap2010:WorkflowViewState.IdRef="LogMessage_4">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">
@@ -326,7 +309,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:LogMessage DisplayName="Log message for GetProjectFolderPath end" sap:VirtualizedContainerService.HintSize="560,164" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+    <ui:LogMessage DisplayName="Log message for GetProjectFolderPath end" sap:VirtualizedContainerService.HintSize="638,164" sap2010:WorkflowViewState.IdRef="LogMessage_2">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">
