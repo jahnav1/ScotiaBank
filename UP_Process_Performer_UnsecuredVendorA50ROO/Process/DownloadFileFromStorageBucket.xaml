@@ -1,8 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DownloadFileFromStorageBucket" this:DownloadFileFromStorageBucket.in_SBName="437-CollectionHighwayStatus" this:DownloadFileFromStorageBucket.in_SBFilePath="437-CollectionHighwayStatusFile.xlsx" this:DownloadFileFromStorageBucket.in_TempFolderPath="C:\Users\2778905\Desktop\TESTING_SB" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadFileFromStorageBucket" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_SBName" Type="InArgument(x:String)" />
-    <x:Property Name="in_SBFilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_TempFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_SBFileName" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>635,1012</sap:VirtualizedContainerService.HintSize>
@@ -92,7 +92,7 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This Workflow Used To Download The Status File From Storage Bucket.&#xD;&#xA;&#xD;&#xA;Arguments:&#xD;&#xA;in_SBName = Storage Bucket Name.&#xD;&#xA;in_SBFilePath = Storage Bucket Status File Path.&#xD;&#xA;in_TempFolderPath = Temp (Local) Folder Path." DisplayName="DownloadFileFromStorageBucket" sap:VirtualizedContainerService.HintSize="564,947" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This Workflow Used To Download The Status File From Storage Bucket.&#xA;&#xA;Arguments:&#xA;in_SBName = Storage Bucket Name.&#xA;in_SBFilePath = Storage Bucket Status File Path.&#xA;in_TempFolderPath = Temp (Local) Folder Path." DisplayName="DownloadFileFromStorageBucket" sap:VirtualizedContainerService.HintSize="564,947" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,7 +145,7 @@
               <ui:IfElseIfBlock BlockType="If">
                 <ui:IfElseIfBlock.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
-                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">!string.IsNullOrEmpty(in_SBName) &amp;&amp; !string.IsNullOrEmpty(in_SBFilePath)</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">!string.IsNullOrEmpty(in_SBName) &amp;&amp; !string.IsNullOrEmpty(in_SBFileName)</CSharpValue>
                   </InArgument>
                 </ui:IfElseIfBlock.Condition>
                 <ui:IfElseIfBlock.Then>
@@ -158,12 +158,12 @@
                     <ucas:DownloadStorageFile TimeoutMS="{x:Null}" DisplayName="Download Storage File - Status File" sap:VirtualizedContainerService.HintSize="354,165" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_1">
                       <ucas:DownloadStorageFile.Destination>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">in_TempFolderPath+"\\"+in_SBFilePath</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">in_TempFolderPath+"\\"+in_SBFileName</CSharpValue>
                         </InArgument>
                       </ucas:DownloadStorageFile.Destination>
                       <ucas:DownloadStorageFile.Path>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">in_SBFilePath</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">in_SBFileName</CSharpValue>
                         </InArgument>
                       </ucas:DownloadStorageFile.Path>
                       <ucas:DownloadStorageFile.StorageBucketName>

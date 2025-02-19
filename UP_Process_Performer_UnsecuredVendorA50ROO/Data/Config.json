@@ -16,6 +16,12 @@
 "MaxConsecutiveSystemExceptions":"3",
 "RetryNumberGetTransactionItem":"2",
 "RetryNumberSetTransactionStatus":"2",
+	
+"StorageBucketName":"437-CollectionHighwayStatus",
+"StorageBucketStatusFileName":"437-CollectionHighwayStatusFile.xlsx",
+"TempFolderPath":"C:\\Users\\*\\UnsecuredVendorA50ROO",
+	
+	
 "Schedule": 
 [
 {
