@@ -16,10 +16,14 @@
 "MaxConsecutiveSystemExceptions":"3",
 "RetryNumberGetTransactionItem":"2",
 "RetryNumberSetTransactionStatus":"2",
-	
+
+"RetryNumber":"3",
+"RetryInterval":"00:00:30",
 "StorageBucketName":"437-CollectionHighwayStatus",
 "StorageBucketStatusFileName":"437-CollectionHighwayStatusFile.xlsx",
 "TempFolderPath":"C:\\Users\\*\\UnsecuredVendorA50ROO",
+"PwdUpdateAssetName":"PasswordUpdateDates",
+
 	
 	
 "Schedule": 

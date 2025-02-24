@@ -3,9 +3,11 @@
     <x:Property Name="in_SBName" Type="InArgument(x:String)" />
     <x:Property Name="in_TempFolderPath" Type="InArgument(x:String)" />
     <x:Property Name="in_SBFileName" Type="InArgument(x:String)" />
+    <x:Property Name="in_RetryNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_RetryInterval" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>635,1012</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>765,2668</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -40,6 +42,7 @@
       <x:String>UiPath.Core.Activities.Storage</x:String>
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -90,16 +93,21 @@
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This Workflow Used To Download The Status File From Storage Bucket.&#xA;&#xA;Arguments:&#xA;in_SBName = Storage Bucket Name.&#xA;in_SBFilePath = Storage Bucket Status File Path.&#xA;in_TempFolderPath = Temp (Local) Folder Path." DisplayName="DownloadFileFromStorageBucket" sap:VirtualizedContainerService.HintSize="564,947" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This Workflow Used To Download The Status File From Storage Bucket.&#xA;&#xA;Arguments:&#xA;in_SBName = Storage Bucket Name.&#xA;in_SBFilePath = Storage Bucket Status File Path.&#xA;in_TempFolderPath = Temp (Local) Folder Path." DisplayName="DownloadFileFromStorageBucket" sap:VirtualizedContainerService.HintSize="751,2976" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="IsDownloaded" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage sap2010:Annotation.AnnotationText="Log Message For Start DownloadedFileFromStorageBucket" DisplayName="Log Message Start DownloadFileFromStorageBucket" sap:VirtualizedContainerService.HintSize="502,215" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+    <ui:LogMessage sap2010:Annotation.AnnotationText="Log Message For Start DownloadedFileFromStorageBucket" DisplayName="Log Message Start DownloadFileFromStorageBucket" sap:VirtualizedContainerService.HintSize="689,215" sap2010:WorkflowViewState.IdRef="LogMessage_1">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -117,29 +125,39 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Process\\CheckAndDeleteTempFolder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="502,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\\CheckAndDeleteTempFolder.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Process\\CheckAndDeleteTempFolder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="689,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\\CheckAndDeleteTempFolder.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_TempFolderPath">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">in_TempFolderPath</CSharpValue>
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Process\\CheckAndCreateTempFolder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="502,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\\CheckAndCreateTempFolder.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Process\\CheckAndCreateTempFolder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="689,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\\CheckAndCreateTempFolder.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_TempFolderPath">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">in_TempFolderPath</CSharpValue>
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <TryCatch DisplayName="Try Catch - Check For Storage Bucket Name And FilePath. Download File From SB" sap:VirtualizedContainerService.HintSize="502,57" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <Assign DisplayName="Assign IsDownloaded as false" sap:VirtualizedContainerService.HintSize="689,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">
+          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">IsDownloaded</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+      </Assign.Value>
+    </Assign>
+    <TryCatch DisplayName="Try Catch - Check For Storage Bucket Name And FilePath. Download File From SB" sap:VirtualizedContainerService.HintSize="689,1972" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:IfElseIf DisplayName="Else If -  Storage Bucket Name And FilePath is Not Empty" sap:VirtualizedContainerService.HintSize="467,1177" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+        <ui:IfElseIf DisplayName="Else If -  Storage Bucket Name And FilePath is Not Empty" sap:VirtualizedContainerService.HintSize="651,1712" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
           <ui:IfElseIf.ConditionBlocks>
             <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
               <ui:IfElseIfBlock BlockType="If">
@@ -149,30 +167,79 @@
                   </InArgument>
                 </ui:IfElseIfBlock.Condition>
                 <ui:IfElseIfBlock.Then>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,417" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="600,952" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ucas:DownloadStorageFile TimeoutMS="{x:Null}" DisplayName="Download Storage File - Status File" sap:VirtualizedContainerService.HintSize="354,165" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_1">
-                      <ucas:DownloadStorageFile.Destination>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">in_TempFolderPath+"\\"+in_SBFileName</CSharpValue>
+                    <ui:RetryScope DisplayName="Retry Scope - Download Storage File - Status File" sap:VirtualizedContainerService.HintSize="538,700" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                      <ui:RetryScope.ActivityBody>
+                        <ActivityAction>
+                          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="496,358" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ucas:DownloadStorageFile TimeoutMS="{x:Null}" DisplayName="Download Storage File - Status File" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_1">
+                              <ucas:DownloadStorageFile.Destination>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">in_TempFolderPath+"\\"+in_SBFileName</CSharpValue>
+                                </InArgument>
+                              </ucas:DownloadStorageFile.Destination>
+                              <ucas:DownloadStorageFile.Path>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">in_SBFileName</CSharpValue>
+                                </InArgument>
+                              </ucas:DownloadStorageFile.Path>
+                              <ucas:DownloadStorageFile.StorageBucketName>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">in_SBName</CSharpValue>
+                                </InArgument>
+                              </ucas:DownloadStorageFile.StorageBucketName>
+                            </ucas:DownloadStorageFile>
+                            <Assign DisplayName="Assign IsDownloaded as true" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">
+                                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">IsDownloaded</CSharpReference>
+                                </OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:RetryScope.ActivityBody>
+                      <ui:RetryScope.Condition>
+                        <ActivityFunc x:TypeArguments="x:Boolean">
+                          <ui:CheckTrue ErrorMessage="{x:Null}" sap2010:Annotation.AnnotationText="Check Condition" DisplayName="Check True Access Bool" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="CheckTrue_1">
+                            <ui:CheckTrue.Expression>
+                              <InArgument x:TypeArguments="x:Boolean">
+                                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">IsDownloaded</CSharpValue>
+                              </InArgument>
+                            </ui:CheckTrue.Expression>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CheckTrue>
+                        </ActivityFunc>
+                      </ui:RetryScope.Condition>
+                      <ui:RetryScope.NumberOfRetries>
+                        <InArgument x:TypeArguments="x:Int32">
+                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">Convert.ToInt32(in_RetryNumber)</CSharpValue>
                         </InArgument>
-                      </ucas:DownloadStorageFile.Destination>
-                      <ucas:DownloadStorageFile.Path>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">in_SBFileName</CSharpValue>
+                      </ui:RetryScope.NumberOfRetries>
+                      <ui:RetryScope.RetryInterval>
+                        <InArgument x:TypeArguments="x:TimeSpan">
+                          <CSharpValue x:TypeArguments="x:TimeSpan" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">TimeSpan.Parse(in_RetryInterval)</CSharpValue>
                         </InArgument>
-                      </ucas:DownloadStorageFile.Path>
-                      <ucas:DownloadStorageFile.StorageBucketName>
-                        <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">in_SBName</CSharpValue>
-                        </InArgument>
-                      </ucas:DownloadStorageFile.StorageBucketName>
-                    </ucas:DownloadStorageFile>
-                    <ui:LogMessage DisplayName="Log Message - SB File Download Successful" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+                      </ui:RetryScope.RetryInterval>
+                    </ui:RetryScope>
+                    <ui:LogMessage DisplayName="Log Message - SB File Download Successful" sap:VirtualizedContainerService.HintSize="538,164" sap2010:WorkflowViewState.IdRef="LogMessage_5">
                       <ui:LogMessage.Level>
                         <InArgument x:TypeArguments="ui:LogLevel">
                           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -235,10 +302,10 @@
         </ui:IfElseIf>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="468,379" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="655,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -270,7 +337,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage sap2010:Annotation.AnnotationText="Log Message For End DownloadFileFromStorageBucket" DisplayName="Log Message End DownloadFileFromStorageBucket" sap:VirtualizedContainerService.HintSize="502,195" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+    <ui:LogMessage sap2010:Annotation.AnnotationText="Log Message For End DownloadFileFromStorageBucket" DisplayName="Log Message End DownloadFileFromStorageBucket" sap:VirtualizedContainerService.HintSize="689,195" sap2010:WorkflowViewState.IdRef="LogMessage_2">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">UiPath.Core.Activities.LogLevel.Info</CSharpValue>

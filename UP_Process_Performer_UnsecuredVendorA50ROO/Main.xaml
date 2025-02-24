@@ -732,6 +732,12 @@
                         <InArgument x:TypeArguments="x:String" x:Key="in_SBFileName">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_458">GlobalVariables.g_Config["StorageBucketStatusFileName"].ToString()</CSharpValue>
                         </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_RetryNumber">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_460">GlobalVariables.g_Config["RetryNumber"].ToString()</CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_RetryInterval">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_459">GlobalVariables.g_Config["RetryInterval"].ToString()</CSharpValue>
+                        </InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
