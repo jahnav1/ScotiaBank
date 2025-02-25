@@ -4,7 +4,7 @@
 "CredentialTrackerCollHighQueueName":"437-CollectionHighway-Canada-CredTracker",
 "HashiCorpSharedFolderPath":"Shared",
 "HashiCorpIntralinkSecretEndPointURL":"https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/IntralinkSecret",
-"HashiCorpCollHighSecretEndPointURL":"https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/COLLHIGHWAY"
+"HashiCorpCollHighSecretEndPointURL":"https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/COLLHIGHWAY",
 "IsDryRun":"True",
 "KillAppNames":"msedge,notepad",
 "CookiesJournalFilePath":"Google\\Chrome\\User Data\\Default\\Network\\Cookies-journal",
