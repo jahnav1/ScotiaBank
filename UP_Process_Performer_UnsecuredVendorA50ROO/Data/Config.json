@@ -23,6 +23,7 @@
 "StorageBucketStatusFileName":"437-CollectionHighwayStatusFile.xlsx",
 "TempFolderPath":"C:\\Users\\*\\UnsecuredVendorA50ROO",
 "PwdUpdateAssetName":"PasswordUpdateDates",
+"DaysBeforePasswordReset":"25",
 
 	
 	
