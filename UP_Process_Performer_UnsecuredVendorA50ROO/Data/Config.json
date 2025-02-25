@@ -24,6 +24,15 @@
 "TempFolderPath":"C:\\Users\\*\\UnsecuredVendorA50ROO",
 "PwdUpdateAssetName":"PasswordUpdateDates",
 "DaysBeforePasswordReset":"25",
+"UpperAlphaChars":"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+"LowerAlphaChars":"abcdefghijklmnopqrstuvwxyz",
+"NumericChars":"0123456789",
+"SpecialChars":"#?!@$%^&*-",
+"LowerCharLength":"1", 
+"UpperCharLength":"1", 
+"NumericCharLength":"1", 
+"SpecialCharLength":"1",
+"MinPasswordLength":"8",
 
 	
 	
