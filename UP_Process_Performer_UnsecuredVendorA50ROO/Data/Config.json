@@ -1,24 +1,29 @@
 ﻿{
-"OrchestratorQueueName":"TestQ",
-"CredentialTrackerQueueName":"405-Intralink-Canada-CredTracker",
+"OrchestratorQueueName":"437-UnsecuredVendor(A50ROO)2.0-Canada",
+"CredentialTrackerIntralinkQueueName":"437-Intralink-Canada-CredTracker",
+"CredentialTrackerCollHighQueueName":"437-CollectionHighway-Canada-CredTracker",
 "HashiCorpSharedFolderPath":"Shared",
-"HashiCorpSecretEndPointURL":"https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/IntralinkSecret",
+"HashiCorpIntralinkSecretEndPointURL":"https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/IntralinkSecret",
+"HashiCorpCollHighSecretEndPointURL":"https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/COLLHIGHWAY"
 "IsDryRun":"True",
 "KillAppNames":"msedge,notepad",
 "CookiesJournalFilePath":"Google\\Chrome\\User Data\\Default\\Network\\Cookies-journal",
 "CookiesFilePath":"Google\\Chrome\\User Data\\Default\\Network\\Cookies",
 "CacheFolderPath":"Google\\Chrome\\User Data\\Default\\Cache",
 "Delay":"00:00:02",
-"MinTimeOut":"30000",
-"MediumTimeOut":"60000",
-"MaxTimeOut":"120000",
 "MaxRetryNumber":"0",
 "MaxConsecutiveSystemExceptions":"3",
 "RetryNumberGetTransactionItem":"2",
 "RetryNumberSetTransactionStatus":"2",
 
+"MinTimeOut":"15",
+"MediumTimeOut":"30",
+"MaxTimeOut":"60",
 "RetryNumber":"3",
 "RetryInterval":"00:00:30",
+"IsCollectionHighwayIncognito":"false",
+"CollectionHighwayLoginURL":"https://uat1.collectionhighway.com/go.aspx",
+"CollectionHighwayWebArg":"",
 "StorageBucketName":"437-CollectionHighwayStatus",
 "StorageBucketStatusFileName":"437-CollectionHighwayStatusFile.xlsx",
 "TempFolderPath":"C:\\Users\\*\\UnsecuredVendorA50ROO",
@@ -33,6 +38,7 @@
 "NumericCharLength":"1", 
 "SpecialCharLength":"1",
 "MinPasswordLength":"8",
+
 
 	
 	

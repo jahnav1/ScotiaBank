@@ -147,6 +147,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID0}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="709,846" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -160,11 +161,11 @@
         <av:PointCollection x:Key="ConnectorLocation">70,76.25 100,76.25 100,76.45 249,76.45</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="721,7416" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="721,8193" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
-        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="675,6997" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="675,7774" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <TryCatch.Try>
-            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="637,6769" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Load configurations and open applications" sap:VirtualizedContainerService.HintSize="637,7546" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -210,7 +211,7 @@
                 </Assign.Value>
               </Assign>
               <ui:Comment DisplayName="Comment Initialization" sap:VirtualizedContainerService.HintSize="575,164" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// Initialization - Read local config file , get project folder path from Master Project Settings Data Service Entity and read Config Settings Json string from Asset in Orchestrator" />
-              <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="575,3449" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap2010:Annotation.AnnotationText="An uninitialized Config dictionary indicates that it is the first run of the process." DisplayName="If first run, read local configuration file" sap:VirtualizedContainerService.HintSize="575,3931" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">Config == null</CSharpValue>
@@ -224,7 +225,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="First run" sap:VirtualizedContainerService.HintSize="541,2996" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="First run" sap:VirtualizedContainerService.HintSize="541,3478" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="CryptographySecretEndPointURL" />
                     </Sequence.Variables>
@@ -242,7 +243,7 @@
                       </ui:LogMessage.Message>
                     </ui:LogMessage>
                     <ui:Comment DisplayName="Read Config and Orchestrator Asset" sap:VirtualizedContainerService.HintSize="479,107" sap2010:WorkflowViewState.IdRef="Comment_21" Text="// Read local Config file and Config Settings Json String from Asset in Orchestrator" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="479,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="479,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">
                           <CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">Config</CSharpReference>
@@ -400,43 +401,96 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <ui:Comment DisplayName="Checkout UserName and Queue Item" sap:VirtualizedContainerService.HintSize="479,107" sap2010:WorkflowViewState.IdRef="Comment_19" Text="// Checkout UserName and Queue Item from Credential Tracker Queue" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckoutCredentialTrackerQueueItem.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Utility\\CheckoutCredentialTrackerQueueItem.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <OutArgument x:TypeArguments="x:String" x:Key="out_UserName">
-                          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_100">GlobalVariables.g_UserName</CSharpReference>
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="ui:QueueItem" x:Key="out_CredTrackerQueueItem">
-                          <CSharpReference x:TypeArguments="ui:QueueItem" sap2010:WorkflowViewState.IdRef="CSharpReference`1_101">GlobalVariables.g_CredentialTrackerQueueItem</CSharpReference>
-                        </OutArgument>
-                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSuccess">
-                          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_106">IsCredentialCheckedOut</CSharpReference>
-                        </OutArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                    <ui:Comment DisplayName="Get Credentials from HashiCorp Vault" sap:VirtualizedContainerService.HintSize="479,88" sap2010:WorkflowViewState.IdRef="Comment_20" Text="//Get Credentials from HashiCorp Vault" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\GetCredentialsFromHashiCorpVault.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Utility\\GetCredentialsFromHashiCorpVault.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Username">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_379">GlobalVariables.g_UserName</CSharpValue>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_HashiCorpVaultSecretEndPoint">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_380">GlobalVariables.g_Config["HashiCorpSecretEndPointURL"].ToString()</CSharpValue>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_HashiCorpVaultFolderPath">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_381">GlobalVariables.g_Config["HashiCorpSharedFolderPath"].ToString()</CSharpValue>
-                        </InArgument>
-                        <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">
-                          <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_98">GlobalVariables.g_SecurePassword</CSharpReference>
-                        </OutArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
+                    <Sequence DisplayName="CheckOut And GetCredentials Intralink" sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="Sequence_95">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:Comment DisplayName="Checkout UserName and Queue Item" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Comment_19" Text="// Checkout UserName and Queue Item from Credential Tracker Queue - Intralink" />
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Intralink CheckoutCredentialTrackerQueueItem.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Utility\\CheckoutCredentialTrackerQueueItem.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_UserName">
+                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_108">GlobalVariables.g_UserNameIntralink</CSharpReference>
+                          </OutArgument>
+                          <OutArgument x:TypeArguments="ui:QueueItem" x:Key="out_CredTrackerQueueItem">
+                            <CSharpReference x:TypeArguments="ui:QueueItem" sap2010:WorkflowViewState.IdRef="CSharpReference`1_101">GlobalVariables.g_CredentialTrackerQueueItem</CSharpReference>
+                          </OutArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSuccess">
+                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_106">IsCredentialCheckedOut</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <ui:Comment DisplayName="Get Credentials from HashiCorp Vault" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Comment_20" Text="//Get Credentials from HashiCorp Vault - Intralink" />
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\GetCredentialsFromHashiCorpVault.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Utility\\GetCredentialsFromHashiCorpVault.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Username">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_462">GlobalVariables.g_UserNameIntralink</CSharpValue>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_HashiCorpVaultSecretEndPoint">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_461">GlobalVariables.g_Config["HashiCorpIntralinkSecretEndPointURL"].ToString()</CSharpValue>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_HashiCorpVaultFolderPath">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_381">GlobalVariables.g_Config["HashiCorpSharedFolderPath"].ToString()</CSharpValue>
+                          </InArgument>
+                          <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">
+                            <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_107">GlobalVariables.g_SecurePasswordIntralink</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                    </Sequence>
+                    <Sequence DisplayName="CheckOut And GetCredentials CollectionHighway" sap:VirtualizedContainerService.HintSize="479,733" sap2010:WorkflowViewState.IdRef="Sequence_96">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                    </ui:InvokeWorkflowFile>
+                      <ui:Comment DisplayName="Checkout UserName and Queue Item" sap:VirtualizedContainerService.HintSize="388,126" sap2010:WorkflowViewState.IdRef="Comment_62" Text="// Checkout UserName and Queue Item from Credential Tracker Queue - Collection Highway" />
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CollHigh CheckoutCredentialTrackerQueueItem.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_51" UnSafe="False" WorkflowFileName="Utility\\CheckoutCredentialTrackerQueueItem.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_UserName">
+                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_113">GlobalVariables.g_UserNameCollHigh</CSharpReference>
+                          </OutArgument>
+                          <OutArgument x:TypeArguments="ui:QueueItem" x:Key="out_CredTrackerQueueItem">
+                            <CSharpReference x:TypeArguments="ui:QueueItem" sap2010:WorkflowViewState.IdRef="CSharpReference`1_110">GlobalVariables.g_CredentialTrackerQueueItem</CSharpReference>
+                          </OutArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSuccess">
+                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_111">IsCredentialCheckedOut</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <ui:Comment DisplayName="Get Credentials from HashiCorp Vault" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="Comment_63" Text="//Get Credentials from HashiCorp Vault" />
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\GetCredentialsFromHashiCorpVault.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_52" UnSafe="False" WorkflowFileName="Utility\\GetCredentialsFromHashiCorpVault.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Username">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_466">GlobalVariables.g_UserNameCollHigh</CSharpValue>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_HashiCorpVaultSecretEndPoint">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_467">GlobalVariables.g_Config["HashiCorpCollHighSecretEndPointURL"].ToString()</CSharpValue>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_HashiCorpVaultFolderPath">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_465">GlobalVariables.g_Config["HashiCorpSharedFolderPath"].ToString()</CSharpValue>
+                          </InArgument>
+                          <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">
+                            <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_114">GlobalVariables.g_SecurePasswordCollHigh</CSharpReference>
+                          </OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                    </Sequence>
                     <ui:RetryScope DisplayName="Retry Scope Get Asset HashiCorpSecretEndPointURLCryptography " sap:VirtualizedContainerService.HintSize="479,57" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
                       <ui:RetryScope.ActivityBody>
                         <ActivityAction>
@@ -515,7 +569,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:RetryScope>
                     <ui:Comment DisplayName="Get Key from HashiCorp Vault" sap:VirtualizedContainerService.HintSize="479,88" sap2010:WorkflowViewState.IdRef="Comment_55" Text="//Get Key from HashiCorp Vault" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\GetKeyFromHashiCorpVault.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_42" UnSafe="False" WorkflowFileName="Utility\\GetKeyFromHashiCorpVault.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\GetKeyFromHashiCorpVault.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_42" UnSafe="False" WorkflowFileName="Utility\\GetKeyFromHashiCorpVault.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_UsernameforKey">Key</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_HashiCorpSecretEndPointForKey">
@@ -530,7 +584,7 @@
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:Comment DisplayName="Get Old Key from HashiCorp Vault" sap:VirtualizedContainerService.HintSize="479,88" sap2010:WorkflowViewState.IdRef="Comment_56" Text="//Get Old_Key from HashiCorp Vault" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\GetKeyFromHashiCorpVault.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Utility\\GetKeyFromHashiCorpVault.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\GetKeyFromHashiCorpVault.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Utility\\GetKeyFromHashiCorpVault.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_UsernameforKey">Old_Key</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_HashiCorpSecretEndPointForKey">
@@ -624,7 +678,7 @@
                 </If.Else>
               </If>
               <ui:Comment DisplayName="Comment to Kill Processes" sap:VirtualizedContainerService.HintSize="575,88" sap2010:WorkflowViewState.IdRef="Comment_39" Text="// Kill Processes" />
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kills all Windows processes representing applications used in this business process to assure that the execution starts in a clean state.&#xA;Since the applications are assumed to be already closed, CloseAllApplications is skipped and just KillAllProcess is invoked." DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="575,247" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kills all Windows processes representing applications used in this business process to assure that the execution starts in a clean state.&#xA;Since the applications are assumed to be already closed, CloseAllApplications is skipped and just KillAllProcess is invoked." DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="575,306" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="in_KillAppNames">
                     <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_343">GlobalVariables.g_Config["KillAppNames"].ToString()</CSharpValue>
@@ -639,27 +693,27 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <ui:Comment DisplayName="Clear Browser Cache and Cookies" sap:VirtualizedContainerService.HintSize="575,88" sap2010:WorkflowViewState.IdRef="Comment_61" Text="// Clear Browser's Cache and Cookies data" />
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\ClearBrowserCacheCookiesData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="575,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_49" UnSafe="False" WorkflowFileName="Utility\\ClearBrowserCacheCookiesData.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\ClearBrowserCacheCookiesData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="575,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_49" UnSafe="False" WorkflowFileName="Utility\\ClearBrowserCacheCookiesData.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <ui:Comment DisplayName="Check Business Hours" sap:VirtualizedContainerService.HintSize="575,88" sap2010:WorkflowViewState.IdRef="Comment_17" Text="// Check Business Hours" />
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\CheckBusinessHours.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="575,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" UnSafe="False" WorkflowFileName="Utility\\CheckBusinessHours.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\CheckBusinessHours.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="575,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" UnSafe="False" WorkflowFileName="Utility\\CheckBusinessHours.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsWithInBUHours">
                     <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_103">WithInBusinessHours</CSharpReference>
                   </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <If DisplayName="If - WithInBusinessHours" sap:VirtualizedContainerService.HintSize="575,1351" sap2010:WorkflowViewState.IdRef="If_30">
+              <If DisplayName="If - WithInBusinessHours" sap:VirtualizedContainerService.HintSize="575,1469" sap2010:WorkflowViewState.IdRef="If_30">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_408">WithInBusinessHours</CSharpValue>
                   </InArgument>
                 </If.Condition>
                 <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,822" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,940" sap2010:WorkflowViewState.IdRef="Sequence_91">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -684,7 +738,7 @@
                         </InArgument>
                       </ui:LogMessage.Message>
                     </ui:LogMessage>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllApplications workflow" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_44" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllApplications workflow" sap:VirtualizedContainerService.HintSize="354,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_44" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
                           <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_413">Config</CSharpValue>
@@ -721,7 +775,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Process\\DownloadFileFromStorageBucket.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_50" UnSafe="False" WorkflowFileName="Process\\DownloadFileFromStorageBucket.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Process\\DownloadFileFromStorageBucket.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_50" UnSafe="False" WorkflowFileName="Process\\DownloadFileFromStorageBucket.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_SBName">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_455">GlobalVariables.g_Config["StorageBucketName"].ToString()</CSharpValue>
