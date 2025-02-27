@@ -164,7 +164,7 @@
         <av:PointCollection x:Key="ConnectorLocation">70,76.25 100,76.25 100,76.45 249,76.45</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="721,7721" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="222,119" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="675,7302" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <TryCatch.Try>
@@ -842,7 +842,7 @@
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_488">GlobalVariables.g_Config["StatusSheetName"].ToString()</CSharpValue>
                         </InArgument>
                         <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DTStatus">
-                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_119">StatusDT</CSharpReference>
+                          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_119">dt_Status</CSharpReference>
                         </OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
@@ -1049,7 +1049,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="208,104" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <Sequence sap2010:Annotation.AnnotationText="Retrieve a new transaction data to be processed.&#xA;The TransactionNumber variable holds the current transaction number and incrementing this variable makes the framework retrieve the next transaction. If the framework is retrying a failed transaction, this variable is not incremented until the maximum number of retry attempts is reached." DisplayName="Retrieve Data" sap:VirtualizedContainerService.HintSize="592,3405" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap2010:Annotation.AnnotationText="Retrieve a new transaction data to be processed.&#xA;The TransactionNumber variable holds the current transaction number and incrementing this variable makes the framework retrieve the next transaction. If the framework is retrying a failed transaction, this variable is not incremented until the maximum number of retry attempts is reached." DisplayName="Retrieve Data" sap:VirtualizedContainerService.HintSize="592,3464" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="ShouldStop" />
                   </Sequence.Variables>
@@ -1079,7 +1079,7 @@
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
                   <ui:Comment DisplayName="Check Business Hours" sap:VirtualizedContainerService.HintSize="530,88" sap2010:WorkflowViewState.IdRef="Comment_47" Text="// Check Business Hours" />
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\CheckBusinessHours.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="530,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_46" UnSafe="False" WorkflowFileName="Utility\\CheckBusinessHours.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\CheckBusinessHours.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="530,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_46" UnSafe="False" WorkflowFileName="Utility\\CheckBusinessHours.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsWithInBUHours">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_104">WithInBusinessHours</CSharpReference>
@@ -2361,7 +2361,7 @@
       <Variable x:TypeArguments="x:Boolean" Name="WithInBusinessHours" />
       <Variable x:TypeArguments="x:Boolean" Name="IsIntrlnkCredentialCheckedOut" />
       <Variable x:TypeArguments="x:Boolean" Name="IsCollHighCredentialCheckedOut" />
-      <Variable x:TypeArguments="sd:DataTable" Name="StatusDT" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Status" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

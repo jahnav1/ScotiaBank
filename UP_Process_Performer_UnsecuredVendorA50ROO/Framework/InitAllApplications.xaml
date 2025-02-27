@@ -133,7 +133,7 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <up:CollectionHighway_Login sap:VirtualizedContainerService.HintSize="354,572" sap2010:WorkflowViewState.IdRef="CollectionHighway_Login_1">
+    <up:CollectionHighway_Login DisplayName="CollectionHighway_Login (Login Actions)" sap:VirtualizedContainerService.HintSize="354,572" sap2010:WorkflowViewState.IdRef="CollectionHighway_Login_1">
       <up:CollectionHighway_Login.in_CollectionHighwayURL>
         <InArgument x:TypeArguments="x:String">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GlobalVariables.g_Config["CollectionHighwayLoginURL"].ToString()</CSharpValue>
