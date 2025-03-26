@@ -6,7 +6,7 @@
     <x:Property Name="out_OutcomeReason" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1172.8,908</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1172.8,1448</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -109,7 +109,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Flowchart - Collection Highway flow" sap:VirtualizedContainerService.HintSize="930.4,1383.2" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Flowchart - Collection Highway flow" sap:VirtualizedContainerService.HintSize="930.4,1550.4" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsWorkAreaSelected" />
       <Variable x:TypeArguments="x:String" Name="WorkAreaError" />
@@ -127,6 +127,10 @@
       <Variable x:TypeArguments="x:String" Name="GetOutcomeError" />
       <Variable x:TypeArguments="x:Boolean" Name="IsSelectAssetSuccess" />
       <Variable x:TypeArguments="x:String" Name="SelectAssetError" />
+      <Variable x:TypeArguments="x:String" Name="Instruction" />
+      <Variable x:TypeArguments="x:String" Name="Status" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsInstructionFetched" />
+      <Variable x:TypeArguments="x:String" Name="InstructionError" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -134,14 +138,14 @@
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75.2</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,107.7</av:PointCollection>
-        <x:Double x:Key="Height">1346.3999999999999</x:Double>
+        <x:Double x:Key="Height">1513.6000000000001</x:Double>
         <x:Double x:Key="Width">896.8</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID11</x:Reference>
+      <x:Reference>__ReferenceID13</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID11">
+    <FlowStep x:Name="__ReferenceID13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,107.7</av:Point>
@@ -149,10 +153,10 @@
           <av:PointCollection x:Key="ConnectorLocation">300,160.5 300,190.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message - Start SearchAccountInCollectionHighway" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+      <ui:LogMessage DisplayName="Start CollectionHighwayFlow" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
         <ui:LogMessage.Message>
           <InArgument x:TypeArguments="x:Object">
-            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">"Start SearchAccountInCollectionHighway"</CSharpValue>
+            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">"Start CollectionHighwayFlow"</CSharpValue>
           </InArgument>
         </ui:LogMessage.Message>
         <sap:WorkflowViewStateService.ViewState>
@@ -353,7 +357,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">300,916.4 300,946.4</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="result = false;&#xD;&#xA;errMsg = &quot;&quot;;&#xD;&#xA;asset = &quot;&quot;;&#xD;&#xA;rowNumber = 0;&#xD;&#xA;isSubmit = false;&#xD;&#xA;outcomeReason = &quot;&quot;;&#xD;&#xA;int resultsCount = dtResults.Rows.Count;&#xD;&#xA;&#xD;&#xA;try&#xD;&#xA;{&#xD;&#xA;&#x9;if (resultsCount == 0)&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;// No results found - withdraw.&#xD;&#xA;&#x9;&#x9;isSubmit = false;&#xD;&#xA;&#x9;&#x9;outcomeReason = &quot;No results found.&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else if (resultsCount == 1)&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;// Only one search result&#xD;&#xA;&#x9;&#x9;if (dtResults.Rows[0].Field&lt;bool&gt;(&quot;IsEnabled&quot;))&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;// One result is enabled button - submit.&#xD;&#xA;&#x9;&#x9;&#x9;isSubmit = true;&#xD;&#xA;&#x9;&#x9;&#x9;outcomeReason = &quot;1 button enabled same asset.&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;asset = dtResults.Rows[0].Field&lt;string&gt;(&quot;Asset&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;rowNumber = dtResults.Rows[0].Field&lt;int&gt;(&quot;RowNumber&quot;);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;// One result is disabled button - withdraw.&#xD;&#xA;&#x9;&#x9;&#x9;isSubmit = false;&#xD;&#xA;&#x9;&#x9;&#x9;outcomeReason = &quot;No button enabled.&quot;;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;// Multiple results - get count of enabled buttons.&#xD;&#xA;&#x9;&#x9;int enabledCount = dtResults.AsEnumerable().Where(x =&gt; x.Field&lt;bool&gt;(&quot;IsEnabled&quot;)).ToList().Count;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;if (enabledCount == 0)&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;// All buttons disabled - withdraw.&#xD;&#xA;&#x9;&#x9;&#x9;isSubmit = false;&#xD;&#xA;&#x9;&#x9;&#x9;outcomeReason = &quot;No button enabled.&quot;;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;else if (enabledCount == 1)&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;// One enabled button only - get count of unique assets.&#xD;&#xA;&#x9;&#x9;&#x9;int uniqueCount = dtResults.AsEnumerable().Select(r =&gt; r.Field&lt;string&gt;(&quot;Asset&quot;)).Distinct().Count();&#xD;&#xA;&#x9;&#x9;&#x9;if (uniqueCount == 1)&#xD;&#xA;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// One unique asset - submit.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;isSubmit = true;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;outcomeReason = &quot;1 button enabled same asset.&quot;;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// Get the first enabled asset and rownumber&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;DataRow drEnabled = dtResults.AsEnumerable().Where(x =&gt; x.Field&lt;bool&gt;(&quot;IsEnabled&quot;)).FirstOrDefault();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;asset = drEnabled.Field&lt;string&gt;(&quot;Asset&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;rowNumber = drEnabled.Field&lt;int&gt;(&quot;RowNumber&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// Multiple different assets - withdraw.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;isSubmit = false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;outcomeReason = &quot;1 button enabled different asset.&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;// Multiple enabled buttons - get count of unique assets.&#xD;&#xA;&#x9;&#x9;&#x9;int uniqueCount = dtResults.AsEnumerable().Select(r =&gt; r.Field&lt;string&gt;(&quot;Asset&quot;)).Distinct().Count();&#xD;&#xA;&#x9;&#x9;&#x9;if (uniqueCount == 1)&#xD;&#xA;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// One unique asset - submit.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;isSubmit = true;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;outcomeReason = &quot;More than 1 button enabled same asset.&quot;;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// Get the first enabled asset and rownumber&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;DataRow drEnabled = dtResults.AsEnumerable().Where(x =&gt; x.Field&lt;bool&gt;(&quot;IsEnabled&quot;)).FirstOrDefault();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;asset = drEnabled.Field&lt;string&gt;(&quot;Asset&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;rowNumber = drEnabled.Field&lt;int&gt;(&quot;RowNumber&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;// Multiple different assets - withdraw.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;isSubmit = false;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;outcomeReason = &quot;More than 1 button enabled different asset.&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;result = true;&#xD;&#xA;}&#xD;&#xA;catch (Exception ex)&#xD;&#xA;{&#xD;&#xA;&#x9;errMsg = ex.Message;&#xD;&#xA;&#x9;result = false;&#xD;&#xA;}" DisplayName="GetOutcome" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+                                  <ui:InvokeCode ContinueOnError="{x:Null}" Code="result = false;&#xA;errMsg = &quot;&quot;;&#xA;asset = &quot;&quot;;&#xA;rowNumber = 0;&#xA;isSubmit = false;&#xA;outcomeReason = &quot;&quot;;&#xA;int resultsCount = dtResults.Rows.Count;&#xA;&#xA;try&#xA;{&#xA;&#x9;if (resultsCount == 0)&#xA;&#x9;{&#xA;&#x9;&#x9;// No results found - withdraw.&#xA;&#x9;&#x9;isSubmit = false;&#xA;&#x9;&#x9;outcomeReason = &quot;No results found.&quot;;&#xA;&#x9;}&#xA;&#x9;else if (resultsCount == 1)&#xA;&#x9;{&#xA;&#x9;&#x9;// Only one search result&#xA;&#x9;&#x9;if (dtResults.Rows[0].Field&lt;bool&gt;(&quot;IsEnabled&quot;))&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;// One result is enabled button - submit.&#xA;&#x9;&#x9;&#x9;isSubmit = true;&#xA;&#x9;&#x9;&#x9;outcomeReason = &quot;1 button enabled same asset.&quot;;&#xA;&#x9;&#x9;&#x9;asset = dtResults.Rows[0].Field&lt;string&gt;(&quot;Asset&quot;);&#xA;&#x9;&#x9;&#x9;rowNumber = dtResults.Rows[0].Field&lt;int&gt;(&quot;RowNumber&quot;);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;// One result is disabled button - withdraw.&#xA;&#x9;&#x9;&#x9;isSubmit = false;&#xA;&#x9;&#x9;&#x9;outcomeReason = &quot;No button enabled.&quot;;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;else&#xA;&#x9;{&#xA;&#x9;&#x9;// Multiple results - get count of enabled buttons.&#xA;&#x9;&#x9;int enabledCount = dtResults.AsEnumerable().Where(x =&gt; x.Field&lt;bool&gt;(&quot;IsEnabled&quot;)).ToList().Count;&#xA;&#xA;&#x9;&#x9;if (enabledCount == 0)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;// All buttons disabled - withdraw.&#xA;&#x9;&#x9;&#x9;isSubmit = false;&#xA;&#x9;&#x9;&#x9;outcomeReason = &quot;No button enabled.&quot;;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if (enabledCount == 1)&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;// One enabled button only - get count of unique assets.&#xA;&#x9;&#x9;&#x9;int uniqueCount = dtResults.AsEnumerable().Select(r =&gt; r.Field&lt;string&gt;(&quot;Asset&quot;)).Distinct().Count();&#xA;&#x9;&#x9;&#x9;if (uniqueCount == 1)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;// One unique asset - submit.&#xA;&#x9;&#x9;&#x9;&#x9;isSubmit = true;&#xA;&#x9;&#x9;&#x9;&#x9;outcomeReason = &quot;1 button enabled same asset.&quot;;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;// Get the first enabled asset and rownumber&#xA;&#x9;&#x9;&#x9;&#x9;DataRow drEnabled = dtResults.AsEnumerable().Where(x =&gt; x.Field&lt;bool&gt;(&quot;IsEnabled&quot;)).FirstOrDefault();&#xA;&#x9;&#x9;&#x9;&#x9;asset = drEnabled.Field&lt;string&gt;(&quot;Asset&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;rowNumber = drEnabled.Field&lt;int&gt;(&quot;RowNumber&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;// Multiple different assets - withdraw.&#xA;&#x9;&#x9;&#x9;&#x9;isSubmit = false;&#xA;&#x9;&#x9;&#x9;&#x9;outcomeReason = &quot;1 button enabled different asset.&quot;;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;// Multiple enabled buttons - get count of unique assets.&#xA;&#x9;&#x9;&#x9;int uniqueCount = dtResults.AsEnumerable().Select(r =&gt; r.Field&lt;string&gt;(&quot;Asset&quot;)).Distinct().Count();&#xA;&#x9;&#x9;&#x9;if (uniqueCount == 1)&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;// One unique asset - submit.&#xA;&#x9;&#x9;&#x9;&#x9;isSubmit = true;&#xA;&#x9;&#x9;&#x9;&#x9;outcomeReason = &quot;More than 1 button enabled same asset.&quot;;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;// Get the first enabled asset and rownumber&#xA;&#x9;&#x9;&#x9;&#x9;DataRow drEnabled = dtResults.AsEnumerable().Where(x =&gt; x.Field&lt;bool&gt;(&quot;IsEnabled&quot;)).FirstOrDefault();&#xA;&#x9;&#x9;&#x9;&#x9;asset = drEnabled.Field&lt;string&gt;(&quot;Asset&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;rowNumber = drEnabled.Field&lt;int&gt;(&quot;RowNumber&quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;{&#xA;&#x9;&#x9;&#x9;&#x9;// Multiple different assets - withdraw.&#xA;&#x9;&#x9;&#x9;&#x9;isSubmit = false;&#xA;&#x9;&#x9;&#x9;&#x9;outcomeReason = &quot;More than 1 button enabled different asset.&quot;;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;result = true;&#xA;}&#xA;catch (Exception ex)&#xA;{&#xA;&#x9;errMsg = ex.Message;&#xA;&#x9;result = false;&#xA;}" DisplayName="GetOutcome" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
                                     <ui:InvokeCode.Arguments>
                                       <InArgument x:TypeArguments="sd:DataTable" x:Key="dtResults">
                                         <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">dt_Results</CSharpValue>
@@ -423,6 +427,7 @@
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">200,1173.6</av:Point>
                                                   <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                                  <av:PointCollection x:Key="ConnectorLocation">300,1226.3999999999999 300,1256.4</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <up:CollectionHighway_SelectAsset DisplayName="SelectAsset" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CollectionHighway_SelectAsset_1">
@@ -462,6 +467,73 @@
                                                   </OutArgument>
                                                 </up:CollectionHighway_SelectAsset.out_SelectAssetError>
                                               </up:CollectionHighway_SelectAsset>
+                                              <FlowStep.Next>
+                                                <FlowDecision x:Name="__ReferenceID11" DisplayName="IsSelectAssetSuccess" sap:VirtualizedContainerService.HintSize="113.6,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+                                                  <FlowDecision.Condition>
+                                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">IsSelectAssetSuccess</CSharpValue>
+                                                  </FlowDecision.Condition>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <av:Point x:Key="ShapeLocation">243.2,1256.4</av:Point>
+                                                      <av:Size x:Key="ShapeSize">113.6,87.2</av:Size>
+                                                      <av:PointCollection x:Key="TrueConnector">243.2,1300 213.2,1300 213.2,1363.6 300,1363.6 300,1393.6</av:PointCollection>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <FlowDecision.True>
+                                                    <FlowStep x:Name="__ReferenceID12">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <av:Point x:Key="ShapeLocation">200,1393.6</av:Point>
+                                                          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <up:CollectionHighway_GetInstructionsStatus DisplayName="GetInstructionsStatus" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CollectionHighway_GetInstructionsStatus_1">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <up:CollectionHighway_GetInstructionsStatus.in_IsIncognito>
+                                                          <InArgument x:TypeArguments="x:Boolean">
+                                                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">Convert.ToBoolean(GlobalVariables.g_Config["IsCollectionHighwayIncognito"])</CSharpValue>
+                                                          </InArgument>
+                                                        </up:CollectionHighway_GetInstructionsStatus.in_IsIncognito>
+                                                        <up:CollectionHighway_GetInstructionsStatus.in_MaxTimeout>
+                                                          <InArgument x:TypeArguments="x:Int32">
+                                                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">Convert.ToInt32(GlobalVariables.g_Config["MaxTimeOutSec"])</CSharpValue>
+                                                          </InArgument>
+                                                        </up:CollectionHighway_GetInstructionsStatus.in_MaxTimeout>
+                                                        <up:CollectionHighway_GetInstructionsStatus.in_MedTimeout>
+                                                          <InArgument x:TypeArguments="x:Int32">
+                                                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">Convert.ToInt32(GlobalVariables.g_Config["MediumTimeOutSec"])</CSharpValue>
+                                                          </InArgument>
+                                                        </up:CollectionHighway_GetInstructionsStatus.in_MedTimeout>
+                                                        <up:CollectionHighway_GetInstructionsStatus.out_Instruction>
+                                                          <OutArgument x:TypeArguments="x:String">
+                                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">Instruction</CSharpReference>
+                                                          </OutArgument>
+                                                        </up:CollectionHighway_GetInstructionsStatus.out_Instruction>
+                                                        <up:CollectionHighway_GetInstructionsStatus.out_InstructionError>
+                                                          <OutArgument x:TypeArguments="x:String">
+                                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">InstructionError</CSharpReference>
+                                                          </OutArgument>
+                                                        </up:CollectionHighway_GetInstructionsStatus.out_InstructionError>
+                                                        <up:CollectionHighway_GetInstructionsStatus.out_IsInstructionFetched>
+                                                          <OutArgument x:TypeArguments="x:Boolean">
+                                                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">IsInstructionFetched</CSharpReference>
+                                                          </OutArgument>
+                                                        </up:CollectionHighway_GetInstructionsStatus.out_IsInstructionFetched>
+                                                        <up:CollectionHighway_GetInstructionsStatus.out_Status>
+                                                          <OutArgument x:TypeArguments="x:String">
+                                                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">Status</CSharpReference>
+                                                          </OutArgument>
+                                                        </up:CollectionHighway_GetInstructionsStatus.out_Status>
+                                                      </up:CollectionHighway_GetInstructionsStatus>
+                                                    </FlowStep>
+                                                  </FlowDecision.True>
+                                                </FlowDecision>
+                                              </FlowStep.Next>
                                             </FlowStep>
                                           </FlowStep.Next>
                                         </FlowStep>
@@ -535,5 +607,7 @@
     <x:Reference>__ReferenceID8</x:Reference>
     <x:Reference>__ReferenceID9</x:Reference>
     <x:Reference>__ReferenceID10</x:Reference>
+    <x:Reference>__ReferenceID11</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
   </Flowchart>
 </Activity>
