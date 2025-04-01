@@ -50,6 +50,47 @@
     "SMTPHostServer": "appmailrelay.glb.bns",
     "SMTPSenderFrom": "437.SmartAutomationNotifications@scotiabank.com",
 
+	"CCSL_API_SurrogateKey_Parameters": {
+        "CCSL_API_SurrogateKey_x_b3_traceid": "80002",
+        "CCSL_API_SurrogateKey_x_country_code": "CA",
+        "CCSL_API_SurrogateKey_x_channel_id": "CallCentre",
+        "CCSL_API_SurrogateKey_originating_appl_code": "CC",
+        "CCSL_API_SurrogateKey_originating_ip_address": "122.122.12.11",
+        "CCSL_API_SurrogateKey_x_b3_spanid": "41200de3d3e82a81",
+        "CCSL_API_SurrogateKey_OfficerId": "1234567",
+        "CCSL_API_SurrogateKey_TransitId": "05132",
+        "CCSL_API_SurrogateKey_ContentType": "application/json",
+        "CCSL_API_SurrogateKey_grant_type": "client_credentials",
+        "CCSL_API_SurrogateKey_scope": "system.tokenization.bgkf.write",
+        "CCSL_API_SurrogateKey_client_assertion_type": "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
+        "CCSL_API_SurrogateKey_EndPointURL": "https://glbccsd-keymaster-uat.apps.stg.azr-cc-pcf.cloud.bns/api/v1/tokenization",
+        "CCSL_API_SurrogateKey_GenerateTokenEndPointURL": "https://wam-uat.cloud.bns/sso/oauth2/realms/root/realms/api/access_token",
+        "CCSL_API_SurrogateKey_OpenAMAUD": "https://wam-uat.cloud.bns:443/sso/oauth2/realms/root/realms/api/access_token",
+        "CCSL_API_SurrogateKey_HashiCorpSecretEndPointURL": "https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/uat/pega-robotics/RoboticsNLPAPIUAT",
+        "CCSL_API_SurrogateKey_user_id": "X601",
+        "CCSL_API_SurrogateKey_HashiCorpSharedFolderPath": "Shared"
+    },
+    "CCSL_API_CreditCardDetailInquiry_Parameters": {
+        "CCSL_API_CreditCardDetailInquiry_x_b3_traceid": "80002",
+        "CCSL_API_CreditCardDetailInquiry_x_country_code": "CA",
+        "CCSL_API_CreditCardDetailInquiry_x_channel_id": "Branch",
+        "CCSL_API_CreditCardDetailInquiry_originating_appl_code": "Test",
+        "CCSL_API_CreditCardDetailInquiry_x_api_version": "v1",
+        "CCSL_API_CreditCardDetailInquiry_x_b3_spanid": "12345",
+        "CCSL_API_CreditCardDetailInquiry_OfficerId": "5550610",
+        "CCSL_API_CreditCardDetailInquiry_TransitId": "52092",
+        "CCSL_API_CreditCardDetailInquiry_ContentType": "application/json",
+        "CCSL_API_CreditCardDetailInquiry_grant_type": "client_credentials",
+        "CCSL_API_CreditCardDetailInquiry_scope": "cards.plastic-card.bgkf.inquiry.read",
+        "CCSL_API_CreditCardDetailInquiry_client_assertion_type": "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
+        "CCSL_API_CreditCardDetailInquiry_EndPointURL": "https://credit-account-card-services-uat-green.apps.stg.azr-cc-pcf.cloud.bns/api/v1/cards/SurrogateKey?all_cards=true",
+        "CCSL_API_CreditCardDetailInquiry_GenerateTokenEndPointURL": "https://wam-uat.cloud.bns/sso/oauth2/realms/root/realms/api/access_token",
+		"CCSL_API_CreditCardDetailInquiry_OpenAMAUD": "https://wam-uat.cloud.bns:443/sso/oauth2/realms/root/realms/api/access_token",
+        "CCSL_API_CreditCardDetailInquiry_HashiCorpSecretEndPointURL": "https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/uat/pega-robotics/RoboticsNLPAPIUAT",
+        "CCSL_API_CreditCardDetailInquiry_user_id": "X601",
+        "CCSL_API_CreditCardDetailInquiry_HashiCorpSharedFolderPath": "Shared"
+    },
+
     "Schedule":
     [{
             "Day": "Sunday",
