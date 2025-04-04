@@ -6,7 +6,7 @@
 	"HashiCorpUseSharedFolder": "True",
     "HashiCorpIntralinkSecretEndPointURL": "https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/IntralinkSecret",
     "HashiCorpCollHighSecretEndPointURL": "https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/COLLHIGHWAY",
-    "IsDryRun": "True",
+    "IsDryRun": "False",
     "KillAppNames": "msedge1,notepad1",
     "CookiesJournalFilePath": "Google\\Chrome\\User Data\\Default\\Network\\Cookies-journal",
     "CookiesFilePath": "Google\\Chrome\\User Data\\Default\\Network\\Cookies",
@@ -93,7 +93,23 @@
 
     "Schedule":
     [{
-            "Day": "Sunday",
+            "Day": "Monday",
+            "StartTime": "00:01",
+            "EndTime": "23:59"
+        }, {
+            "Day": "Tuesday",
+            "StartTime": "00:01",
+            "EndTime": "23:59"
+        }, {
+            "Day": "Wednesday",
+            "StartTime": "00:01",
+            "EndTime": "23:59"
+        }, {
+            "Day": "Thursday",
+            "StartTime": "00:01",
+            "EndTime": "23:59"
+        }, {
+            "Day": "Friday",
             "StartTime": "00:01",
             "EndTime": "23:59"
         }, {
@@ -101,23 +117,7 @@
             "StartTime": "00:01",
             "EndTime": "23:59"
         }, {
-            "Day": "Tuesday",
-            "StartTime": "00:01",
-            "EndTime": "23:00"
-        }, {
-            "Day": "Wednesday",
-            "StartTime": "00:01",
-            "EndTime": "23:59"
-        }, {
-            "Day": "Thursday",
-            "StartTime": "19:19",
-            "EndTime": "08:15"
-        }, {
-            "Day": "Friday",
-            "StartTime": "00:01",
-            "EndTime": "23:59"
-        }, {
-            "Day": "Monday",
+            "Day": "Sunday",
             "StartTime": "00:01",
             "EndTime": "23:59"
         }

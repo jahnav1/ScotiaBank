@@ -1,10 +1,10 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetCardNumber" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:up="clr-namespace:UP_Lib_Connector_OpenAMAPI.Public;assembly=UP_Lib_Connector_OpenAMAPI" xmlns:upc="clr-namespace:UP_Lib_Connector_TSYS.Public.CreditCardDetailInquiry;assembly=UP_Lib_Connector_TSYS" xmlns:upk="clr-namespace:UP_Lib_Connector_TSYS.Public.KeyMasterService;assembly=UP_Lib_Connector_TSYS" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetCardNumber" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:up="clr-namespace:UP_Lib_Connector_OpenAMAPI.Public;assembly=UP_Lib_Connector_OpenAMAPI" xmlns:upc="clr-namespace:UP_Lib_Connector_TSYS.Public.CreditCardDetailInquiry;assembly=UP_Lib_Connector_TSYS" xmlns:upk="clr-namespace:UP_Lib_Connector_TSYS.Public.KeyMasterService;assembly=UP_Lib_Connector_TSYS" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_ProductID" Type="InArgument(x:String)" />
     <x:Property Name="out_CardNumber" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1204,5254.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1072,4985.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -127,7 +127,7 @@
       <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetCardNumber" sap:VirtualizedContainerService.HintSize="540.8,5189.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetCardNumber" sap:VirtualizedContainerService.HintSize="540.8,4920.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="SurrogateKeyParamsObj" />
       <Variable x:TypeArguments="x:String" Name="SurrogateAccessToken" />
@@ -151,6 +151,7 @@
       <Variable x:TypeArguments="x:String" Name="CCDetailInquiryResponse" />
       <Variable x:TypeArguments="x:String" Name="CCDetailInquiryMessage" />
       <Variable x:TypeArguments="njl:JObject" Name="CCDetailInquiryResponseJsonObj" />
+      <Variable x:TypeArguments="x:String" Name="OriginatingIPAddress" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -187,64 +188,145 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:DeserializeJson>
-    <up:OpenAM_GenerateToken in_AccessToken="{x:Null}" sap:VirtualizedContainerService.HintSize="478.4,662.4" sap2010:WorkflowViewState.IdRef="OpenAM_GenerateToken_1" in_IsRenewable="True">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <up:OpenAM_GenerateToken.in_ClientAssertionType>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_client_assertion_type"].ToString().Trim()</CSharpValue>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="478.4,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <up:OpenAM_GenerateToken in_AccessToken="{x:Null}" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="OpenAM_GenerateToken_3" in_IsRenewable="True">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <up:OpenAM_GenerateToken.in_ClientAssertionType>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_client_assertion_type"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_ClientAssertionType>
+          <up:OpenAM_GenerateToken.in_ClientId>
+            <InArgument x:TypeArguments="ss:SecureString">
+              <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">GlobalVariables.g_SecureClientID</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_ClientId>
+          <up:OpenAM_GenerateToken.in_GrantType>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_grant_type"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_GrantType>
+          <up:OpenAM_GenerateToken.in_JwtKid>
+            <InArgument x:TypeArguments="ss:SecureString">
+              <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">GlobalVariables.g_SecureKID</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_JwtKid>
+          <up:OpenAM_GenerateToken.in_OpenAMUrl>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_OpenAMAUD"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_OpenAMUrl>
+          <up:OpenAM_GenerateToken.in_PrivateKey>
+            <InArgument x:TypeArguments="ss:SecureString">
+              <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GlobalVariables.g_SecurePrivateKey</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_PrivateKey>
+          <up:OpenAM_GenerateToken.in_Scope>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_scope"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_Scope>
+          <up:OpenAM_GenerateToken.out_AccessToken>
+            <OutArgument x:TypeArguments="x:String">
+              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">SurrogateAccessToken</CSharpReference>
+            </OutArgument>
+          </up:OpenAM_GenerateToken.out_AccessToken>
+          <up:OpenAM_GenerateToken.out_ErrorMsg>
+            <OutArgument x:TypeArguments="x:String">
+              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">SurrogateOpenAMError</CSharpReference>
+            </OutArgument>
+          </up:OpenAM_GenerateToken.out_ErrorMsg>
+          <up:OpenAM_GenerateToken.out_IsSuccess>
+            <OutArgument x:TypeArguments="x:Boolean">
+              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">SurrogateOpenAMIsSuccess</CSharpReference>
+            </OutArgument>
+          </up:OpenAM_GenerateToken.out_IsSuccess>
+        </up:OpenAM_GenerateToken>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">SurrogateOpenAMError</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">exception.Message</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">SurrogateOpenAMIsSuccess</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <If DisplayName="If - error getting access token" sap:VirtualizedContainerService.HintSize="478.4,325.6" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">!SurrogateOpenAMIsSuccess</CSharpValue>
         </InArgument>
-      </up:OpenAM_GenerateToken.in_ClientAssertionType>
-      <up:OpenAM_GenerateToken.in_ClientId>
-        <InArgument x:TypeArguments="ss:SecureString">
-          <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">GlobalVariables.g_SecureClientID</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_ClientId>
-      <up:OpenAM_GenerateToken.in_GrantType>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_grant_type"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_GrantType>
-      <up:OpenAM_GenerateToken.in_JwtKid>
-        <InArgument x:TypeArguments="ss:SecureString">
-          <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">GlobalVariables.g_SecureKID</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_JwtKid>
-      <up:OpenAM_GenerateToken.in_OpenAMUrl>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_GenerateTokenEndPointURL"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_OpenAMUrl>
-      <up:OpenAM_GenerateToken.in_PrivateKey>
-        <InArgument x:TypeArguments="ss:SecureString">
-          <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GlobalVariables.g_SecurePrivateKey</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_PrivateKey>
-      <up:OpenAM_GenerateToken.in_Scope>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_scope"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_Scope>
-      <up:OpenAM_GenerateToken.out_AccessToken>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">SurrogateAccessToken</CSharpReference>
-        </OutArgument>
-      </up:OpenAM_GenerateToken.out_AccessToken>
-      <up:OpenAM_GenerateToken.out_ErrorMsg>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">SurrogateOpenAMError</CSharpReference>
-        </OutArgument>
-      </up:OpenAM_GenerateToken.out_ErrorMsg>
-      <up:OpenAM_GenerateToken.out_IsSuccess>
-        <OutArgument x:TypeArguments="x:Boolean">
-          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">SurrogateOpenAMIsSuccess</CSharpReference>
-        </OutArgument>
-      </up:OpenAM_GenerateToken.out_IsSuccess>
-    </up:OpenAM_GenerateToken>
+      </If.Condition>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ThrowException - Invoke Workflow File (Utility\\ThrowException.xaml)" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Utility\\ThrowException.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkFlowName">GetCardNumber</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExceptionMessage">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_69">SurrogateOpenAMError</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsSystemException">True</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4" />
+      </If.Else>
+    </If>
     <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
@@ -281,88 +363,243 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <upk:TokenizeAccountOrCard sap:VirtualizedContainerService.HintSize="478.4,870.4" sap2010:WorkflowViewState.IdRef="TokenizeAccountOrCard_1">
-      <upk:TokenizeAccountOrCard.in_APITimeout>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">GlobalVariables.g_Config["MaxTimeOut"].ToString().Trim()</CSharpValue>
+    <TryCatch DisplayName="Try-Catch with Assign activities" sap:VirtualizedContainerService.HintSize="478.4,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="OriginatingIPAddress" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign IP address to a variable" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">OriginatingIPAddress</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">
+                  <CSharpValue.Result>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </CSharpValue.Result>Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString()</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="499.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Assign DisplayName="Assign originating IP address" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">OriginatingIPAddress</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_originating_ip_address"].ToString().Trim()</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="478.4,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <upk:TokenizeAccountOrCard sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TokenizeAccountOrCard_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <upk:TokenizeAccountOrCard.in_APITimeout>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">GlobalVariables.g_Config["MaxTimeOut"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_APITimeout>
+          <upk:TokenizeAccountOrCard.in_AccNum>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">in_ProductID</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_AccNum>
+          <upk:TokenizeAccountOrCard.in_AccessToken>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">SurrogateAccessToken</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_AccessToken>
+          <upk:TokenizeAccountOrCard.in_ApplCode>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_originating_appl_code"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_ApplCode>
+          <upk:TokenizeAccountOrCard.in_ChannelID>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_x_channel_id"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_ChannelID>
+          <upk:TokenizeAccountOrCard.in_ContentType>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_ContentType"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_ContentType>
+          <upk:TokenizeAccountOrCard.in_CountryCode>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_x_country_code"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_CountryCode>
+          <upk:TokenizeAccountOrCard.in_EndPoint>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_EndPointURL"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_EndPoint>
+          <upk:TokenizeAccountOrCard.in_IpAddress>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">OriginatingIPAddress</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_IpAddress>
+          <upk:TokenizeAccountOrCard.in_RetryCount>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">GlobalVariables.g_Config["RetryNumber"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_RetryCount>
+          <upk:TokenizeAccountOrCard.in_RetryInterval>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">GlobalVariables.g_Config["RetryInterval"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_RetryInterval>
+          <upk:TokenizeAccountOrCard.in_UserContext>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">SurrogateUserContext</CSharpValue>
+            </InArgument>
+          </upk:TokenizeAccountOrCard.in_UserContext>
+          <upk:TokenizeAccountOrCard.out_IsSuccess>
+            <OutArgument x:TypeArguments="x:Boolean">
+              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">TokenizeIsSuccess</CSharpReference>
+            </OutArgument>
+          </upk:TokenizeAccountOrCard.out_IsSuccess>
+          <upk:TokenizeAccountOrCard.out_Message>
+            <OutArgument x:TypeArguments="x:String">
+              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">TokenizeMessage</CSharpReference>
+            </OutArgument>
+          </upk:TokenizeAccountOrCard.out_Message>
+          <upk:TokenizeAccountOrCard.out_ResponseData>
+            <OutArgument x:TypeArguments="x:String">
+              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">TokenizeResponse</CSharpReference>
+            </OutArgument>
+          </upk:TokenizeAccountOrCard.out_ResponseData>
+          <upk:TokenizeAccountOrCard.out_StatusCode>
+            <OutArgument x:TypeArguments="x:Int32">
+              <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">TokenizeStatusCode</CSharpReference>
+            </OutArgument>
+          </upk:TokenizeAccountOrCard.out_StatusCode>
+        </upk:TokenizeAccountOrCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">TokenizeMessage</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">exception.Message</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">TokenizeIsSuccess</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <If DisplayName="If - error getting surrogate key" sap:VirtualizedContainerService.HintSize="478.4,325.6" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">!TokenizeIsSuccess</CSharpValue>
         </InArgument>
-      </upk:TokenizeAccountOrCard.in_APITimeout>
-      <upk:TokenizeAccountOrCard.in_AccNum>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">in_ProductID</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_AccNum>
-      <upk:TokenizeAccountOrCard.in_AccessToken>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">SurrogateAccessToken</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_AccessToken>
-      <upk:TokenizeAccountOrCard.in_ApplCode>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_originating_appl_code"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_ApplCode>
-      <upk:TokenizeAccountOrCard.in_ChannelID>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_x_channel_id"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_ChannelID>
-      <upk:TokenizeAccountOrCard.in_ContentType>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_ContentType"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_ContentType>
-      <upk:TokenizeAccountOrCard.in_CountryCode>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_x_country_code"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_CountryCode>
-      <upk:TokenizeAccountOrCard.in_EndPoint>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_EndPointURL"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_EndPoint>
-      <upk:TokenizeAccountOrCard.in_IpAddress>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">SurrogateKeyParamsObj["CCSL_API_SurrogateKey_originating_ip_address"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_IpAddress>
-      <upk:TokenizeAccountOrCard.in_RetryCount>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">GlobalVariables.g_Config["RetryNumber"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_RetryCount>
-      <upk:TokenizeAccountOrCard.in_RetryInterval>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">GlobalVariables.g_Config["RetryInterval"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_RetryInterval>
-      <upk:TokenizeAccountOrCard.in_UserContext>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">SurrogateUserContext</CSharpValue>
-        </InArgument>
-      </upk:TokenizeAccountOrCard.in_UserContext>
-      <upk:TokenizeAccountOrCard.out_IsSuccess>
-        <OutArgument x:TypeArguments="x:Boolean">
-          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">TokenizeIsSuccess</CSharpReference>
-        </OutArgument>
-      </upk:TokenizeAccountOrCard.out_IsSuccess>
-      <upk:TokenizeAccountOrCard.out_Message>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">TokenizeMessage</CSharpReference>
-        </OutArgument>
-      </upk:TokenizeAccountOrCard.out_Message>
-      <upk:TokenizeAccountOrCard.out_ResponseData>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">TokenizeResponse</CSharpReference>
-        </OutArgument>
-      </upk:TokenizeAccountOrCard.out_ResponseData>
-      <upk:TokenizeAccountOrCard.out_StatusCode>
-        <OutArgument x:TypeArguments="x:Int32">
-          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">TokenizeStatusCode</CSharpReference>
-        </OutArgument>
-      </upk:TokenizeAccountOrCard.out_StatusCode>
-    </upk:TokenizeAccountOrCard>
+      </If.Condition>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ThrowException - Invoke Workflow File (Utility\\ThrowException.xaml)" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utility\\ThrowException.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkFlowName">GetCardNumber</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExceptionMessage">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">TokenizeMessage</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsSystemException">True</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7" />
+      </If.Else>
+    </If>
     <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="478.4,90.4" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2">
       <ui:DeserializeJson.JsonObject>
         <OutArgument x:TypeArguments="njl:JObject">
@@ -393,7 +630,7 @@
         </InArgument>
       </ui:DeserializeJsonArray.JsonString>
     </ui:DeserializeJsonArray>
-    <Assign sap:VirtualizedContainerService.HintSize="478.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="478.4,80.8" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">SurrogateKey</CSharpReference>
@@ -435,64 +672,145 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:DeserializeJson>
-    <up:OpenAM_GenerateToken in_AccessToken="{x:Null}" sap:VirtualizedContainerService.HintSize="478.4,662.4" sap2010:WorkflowViewState.IdRef="OpenAM_GenerateToken_2" in_IsRenewable="True">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <up:OpenAM_GenerateToken.in_ClientAssertionType>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_client_assertion_type"].ToString().Trim()</CSharpValue>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="478.4,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+      <TryCatch.Try>
+        <up:OpenAM_GenerateToken in_AccessToken="{x:Null}" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="OpenAM_GenerateToken_2" in_IsRenewable="True">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <up:OpenAM_GenerateToken.in_ClientAssertionType>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_client_assertion_type"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_ClientAssertionType>
+          <up:OpenAM_GenerateToken.in_ClientId>
+            <InArgument x:TypeArguments="ss:SecureString">
+              <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">GlobalVariables.g_SecureClientID</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_ClientId>
+          <up:OpenAM_GenerateToken.in_GrantType>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_grant_type"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_GrantType>
+          <up:OpenAM_GenerateToken.in_JwtKid>
+            <InArgument x:TypeArguments="ss:SecureString">
+              <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">GlobalVariables.g_SecureKID</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_JwtKid>
+          <up:OpenAM_GenerateToken.in_OpenAMUrl>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_OpenAMAUD"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_OpenAMUrl>
+          <up:OpenAM_GenerateToken.in_PrivateKey>
+            <InArgument x:TypeArguments="ss:SecureString">
+              <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">GlobalVariables.g_SecurePrivateKey</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_PrivateKey>
+          <up:OpenAM_GenerateToken.in_Scope>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_scope"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </up:OpenAM_GenerateToken.in_Scope>
+          <up:OpenAM_GenerateToken.out_AccessToken>
+            <OutArgument x:TypeArguments="x:String">
+              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">CCDetailInquiryAccessToken</CSharpReference>
+            </OutArgument>
+          </up:OpenAM_GenerateToken.out_AccessToken>
+          <up:OpenAM_GenerateToken.out_ErrorMsg>
+            <OutArgument x:TypeArguments="x:String">
+              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">CCDetailInquiryOpenAMError</CSharpReference>
+            </OutArgument>
+          </up:OpenAM_GenerateToken.out_ErrorMsg>
+          <up:OpenAM_GenerateToken.out_IsSuccess>
+            <OutArgument x:TypeArguments="x:Boolean">
+              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">CCDetailInquiryOpenAMIsSuccess</CSharpReference>
+            </OutArgument>
+          </up:OpenAM_GenerateToken.out_IsSuccess>
+        </up:OpenAM_GenerateToken>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">CCDetailInquiryOpenAMError</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">exception.Message</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">CCDetailInquiryOpenAMIsSuccess</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <If DisplayName="If - error getting access token" sap:VirtualizedContainerService.HintSize="478.4,325.6" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_77">!CCDetailInquiryOpenAMIsSuccess</CSharpValue>
         </InArgument>
-      </up:OpenAM_GenerateToken.in_ClientAssertionType>
-      <up:OpenAM_GenerateToken.in_ClientId>
-        <InArgument x:TypeArguments="ss:SecureString">
-          <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">GlobalVariables.g_SecureClientID</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_ClientId>
-      <up:OpenAM_GenerateToken.in_GrantType>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_grant_type"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_GrantType>
-      <up:OpenAM_GenerateToken.in_JwtKid>
-        <InArgument x:TypeArguments="ss:SecureString">
-          <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">GlobalVariables.g_SecureKID</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_JwtKid>
-      <up:OpenAM_GenerateToken.in_OpenAMUrl>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_GenerateTokenEndPointURL"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_OpenAMUrl>
-      <up:OpenAM_GenerateToken.in_PrivateKey>
-        <InArgument x:TypeArguments="ss:SecureString">
-          <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">GlobalVariables.g_SecurePrivateKey</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_PrivateKey>
-      <up:OpenAM_GenerateToken.in_Scope>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_scope"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </up:OpenAM_GenerateToken.in_Scope>
-      <up:OpenAM_GenerateToken.out_AccessToken>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">CCDetailInquiryAccessToken</CSharpReference>
-        </OutArgument>
-      </up:OpenAM_GenerateToken.out_AccessToken>
-      <up:OpenAM_GenerateToken.out_ErrorMsg>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">CCDetailInquiryOpenAMError</CSharpReference>
-        </OutArgument>
-      </up:OpenAM_GenerateToken.out_ErrorMsg>
-      <up:OpenAM_GenerateToken.out_IsSuccess>
-        <OutArgument x:TypeArguments="x:Boolean">
-          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">CCDetailInquiryOpenAMIsSuccess</CSharpReference>
-        </OutArgument>
-      </up:OpenAM_GenerateToken.out_IsSuccess>
-    </up:OpenAM_GenerateToken>
+      </If.Condition>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ThrowException - Invoke Workflow File (Utility\\ThrowException.xaml)" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utility\\ThrowException.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkFlowName">GetCardNumber</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExceptionMessage">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_78">CCDetailInquiryOpenAMError</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsSystemException">True</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9" />
+      </If.Else>
+    </If>
     <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
@@ -529,98 +847,191 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <upc:GetCreditCardDetail sap:VirtualizedContainerService.HintSize="478.4,974.4" sap2010:WorkflowViewState.IdRef="GetCreditCardDetail_1">
-      <upc:GetCreditCardDetail.in_APITimeout>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">GlobalVariables.g_Config["MaxTimeOut"].ToString().Trim()</CSharpValue>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="478.4,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+      <TryCatch.Try>
+        <upc:GetCreditCardDetail sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="GetCreditCardDetail_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <upc:GetCreditCardDetail.in_APITimeout>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">GlobalVariables.g_Config["MaxTimeOut"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_APITimeout>
+          <upc:GetCreditCardDetail.in_AccessToken>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">CCDetailInquiryAccessToken</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_AccessToken>
+          <upc:GetCreditCardDetail.in_ApplCode>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_originating_appl_code"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_ApplCode>
+          <upc:GetCreditCardDetail.in_ChannelID>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_x_channel_id"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_ChannelID>
+          <upc:GetCreditCardDetail.in_ContentType>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_ContentType"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_ContentType>
+          <upc:GetCreditCardDetail.in_CountryCode>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_x_country_code"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_CountryCode>
+          <upc:GetCreditCardDetail.in_EndPoint>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_EndPointURL"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_EndPoint>
+          <upc:GetCreditCardDetail.in_Key>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">SurrogateKey</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_Key>
+          <upc:GetCreditCardDetail.in_OfficerID>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_OfficerId"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_OfficerID>
+          <upc:GetCreditCardDetail.in_RetryCount>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">GlobalVariables.g_Config["RetryNumber"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_RetryCount>
+          <upc:GetCreditCardDetail.in_RetryInterval>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">GlobalVariables.g_Config["RetryInterval"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_RetryInterval>
+          <upc:GetCreditCardDetail.in_TellerNum>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_teller_id"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_TellerNum>
+          <upc:GetCreditCardDetail.in_TransitID>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_TransitId"].ToString().Trim()</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_TransitID>
+          <upc:GetCreditCardDetail.in_UserContext>
+            <InArgument x:TypeArguments="x:String">
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">CCDetailInquiryUserContext</CSharpValue>
+            </InArgument>
+          </upc:GetCreditCardDetail.in_UserContext>
+          <upc:GetCreditCardDetail.out_IsSuccess>
+            <OutArgument x:TypeArguments="x:Boolean">
+              <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">CCDetailInquiryIsSuccess</CSharpReference>
+            </OutArgument>
+          </upc:GetCreditCardDetail.out_IsSuccess>
+          <upc:GetCreditCardDetail.out_Message>
+            <OutArgument x:TypeArguments="x:String">
+              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">CCDetailInquiryMessage</CSharpReference>
+            </OutArgument>
+          </upc:GetCreditCardDetail.out_Message>
+          <upc:GetCreditCardDetail.out_ResponseData>
+            <OutArgument x:TypeArguments="x:String">
+              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">CCDetailInquiryResponse</CSharpReference>
+            </OutArgument>
+          </upc:GetCreditCardDetail.out_ResponseData>
+          <upc:GetCreditCardDetail.out_StatusCode>
+            <OutArgument x:TypeArguments="x:Int32">
+              <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">CCDetailInquiryStatusCode</CSharpReference>
+            </OutArgument>
+          </upc:GetCreditCardDetail.out_StatusCode>
+        </upc:GetCreditCardDetail>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_39">CCDetailInquiryMessage</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_79">exception.Message</CSharpValue>
+                      </InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">CCDetailInquiryIsSuccess</CSharpReference>
+                      </OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <If DisplayName="If - error getting card detail" sap:VirtualizedContainerService.HintSize="478.4,325.6" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80">!CCDetailInquiryIsSuccess</CSharpValue>
         </InArgument>
-      </upc:GetCreditCardDetail.in_APITimeout>
-      <upc:GetCreditCardDetail.in_AccessToken>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">CCDetailInquiryAccessToken</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_AccessToken>
-      <upc:GetCreditCardDetail.in_ApplCode>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_originating_appl_code"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_ApplCode>
-      <upc:GetCreditCardDetail.in_ChannelID>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_x_channel_id"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_ChannelID>
-      <upc:GetCreditCardDetail.in_ContentType>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_ContentType"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_ContentType>
-      <upc:GetCreditCardDetail.in_CountryCode>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_x_country_code"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_CountryCode>
-      <upc:GetCreditCardDetail.in_EndPoint>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_EndPointURL"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_EndPoint>
-      <upc:GetCreditCardDetail.in_Key>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">SurrogateKey</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_Key>
-      <upc:GetCreditCardDetail.in_OfficerID>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_OfficerId"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_OfficerID>
-      <upc:GetCreditCardDetail.in_RetryCount>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">GlobalVariables.g_Config["RetryNumber"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_RetryCount>
-      <upc:GetCreditCardDetail.in_RetryInterval>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">GlobalVariables.g_Config["RetryInterval"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_RetryInterval>
-      <upc:GetCreditCardDetail.in_TellerNum>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_teller_id"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_TellerNum>
-      <upc:GetCreditCardDetail.in_TransitID>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">CCDetailInquiryParamsObj["CCSL_API_CreditCardDetailInquiry_TransitId"].ToString().Trim()</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_TransitID>
-      <upc:GetCreditCardDetail.in_UserContext>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">CCDetailInquiryUserContext</CSharpValue>
-        </InArgument>
-      </upc:GetCreditCardDetail.in_UserContext>
-      <upc:GetCreditCardDetail.out_IsSuccess>
-        <OutArgument x:TypeArguments="x:Boolean">
-          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">CCDetailInquiryIsSuccess</CSharpReference>
-        </OutArgument>
-      </upc:GetCreditCardDetail.out_IsSuccess>
-      <upc:GetCreditCardDetail.out_Message>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">CCDetailInquiryMessage</CSharpReference>
-        </OutArgument>
-      </upc:GetCreditCardDetail.out_Message>
-      <upc:GetCreditCardDetail.out_ResponseData>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">CCDetailInquiryResponse</CSharpReference>
-        </OutArgument>
-      </upc:GetCreditCardDetail.out_ResponseData>
-      <upc:GetCreditCardDetail.out_StatusCode>
-        <OutArgument x:TypeArguments="x:Int32">
-          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">CCDetailInquiryStatusCode</CSharpReference>
-        </OutArgument>
-      </upc:GetCreditCardDetail.out_StatusCode>
-    </upc:GetCreditCardDetail>
+      </If.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ThrowException - Invoke Workflow File (Utility\\ThrowException.xaml)" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Utility\\ThrowException.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkFlowName">GetCardNumber</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExceptionMessage">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81">CCDetailInquiryMessage</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="in_IsSystemException">True</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11" />
+      </If.Else>
+    </If>
     <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="478.4,90.4" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_4">
       <ui:DeserializeJson.JsonObject>
         <OutArgument x:TypeArguments="njl:JObject">
@@ -639,7 +1050,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:DeserializeJson>
-    <Assign sap:VirtualizedContainerService.HintSize="478.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="478.4,80.8" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_30">out_CardNumber</CSharpReference>
@@ -651,6 +1062,18 @@
         </InArgument>
       </Assign.Value>
     </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+      <ui:LogMessage.Level>
+        <InArgument x:TypeArguments="ui:LogLevel">
+          <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_82">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Level>
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">"Received Credit Card Detail successfully"</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
     <ui:LogMessage DisplayName="Log Message - End GetCardNumber" sap:VirtualizedContainerService.HintSize="478.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
