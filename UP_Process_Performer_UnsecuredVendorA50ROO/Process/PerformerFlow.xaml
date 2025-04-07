@@ -4,7 +4,7 @@
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1149.6,826.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1149.6,955.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -86,7 +86,7 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Flowchart - PerformerFlow" sap:VirtualizedContainerService.HintSize="633.5999999999999,687.9999999999999" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Flowchart - PerformerFlow" sap:VirtualizedContainerService.HintSize="633.6,890.4" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="ProductType" />
       <Variable x:TypeArguments="x:String" Name="ProductID" />
@@ -100,21 +100,21 @@
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75.2</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,107.7</av:PointCollection>
-        <x:Double x:Key="Height">650.8</x:Double>
+        <x:Double x:Key="Height">853.6</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID7</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID5">
+    <FlowStep x:Name="__ReferenceID7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,107.7</av:Point>
-          <av:Size x:Key="ShapeSize">200,95.2</av:Size>
+          <av:Size x:Key="ShapeSize">200,94.4</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">300,202.10000000000002 300,236.39999999999998</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:Comment sap:VirtualizedContainerService.HintSize="200,95.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// TODO: Get StateCode, ProductType and ProductID.">
+      <ui:Comment sap:VirtualizedContainerService.HintSize="200,94.4" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Get StateCode, ProductType and ProductID.">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -122,7 +122,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:Comment>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID1" DisplayName="IsProductTypeBCP" sap:VirtualizedContainerService.HintSize="100.8,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+        <FlowDecision x:Name="__ReferenceID1" DisplayName="IsProductTypeBCP" sap:VirtualizedContainerService.HintSize="100,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
           <FlowDecision.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">ProductType.Equals("BCP", StringComparison.OrdinalIgnoreCase)</CSharpValue>
           </FlowDecision.Condition>
@@ -130,7 +130,7 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">249.60000000000002,236.39999999999998</av:Point>
-              <av:Size x:Key="ShapeSize">100.8,87.2</av:Size>
+              <av:Size x:Key="ShapeSize">100,87.2</av:Size>
               <av:PointCollection x:Key="TrueConnector">249.60000000000002,280 186.40000000000003,280 186.40000000000003,336.4</av:PointCollection>
               <av:PointCollection x:Key="FalseConnector">350.40000000000003,280 410,280 410,453.59999999999997</av:PointCollection>
             </scg:Dictionary>
@@ -179,7 +179,7 @@
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">310,453.59999999999997</av:Point>
                           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">410,506.4 410,556.4</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">410,506.4 410,536.4</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CollectionHighwayFlow - Invoke Workflow File (Process\\CollectionHighwayFlow.xaml)" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\\CollectionHighwayFlow.xaml">
@@ -204,20 +204,61 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
                       <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID4">
+                        <FlowStep x:Name="__ReferenceID5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">310,556.4</av:Point>
-                              <av:Size x:Key="ShapeSize">200,94.4</av:Size>
+                              <av:Point x:Key="ShapeLocation">310,536.4</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">410,589.1999999999999 410,626.4</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="200,94.4" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// TODO: Perform Submit/Withdraw steps.">
+                          <ui:LogMessage DisplayName="Log CollectionHighway outcome" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"CollectionHighway outcome result is " + (IsSubmit?"Submit":"Withdraw") + " and the reason is " + OutcomeReason</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                          </ui:Comment>
+                          </ui:LogMessage>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID4">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">310,626.4</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,76</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">410,702.4 410,742.4</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:Comment sap:VirtualizedContainerService.HintSize="200,76" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Perform submit or withdraw.">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:Comment>
+                              <FlowStep.Next>
+                                <FlowStep x:Name="__ReferenceID6">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">310,742.4</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,56</av:Size>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:Comment sap:VirtualizedContainerService.HintSize="200,56" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Add to eod report.">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:Comment>
+                                </FlowStep>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
                         </FlowStep>
                       </FlowStep.Next>
                     </FlowStep>
@@ -240,5 +281,7 @@
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
   </Flowchart>
 </Activity>
