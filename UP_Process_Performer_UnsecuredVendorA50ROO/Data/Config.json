@@ -7,7 +7,7 @@
     "HashiCorpIntralinkSecretEndPointURL": "https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/IntralinkSecret",
     "HashiCorpCollHighSecretEndPointURL": "https://lb.vault.nonprod.bns:8200/v1/secret/data/amlnlp/ist/pega-robotics/COLLHIGHWAY",
     "IsDryRun": "False",
-    "KillAppNames": "msedge1,notepad1",
+    "KillAppNames": "chrome",
     "CookiesJournalFilePath": "Google\\Chrome\\User Data\\Default\\Network\\Cookies-journal",
     "CookiesFilePath": "Google\\Chrome\\User Data\\Default\\Network\\Cookies",
     "CacheFolderPath": "Google\\Chrome\\User Data\\Default\\Cache",
