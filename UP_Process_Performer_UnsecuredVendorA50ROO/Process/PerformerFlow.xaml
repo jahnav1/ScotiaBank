@@ -4,7 +4,7 @@
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1149.6,1010.4000000000001</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1084,1010.4000000000001</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -160,7 +160,7 @@
                     </OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">93734000141</InArgument>
+                    <InArgument x:TypeArguments="x:String">379241638222474</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>
@@ -262,10 +262,10 @@
                                   <av:PointCollection x:Key="ConnectorLocation">410,669.1999999999999 410,706.4</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log CollectionHighway outcome" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+                              <ui:LogMessage DisplayName="Log CollectionHighway outcome" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
                                 <ui:LogMessage.Message>
                                   <InArgument x:TypeArguments="x:Object">
-                                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"CollectionHighway outcome result is " + (IsSubmit?"Submit":"Withdraw") + " and the reason is " + OutcomeReason</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"CollectionHighway outcome result is " + (IsSubmit ? "Submit" : "Withdraw") + " and the reason is " + OutcomeReason</CSharpValue>
                                   </InArgument>
                                 </ui:LogMessage.Message>
                                 <sap:WorkflowViewStateService.ViewState>

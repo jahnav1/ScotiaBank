@@ -6,7 +6,7 @@
     <x:Property Name="in_StateCode" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1251.2,3488</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1149.6,3748</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -109,6 +109,11 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
   <Flowchart DisplayName="Flowchart - Collection Highway flow" sap:VirtualizedContainerService.HintSize="966.4,3683.2" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsWorkAreaSelected" />
@@ -176,13 +181,13 @@
               <av:PointCollection x:Key="ConnectorLocation">300,266.4 300,296.4 300.40000000000003,296.4 300.40000000000003,306.4</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Switch x:TypeArguments="x:String" DisplayName="Get WorkArea" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+          <Switch x:TypeArguments="x:String" DisplayName="Get WorkArea" sap:VirtualizedContainerService.HintSize="496.79999999999995,676" sap2010:WorkflowViewState.IdRef="Switch`1_1">
             <Switch.Expression>
               <InArgument x:TypeArguments="x:String">
                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_107">in_StateCode.Trim().ToUpper()</CSharpValue>
               </InArgument>
             </Switch.Expression>
-            <Assign x:Key="&quot;A03&quot;" DisplayName="Assign WorkArea" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign x:Key="A03" DisplayName="Assign WorkArea" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">WorkArea</CSharpReference>
@@ -192,7 +197,7 @@
                 <InArgument x:TypeArguments="x:String">Collection Agency</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign x:Key="&quot;A50&quot;" DisplayName="Assign WorkArea" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign x:Key="A50" DisplayName="Assign WorkArea" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">WorkArea</CSharpReference>
@@ -202,7 +207,7 @@
                 <InArgument x:TypeArguments="x:String">Collection Agency</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign x:Key="&quot;G40&quot;" DisplayName="Assign WorkArea" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign x:Key="G40" DisplayName="Assign WorkArea" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">WorkArea</CSharpReference>
@@ -216,7 +221,7 @@
           <FlowStep.Next>
             <FlowDecision x:Name="__ReferenceID47" DisplayName="IsWorkAreaEmpty" sap:VirtualizedContainerService.HintSize="99.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_12">
               <FlowDecision.Condition>
-                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_108">WorkArea.IsNullOrEmpty()</CSharpValue>
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_116">string.IsNullOrWhiteSpace(WorkArea)</CSharpValue>
               </FlowDecision.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
