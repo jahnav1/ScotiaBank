@@ -1,1012 +1,1010 @@
-﻿{
-    "DHStatus": [{
-            "InstructionCode": "1",
-            "Instruction": "ACCOUNT RECEIPT ACKNOWLEDGED",
-            "StatusCode": "1",
-            "Status": "SETTING UP OF ACCOUNT",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "2",
-            "Instruction": "SKIP ACCOUNT",
-            "StatusCode": "2",
-            "Status": "ATTEMPTING TO LOCATE DEBTOR",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "2",
-            "Instruction": "SKIP ACCOUNT",
-            "StatusCode": "3",
-            "Status": "ASSIGNED TO 3RD PARTY TRACE AGENCY TO LOCATE",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "2",
-            "Instruction": "SKIP ACCOUNT",
-            "StatusCode": "55",
-            "Status": "PROCESSING ELECTRONIC SCRUB",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "2",
-            "Instruction": "SKIP ACCOUNT",
-            "StatusCode": "102",
-            "Status": "NEW INFORMATION - PENDING VERIFICATION",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "2",
-            "Instruction": "SKIP ACCOUNT",
-            "StatusCode": "103",
-            "Status": "NEW INFORMATION - VERIFIED",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "2",
-            "Instruction": "SKIP ACCOUNT",
-            "StatusCode": "131",
-            "Status": "SKIP - TRACING SECURITY",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "3",
-            "Instruction": "PROMISE 2 PAY",
-            "StatusCode": "4",
-            "Status": "BROKEN PROMISE",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "3",
-            "Instruction": "PROMISE 2 PAY",
-            "StatusCode": "5",
-            "Status": "AWAITING RECEIPT OF PAYMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "6",
-            "Status": "STATEMENT OF CLAIM-SERVED-AWAITING EXPIRY",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "7",
-            "Status": "SETTLEMENT/PRE-TRIAL CONFERENCE - AWAITING",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "9",
-            "Status": "SUMMARY JUDGEMENT PROCESS",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "10",
-            "Status": "PAYMENT HEARING",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "11",
-            "Status": "JUDGEMENT REGISTERED ON TITLE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "12",
-            "Status": "WRIT PROCESS",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "13",
-            "Status": "STATEMENT OF CLAIM- PREPERATION",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "14",
-            "Status": "JUDGEMENT - OBTAINED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "15",
-            "Status": "LISTED/AWAITING - TRIAL",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "16",
-            "Status": "SALE UNDER EXECUTION - PROCEEDING",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "17",
-            "Status": "GARNISHEE - PROCEEDINGS",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "57",
-            "Status": "JUDGEMENT - SKIP",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "59",
-            "Status": "JUDGEMENT - PAYMENT ARRANGEMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "72",
-            "Status": "STATEMENT OF CLAIM-PENDING ISSUANCE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "73",
-            "Status": "STATEMENT OF CLAIM-ISSUED-AWAITING SERVICE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "74",
-            "Status": "APPEAL",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "75",
-            "Status": "CASE CONFERENCE SCHEDULED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "76",
-            "Status": "DEFENCE AND COUNTER CLAIM SERVED-PREPARING RESPONSE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "77",
-            "Status": "DEFENCE-RECEIVED PREPARING RESPONSE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "78",
-            "Status": "EXAMINATION FOR DISCOVERY - PENDING",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "79",
-            "Status": "DEFENCE TO COUNTERCLAIM SERVED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "80",
-            "Status": "MOTION-PROCESSING",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "81",
-            "Status": "NOTICE OF INTENT TO DEFEND SERVED-AWAITING EXPIRY",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "85",
-            "Status": "JUDGEMENT - PROCESSING",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "90",
-            "Status": "EXAMINATION IN AID OF EXECUTION",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "92",
-            "Status": "AFFIDAVIT OF DOCUMENTS - PREPERATION",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "104",
-            "Status": "AWAITING CLIENTS AUTHORIZATION TO COMMENCE ACTION",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "105",
-            "Status": "LEGAL ACTION HAS BEEN AUTHORIZED BY CLIENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "110",
-            "Status": "LEGAL ACTION UNACCEPTABLE AND DECLINED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "112",
-            "Status": "AWAITING CLIENTS DOCUMENTATION TO COMMENCE ACTION",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "138",
-            "Status": "LEGAL DEMAND LETTER SENT - AWAITING RESPONSE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "140",
-            "Status": "ORDER TO CONTINUE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "4",
-            "Instruction": "LEGAL ACTION",
-            "StatusCode": "155",
-            "Status": "UNDER NEGOTIATION",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "5",
-            "Instruction": "PAYMENT ARRANGEMENT",
-            "StatusCode": "18",
-            "Status": "PROCESSING POST DATED CHEQUES",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "5",
-            "Instruction": "PAYMENT ARRANGEMENT",
-            "StatusCode": "19",
-            "Status": "WAGE ASSIGNMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "5",
-            "Instruction": "PAYMENT ARRANGEMENT",
-            "StatusCode": "20",
-            "Status": "VOLUNTARY PAYMENTS",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "5",
-            "Instruction": "PAYMENT ARRANGEMENT",
-            "StatusCode": "21",
-            "Status": "DIRECT PAYMENTS TO CLIENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "5",
-            "Instruction": "PAYMENT ARRANGEMENT",
-            "StatusCode": "22",
-            "Status": "PIF - CONFIRMING PAYOUT WITH CREDITOR",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "5",
-            "Instruction": "PAYMENT ARRANGEMENT",
-            "StatusCode": "56",
-            "Status": "NSF CHEQUE",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "5",
-            "Instruction": "PAYMENT ARRANGEMENT",
-            "StatusCode": "87",
-            "Status": "GARNISHEE - PROCESSING",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "5",
-            "Instruction": "PAYMENT ARRANGEMENT",
-            "StatusCode": "101",
-            "Status": "PAYMENTS FORWARDED FROM BRANCH",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "5",
-            "Instruction": "PAYMENT ARRANGEMENT",
-            "StatusCode": "148",
-            "Status": "PROCESSING PRE-AUTHORIZED PAYMENTS",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "5",
-            "Instruction": "PAYMENT ARRANGEMENT",
-            "StatusCode": "150",
-            "Status": "REQUESTING SETTLEMENT FROM CUSTOMER",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "6",
-            "Instruction": "CCS-OPD-PQ/VD",
-            "StatusCode": "23",
-            "Status": "FOLLOWING UP PAYMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "6",
-            "Instruction": "CCS-OPD-PQ/VD",
-            "StatusCode": "24",
-            "Status": "QUALIFYING PAYMENT ARRANGEMNET",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "6",
-            "Instruction": "CCS-OPD-PQ/VD",
-            "StatusCode": "61",
-            "Status": "CONSUMER PROPOSAL",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "6",
-            "Instruction": "CCS-OPD-PQ/VD",
-            "StatusCode": "111",
-            "Status": "CREDIT COUNSELLING PLAN",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "6",
-            "Instruction": "CCS-OPD-PQ/VD",
-            "StatusCode": "114",
-            "Status": "LEGACY PENDING PAYMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "6",
-            "Instruction": "CCS-OPD-PQ/VD",
-            "StatusCode": "149",
-            "Status": "COUNTER PROPOSAL - ACCEPTANCE PENDING",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "25",
-            "Status": "HOLD - INDIGENT - FOLLOW UP",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "26",
-            "Status": "HOLD - WELFARE FOLLOW UP",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "27",
-            "Status": "HOLD - UI - FOLLOW UP",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "28",
-            "Status": "HOLD - QUALIFYING DISPUTE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "29",
-            "Status": "HOLD - MANAGEMENT REVIEW",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "30",
-            "Status": "HOLD - QUALIFYING BANKRUPTCY",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "31",
-            "Status": "HOLD - PUBLIC RELATIONS ISSUE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "88",
-            "Status": "HOLD - AWAITING CLIENT DOCUMENTS",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "89",
-            "Status": "HOLD - AWAITING CLIENT INSTRUCTION",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "96",
-            "Status": "HOLD - WAITING FOR FINANCIAL CAPACITY FORM (SETTLEMENT PENDING)",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "100",
-            "Status": "ACCOUNT NEEDS TO BE REVIEWED AND ASSIGNED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "107",
-            "Status": "HOLD - BANKRUPTCY BEING OPPOSED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "108",
-            "Status": "HOLD - INCARCERATED - AWAITING RELEASE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "130",
-            "Status": "HOLD - INVESTIGATING FRAUD",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "132",
-            "Status": "HOLD - PROVEN FRAUD",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "135",
-            "Status": "HOLD -  MISSING REQD CUSTOMER INFO – CLIENT TO PROVIDE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "135",
-            "Status": "HOLD -  MISSING REQD CUSTOMER INFO - CLIENT TO PROVIDE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "136",
-            "Status": "HOLD -  MISSING REQD CUSTOMER INFO – CONTACT LENDER SOURCE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "136",
-            "Status": "HOLD -  MISSING REQD CUSTOMER INFO - CONTACT LENDER SOURCE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "143",
-            "Status": "HOLD – PROCESSING CREDIT BUREAU SEARCH",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "143",
-            "Status": "HOLD - PROCESSING CREDIT BUREAU SEARCH",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "144",
-            "Status": "HOLD - SETTING UP JUDGMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "146",
-            "Status": "HOLD - SECURITY SEIZED & BEING MARKETED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "147",
-            "Status": "HOLD - PENDING SKIP ASSIGNMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "153",
-            "Status": "HOLD - ESTATE FILE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "7",
-            "Instruction": "HOLD",
-            "StatusCode": "160",
-            "Status": "HOLD - PENDING PARTIAL WRITE-OFF",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "32",
-            "Status": "CLOSED - UNCOLLECTABLE - STATUTE BARRED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "33",
-            "Status": "CLOSED - UNCOLLECTABLE - DEBTOR DECEASED - NO ESTATE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "34",
-            "Status": "CLOSED - UNCOLLECTABLE - DEBTOR INDIGENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "35",
-            "Status": "CLOSED - UNABLE TO LOCATE DEBTOR",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "36",
-            "Status": "CLOSED - ACCOUNT PAID IN FULL",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "37",
-            "Status": "CLOSED - SETTLEMENT REALIZED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "38",
-            "Status": "CLOSED - PUBLIC RELATIONS ISSUE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "39",
-            "Status": "CLOSED - UNCOLLECTABLE - DEBTOR TERMINALLY ILL",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "40",
-            "Status": "CLOSED - ACCOUNT NOT COST EFFECTIVE TO COLLECT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "52",
-            "Status": "CLOSED - UNCOLLECTABLE - PROVINCIAL STATUTE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "53",
-            "Status": "CLOSED - UNCOLLECTABLE - BANKRUPTCY",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "58",
-            "Status": "CLOSED - UNCOLLECTABLE - NO REASON GIVEN",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "60",
-            "Status": "CLOSED - CLIENT REINSTATED ACCOUNT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "68",
-            "Status": "CLOSED - ASSIGNED IN ERROR",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "69",
-            "Status": "CLOSED - CCS-OPD-PQ/VD-PROPOSAL DECLINED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "70",
-            "Status": "CLOSED - CCS-OPD-PQ/VD DEFAULT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "71",
-            "Status": "CLOSED - GOV. STUDENT LOAN",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "82",
-            "Status": "CLOSED - CCS-OPD-PQ/VD BANKRUPT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "83",
-            "Status": "CLOSED - CCS-OPD-PQ/VD - PAY OUT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "84",
-            "Status": "CLOSED - CCS-OPD-PQ/VD - SETTLEMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "94",
-            "Status": "CLOSED - CCS - OPD - PQ/VD CONSUMER PROPOSAL",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "106",
-            "Status": "CLOSED - UNCOLLECTABLE - FRAUD",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "113",
-            "Status": "CLOSED - REASSIGNED TO LITIGATION HIGHWAY",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "126",
-            "Status": "CLOSED - NOT FUNDED - EXISTING LIEN",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "127",
-            "Status": "CLOSED - NOT FUNDED - EXISTING HYPO",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "128",
-            "Status": "CLOSED - NOT FUNDED - OTHER",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "133",
-            "Status": "CLOSED – MISSING REQD CUSTOMER INFO – CANNOT ENFORCE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "133",
-            "Status": "CLOSED - MISSING REQD CUSTOMER INFO - CANNOT ENFORCE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "134",
-            "Status": "CLOSED – NO DOCUMENTS – CANNOT ENFORCE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "134",
-            "Status": "CLOSED - NO DOCUMENTS - CANNOT ENFORCE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "137",
-            "Status": "CLOSED – COLLECTION EFFORTS EXHAUSTED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "137",
-            "Status": "CLOSED - COLLECTION EFFORTS EXHAUSTED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "139",
-            "Status": "CLOSED - SETTLEMENT (ORIGINATING AGENCY DATA ERROR)",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "141",
-            "Status": "CLOSED - COMPANY HAS CEASED OPERATIONS",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "142",
-            "Status": "CLOSED - UNCOLLECTABLE - IMPERFECT JUDGMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "145",
-            "Status": "CLOSED - UNCOLLECTABLE - WRIT EXPIRED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "151",
-            "Status": "CLOSED – TO BE REMOVED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "151",
-            "Status": "CLOSED - TO BE REMOVED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "152",
-            "Status": "CLOSED – SKIP ASSIGNMENT – SCRUB LOCATE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "152",
-            "Status": "CLOSED - SKIP ASSIGNMENT - SCRUB LOCATE",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "154",
-            "Status": "CLOSED - CCS-OPD-PQ/VD - CCS COMPLETED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "156",
-            "Status": "CLOSED - ACCOUNT SOLD",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "8",
-            "Instruction": "CLOSED",
-            "StatusCode": "161",
-            "Status": "CLOSED-EXTINGUISHED DEBT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "9",
-            "Instruction": "FOREIGN RECOVERY",
-            "StatusCode": "41",
-            "Status": "SKIP",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "9",
-            "Instruction": "FOREIGN RECOVERY",
-            "StatusCode": "42",
-            "Status": "DIALING 4 DOLLARS",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "9",
-            "Instruction": "FOREIGN RECOVERY",
-            "StatusCode": "43",
-            "Status": "PAYMENTS ARRANGEMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "9",
-            "Instruction": "FOREIGN RECOVERY",
-            "StatusCode": "63",
-            "Status": "CONTACT MADE",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "9",
-            "Instruction": "FOREIGN RECOVERY",
-            "StatusCode": "64",
-            "Status": "TAKING LEGAL ACTION",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "9",
-            "Instruction": "FOREIGN RECOVERY",
-            "StatusCode": "65",
-            "Status": "JUDGMENT OBTAINED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "9",
-            "Instruction": "FOREIGN RECOVERY",
-            "StatusCode": "66",
-            "Status": "CCS-OPD PLAN",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "9",
-            "Instruction": "FOREIGN RECOVERY",
-            "StatusCode": "67",
-            "Status": "CONSUMER PROPOSAL",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "10",
-            "Instruction": "DIALING 4 DOLLARS",
-            "StatusCode": "44",
-            "Status": "QUALIFYING ASSETS",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "10",
-            "Instruction": "DIALING 4 DOLLARS",
-            "StatusCode": "45",
-            "Status": "ATTEMPTING TO CONTACT LOCATE DEBTOR",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "10",
-            "Instruction": "DIALING 4 DOLLARS",
-            "StatusCode": "54",
-            "Status": "CONTACT MADE",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "10",
-            "Instruction": "DIALING 4 DOLLARS",
-            "StatusCode": "91",
-            "Status": "DEMAND LETTER PROCESS - AWAITING RESPONSE",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "10",
-            "Instruction": "DIALING 4 DOLLARS",
-            "StatusCode": "95",
-            "Status": "SETTLEMENT PENDING",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "10",
-            "Instruction": "DIALING 4 DOLLARS",
-            "StatusCode": "97",
-            "Status": "CONTACT MADE - UNCOOPERATIVE",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "10",
-            "Instruction": "DIALING 4 DOLLARS",
-            "StatusCode": "98",
-            "Status": "CONTACT MADE - COOPERATIVE",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "10",
-            "Instruction": "DIALING 4 DOLLARS",
-            "StatusCode": "99",
-            "Status": "CONTACT MADE - UNDER NEGOTIATION",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "11",
-            "Instruction": "(N/A)",
-            "StatusCode": "46",
-            "Status": "(N/A)",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "12",
-            "Instruction": "SETTLEMENT",
-            "StatusCode": "47",
-            "Status": "UPDATING FINANCIALS",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "12",
-            "Instruction": "SETTLEMENT",
-            "StatusCode": "48",
-            "Status": "AWAITING RECEIPT OF STATUTORY DECLORATION",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "12",
-            "Instruction": "SETTLEMENT",
-            "StatusCode": "49",
-            "Status": "AWAITING CLIENT AUTHORIZATION",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "12",
-            "Instruction": "SETTLEMENT",
-            "StatusCode": "62",
-            "Status": "ACCEPTED WITH IN AGENCY LIMITS",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "12",
-            "Instruction": "SETTLEMENT",
-            "StatusCode": "93",
-            "Status": "AUTHORIZED BY CLIENT - AWAITING PAYOUT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "12",
-            "Instruction": "SETTLEMENT",
-            "StatusCode": "109",
-            "Status": "SETTLEMENT OFFER UNACCEPTABLE AND DECLINED",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "115",
-            "Status": "PRE-APPROVAL - DOCUMENT REVIEW",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "116",
-            "Status": "PRE-APPROVAL - PPSA",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "117",
-            "Status": "MARGINING - GENERAL",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "118",
-            "Status": "MARGINING - AMBER ALERT REVIEW",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "119",
-            "Status": "MARGINING - MARGIN CALL REVIEW",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "120",
-            "Status": "SERVICING - TOP UP COLLATERAL",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "121",
-            "Status": "SERVICING - PAY OUT",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "122",
-            "Status": "SERVICING - PLC LIMIT REDUCTION",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "123",
-            "Status": "SERVICING - PARTIAL RELEASE",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "124",
-            "Status": "SERVICING - COLLATERAL SWAP",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "125",
-            "Status": "SERVICING - GIC RENEWAL",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "13",
-            "Instruction": "ABL",
-            "StatusCode": "129",
-            "Status": "CLOSED - PAID IN FULL (EXISTING)",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "14",
-            "Instruction": "RESTRUCTURE",
-            "StatusCode": "157",
-            "Status": "REVIEW – PENDING",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "14",
-            "Instruction": "RESTRUCTURE",
-            "StatusCode": "157",
-            "Status": "REVIEW - PENDING",
-            "SubmitWithdraw": "Submit"
-        }, {
-            "InstructionCode": "14",
-            "Instruction": "RESTRUCTURE",
-            "StatusCode": "158",
-            "Status": "APPROVED – PENDING PAYMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "14",
-            "Instruction": "RESTRUCTURE",
-            "StatusCode": "158",
-            "Status": "APPROVED - PENDING PAYMENT",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "14",
-            "Instruction": "RESTRUCTURE",
-            "StatusCode": "159",
-            "Status": "CLOSED – PAID",
-            "SubmitWithdraw": "Withdraw"
-        }, {
-            "InstructionCode": "14",
-            "Instruction": "RESTRUCTURE",
-            "StatusCode": "159",
-            "Status": "CLOSED - PAID",
-            "SubmitWithdraw": "Withdraw"
-        }
-    ]
-}
+﻿[{
+        "InstructionCode": "1",
+        "Instruction": "ACCOUNT RECEIPT ACKNOWLEDGED",
+        "StatusCode": "1",
+        "Status": "SETTING UP OF ACCOUNT",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "2",
+        "Instruction": "SKIP ACCOUNT",
+        "StatusCode": "2",
+        "Status": "ATTEMPTING TO LOCATE DEBTOR",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "2",
+        "Instruction": "SKIP ACCOUNT",
+        "StatusCode": "3",
+        "Status": "ASSIGNED TO 3RD PARTY TRACE AGENCY TO LOCATE",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "2",
+        "Instruction": "SKIP ACCOUNT",
+        "StatusCode": "55",
+        "Status": "PROCESSING ELECTRONIC SCRUB",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "2",
+        "Instruction": "SKIP ACCOUNT",
+        "StatusCode": "102",
+        "Status": "NEW INFORMATION - PENDING VERIFICATION",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "2",
+        "Instruction": "SKIP ACCOUNT",
+        "StatusCode": "103",
+        "Status": "NEW INFORMATION - VERIFIED",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "2",
+        "Instruction": "SKIP ACCOUNT",
+        "StatusCode": "131",
+        "Status": "SKIP - TRACING SECURITY",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "3",
+        "Instruction": "PROMISE 2 PAY",
+        "StatusCode": "4",
+        "Status": "BROKEN PROMISE",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "3",
+        "Instruction": "PROMISE 2 PAY",
+        "StatusCode": "5",
+        "Status": "AWAITING RECEIPT OF PAYMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "6",
+        "Status": "STATEMENT OF CLAIM-SERVED-AWAITING EXPIRY",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "7",
+        "Status": "SETTLEMENT/PRE-TRIAL CONFERENCE - AWAITING",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "9",
+        "Status": "SUMMARY JUDGEMENT PROCESS",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "10",
+        "Status": "PAYMENT HEARING",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "11",
+        "Status": "JUDGEMENT REGISTERED ON TITLE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "12",
+        "Status": "WRIT PROCESS",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "13",
+        "Status": "STATEMENT OF CLAIM- PREPERATION",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "14",
+        "Status": "JUDGEMENT - OBTAINED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "15",
+        "Status": "LISTED/AWAITING - TRIAL",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "16",
+        "Status": "SALE UNDER EXECUTION - PROCEEDING",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "17",
+        "Status": "GARNISHEE - PROCEEDINGS",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "57",
+        "Status": "JUDGEMENT - SKIP",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "59",
+        "Status": "JUDGEMENT - PAYMENT ARRANGEMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "72",
+        "Status": "STATEMENT OF CLAIM-PENDING ISSUANCE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "73",
+        "Status": "STATEMENT OF CLAIM-ISSUED-AWAITING SERVICE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "74",
+        "Status": "APPEAL",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "75",
+        "Status": "CASE CONFERENCE SCHEDULED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "76",
+        "Status": "DEFENCE AND COUNTER CLAIM SERVED-PREPARING RESPONSE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "77",
+        "Status": "DEFENCE-RECEIVED PREPARING RESPONSE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "78",
+        "Status": "EXAMINATION FOR DISCOVERY - PENDING",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "79",
+        "Status": "DEFENCE TO COUNTERCLAIM SERVED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "80",
+        "Status": "MOTION-PROCESSING",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "81",
+        "Status": "NOTICE OF INTENT TO DEFEND SERVED-AWAITING EXPIRY",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "85",
+        "Status": "JUDGEMENT - PROCESSING",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "90",
+        "Status": "EXAMINATION IN AID OF EXECUTION",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "92",
+        "Status": "AFFIDAVIT OF DOCUMENTS - PREPERATION",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "104",
+        "Status": "AWAITING CLIENTS AUTHORIZATION TO COMMENCE ACTION",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "105",
+        "Status": "LEGAL ACTION HAS BEEN AUTHORIZED BY CLIENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "110",
+        "Status": "LEGAL ACTION UNACCEPTABLE AND DECLINED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "112",
+        "Status": "AWAITING CLIENTS DOCUMENTATION TO COMMENCE ACTION",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "138",
+        "Status": "LEGAL DEMAND LETTER SENT - AWAITING RESPONSE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "140",
+        "Status": "ORDER TO CONTINUE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "4",
+        "Instruction": "LEGAL ACTION",
+        "StatusCode": "155",
+        "Status": "UNDER NEGOTIATION",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "5",
+        "Instruction": "PAYMENT ARRANGEMENT",
+        "StatusCode": "18",
+        "Status": "PROCESSING POST DATED CHEQUES",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "5",
+        "Instruction": "PAYMENT ARRANGEMENT",
+        "StatusCode": "19",
+        "Status": "WAGE ASSIGNMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "5",
+        "Instruction": "PAYMENT ARRANGEMENT",
+        "StatusCode": "20",
+        "Status": "VOLUNTARY PAYMENTS",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "5",
+        "Instruction": "PAYMENT ARRANGEMENT",
+        "StatusCode": "21",
+        "Status": "DIRECT PAYMENTS TO CLIENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "5",
+        "Instruction": "PAYMENT ARRANGEMENT",
+        "StatusCode": "22",
+        "Status": "PIF - CONFIRMING PAYOUT WITH CREDITOR",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "5",
+        "Instruction": "PAYMENT ARRANGEMENT",
+        "StatusCode": "56",
+        "Status": "NSF CHEQUE",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "5",
+        "Instruction": "PAYMENT ARRANGEMENT",
+        "StatusCode": "87",
+        "Status": "GARNISHEE - PROCESSING",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "5",
+        "Instruction": "PAYMENT ARRANGEMENT",
+        "StatusCode": "101",
+        "Status": "PAYMENTS FORWARDED FROM BRANCH",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "5",
+        "Instruction": "PAYMENT ARRANGEMENT",
+        "StatusCode": "148",
+        "Status": "PROCESSING PRE-AUTHORIZED PAYMENTS",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "5",
+        "Instruction": "PAYMENT ARRANGEMENT",
+        "StatusCode": "150",
+        "Status": "REQUESTING SETTLEMENT FROM CUSTOMER",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "6",
+        "Instruction": "CCS-OPD-PQ/VD",
+        "StatusCode": "23",
+        "Status": "FOLLOWING UP PAYMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "6",
+        "Instruction": "CCS-OPD-PQ/VD",
+        "StatusCode": "24",
+        "Status": "QUALIFYING PAYMENT ARRANGEMNET",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "6",
+        "Instruction": "CCS-OPD-PQ/VD",
+        "StatusCode": "61",
+        "Status": "CONSUMER PROPOSAL",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "6",
+        "Instruction": "CCS-OPD-PQ/VD",
+        "StatusCode": "111",
+        "Status": "CREDIT COUNSELLING PLAN",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "6",
+        "Instruction": "CCS-OPD-PQ/VD",
+        "StatusCode": "114",
+        "Status": "LEGACY PENDING PAYMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "6",
+        "Instruction": "CCS-OPD-PQ/VD",
+        "StatusCode": "149",
+        "Status": "COUNTER PROPOSAL - ACCEPTANCE PENDING",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "25",
+        "Status": "HOLD - INDIGENT - FOLLOW UP",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "26",
+        "Status": "HOLD - WELFARE FOLLOW UP",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "27",
+        "Status": "HOLD - UI - FOLLOW UP",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "28",
+        "Status": "HOLD - QUALIFYING DISPUTE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "29",
+        "Status": "HOLD - MANAGEMENT REVIEW",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "30",
+        "Status": "HOLD - QUALIFYING BANKRUPTCY",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "31",
+        "Status": "HOLD - PUBLIC RELATIONS ISSUE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "88",
+        "Status": "HOLD - AWAITING CLIENT DOCUMENTS",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "89",
+        "Status": "HOLD - AWAITING CLIENT INSTRUCTION",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "96",
+        "Status": "HOLD - WAITING FOR FINANCIAL CAPACITY FORM (SETTLEMENT PENDING)",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "100",
+        "Status": "ACCOUNT NEEDS TO BE REVIEWED AND ASSIGNED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "107",
+        "Status": "HOLD - BANKRUPTCY BEING OPPOSED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "108",
+        "Status": "HOLD - INCARCERATED - AWAITING RELEASE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "130",
+        "Status": "HOLD - INVESTIGATING FRAUD",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "132",
+        "Status": "HOLD - PROVEN FRAUD",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "135",
+        "Status": "HOLD -  MISSING REQD CUSTOMER INFO – CLIENT TO PROVIDE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "135",
+        "Status": "HOLD -  MISSING REQD CUSTOMER INFO - CLIENT TO PROVIDE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "136",
+        "Status": "HOLD -  MISSING REQD CUSTOMER INFO – CONTACT LENDER SOURCE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "136",
+        "Status": "HOLD -  MISSING REQD CUSTOMER INFO - CONTACT LENDER SOURCE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "143",
+        "Status": "HOLD – PROCESSING CREDIT BUREAU SEARCH",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "143",
+        "Status": "HOLD - PROCESSING CREDIT BUREAU SEARCH",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "144",
+        "Status": "HOLD - SETTING UP JUDGMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "146",
+        "Status": "HOLD - SECURITY SEIZED & BEING MARKETED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "147",
+        "Status": "HOLD - PENDING SKIP ASSIGNMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "153",
+        "Status": "HOLD - ESTATE FILE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "7",
+        "Instruction": "HOLD",
+        "StatusCode": "160",
+        "Status": "HOLD - PENDING PARTIAL WRITE-OFF",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "32",
+        "Status": "CLOSED - UNCOLLECTABLE - STATUTE BARRED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "33",
+        "Status": "CLOSED - UNCOLLECTABLE - DEBTOR DECEASED - NO ESTATE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "34",
+        "Status": "CLOSED - UNCOLLECTABLE - DEBTOR INDIGENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "35",
+        "Status": "CLOSED - UNABLE TO LOCATE DEBTOR",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "36",
+        "Status": "CLOSED - ACCOUNT PAID IN FULL",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "37",
+        "Status": "CLOSED - SETTLEMENT REALIZED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "38",
+        "Status": "CLOSED - PUBLIC RELATIONS ISSUE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "39",
+        "Status": "CLOSED - UNCOLLECTABLE - DEBTOR TERMINALLY ILL",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "40",
+        "Status": "CLOSED - ACCOUNT NOT COST EFFECTIVE TO COLLECT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "52",
+        "Status": "CLOSED - UNCOLLECTABLE - PROVINCIAL STATUTE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "53",
+        "Status": "CLOSED - UNCOLLECTABLE - BANKRUPTCY",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "58",
+        "Status": "CLOSED - UNCOLLECTABLE - NO REASON GIVEN",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "60",
+        "Status": "CLOSED - CLIENT REINSTATED ACCOUNT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "68",
+        "Status": "CLOSED - ASSIGNED IN ERROR",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "69",
+        "Status": "CLOSED - CCS-OPD-PQ/VD-PROPOSAL DECLINED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "70",
+        "Status": "CLOSED - CCS-OPD-PQ/VD DEFAULT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "71",
+        "Status": "CLOSED - GOV. STUDENT LOAN",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "82",
+        "Status": "CLOSED - CCS-OPD-PQ/VD BANKRUPT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "83",
+        "Status": "CLOSED - CCS-OPD-PQ/VD - PAY OUT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "84",
+        "Status": "CLOSED - CCS-OPD-PQ/VD - SETTLEMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "94",
+        "Status": "CLOSED - CCS - OPD - PQ/VD CONSUMER PROPOSAL",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "106",
+        "Status": "CLOSED - UNCOLLECTABLE - FRAUD",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "113",
+        "Status": "CLOSED - REASSIGNED TO LITIGATION HIGHWAY",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "126",
+        "Status": "CLOSED - NOT FUNDED - EXISTING LIEN",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "127",
+        "Status": "CLOSED - NOT FUNDED - EXISTING HYPO",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "128",
+        "Status": "CLOSED - NOT FUNDED - OTHER",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "133",
+        "Status": "CLOSED – MISSING REQD CUSTOMER INFO – CANNOT ENFORCE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "133",
+        "Status": "CLOSED - MISSING REQD CUSTOMER INFO - CANNOT ENFORCE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "134",
+        "Status": "CLOSED – NO DOCUMENTS – CANNOT ENFORCE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "134",
+        "Status": "CLOSED - NO DOCUMENTS - CANNOT ENFORCE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "137",
+        "Status": "CLOSED – COLLECTION EFFORTS EXHAUSTED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "137",
+        "Status": "CLOSED - COLLECTION EFFORTS EXHAUSTED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "139",
+        "Status": "CLOSED - SETTLEMENT (ORIGINATING AGENCY DATA ERROR)",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "141",
+        "Status": "CLOSED - COMPANY HAS CEASED OPERATIONS",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "142",
+        "Status": "CLOSED - UNCOLLECTABLE - IMPERFECT JUDGMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "145",
+        "Status": "CLOSED - UNCOLLECTABLE - WRIT EXPIRED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "151",
+        "Status": "CLOSED – TO BE REMOVED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "151",
+        "Status": "CLOSED - TO BE REMOVED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "152",
+        "Status": "CLOSED – SKIP ASSIGNMENT – SCRUB LOCATE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "152",
+        "Status": "CLOSED - SKIP ASSIGNMENT - SCRUB LOCATE",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "154",
+        "Status": "CLOSED - CCS-OPD-PQ/VD - CCS COMPLETED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "156",
+        "Status": "CLOSED - ACCOUNT SOLD",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "8",
+        "Instruction": "CLOSED",
+        "StatusCode": "161",
+        "Status": "CLOSED-EXTINGUISHED DEBT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "9",
+        "Instruction": "FOREIGN RECOVERY",
+        "StatusCode": "41",
+        "Status": "SKIP",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "9",
+        "Instruction": "FOREIGN RECOVERY",
+        "StatusCode": "42",
+        "Status": "DIALING 4 DOLLARS",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "9",
+        "Instruction": "FOREIGN RECOVERY",
+        "StatusCode": "43",
+        "Status": "PAYMENTS ARRANGEMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "9",
+        "Instruction": "FOREIGN RECOVERY",
+        "StatusCode": "63",
+        "Status": "CONTACT MADE",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "9",
+        "Instruction": "FOREIGN RECOVERY",
+        "StatusCode": "64",
+        "Status": "TAKING LEGAL ACTION",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "9",
+        "Instruction": "FOREIGN RECOVERY",
+        "StatusCode": "65",
+        "Status": "JUDGMENT OBTAINED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "9",
+        "Instruction": "FOREIGN RECOVERY",
+        "StatusCode": "66",
+        "Status": "CCS-OPD PLAN",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "9",
+        "Instruction": "FOREIGN RECOVERY",
+        "StatusCode": "67",
+        "Status": "CONSUMER PROPOSAL",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "10",
+        "Instruction": "DIALING 4 DOLLARS",
+        "StatusCode": "44",
+        "Status": "QUALIFYING ASSETS",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "10",
+        "Instruction": "DIALING 4 DOLLARS",
+        "StatusCode": "45",
+        "Status": "ATTEMPTING TO CONTACT LOCATE DEBTOR",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "10",
+        "Instruction": "DIALING 4 DOLLARS",
+        "StatusCode": "54",
+        "Status": "CONTACT MADE",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "10",
+        "Instruction": "DIALING 4 DOLLARS",
+        "StatusCode": "91",
+        "Status": "DEMAND LETTER PROCESS - AWAITING RESPONSE",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "10",
+        "Instruction": "DIALING 4 DOLLARS",
+        "StatusCode": "95",
+        "Status": "SETTLEMENT PENDING",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "10",
+        "Instruction": "DIALING 4 DOLLARS",
+        "StatusCode": "97",
+        "Status": "CONTACT MADE - UNCOOPERATIVE",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "10",
+        "Instruction": "DIALING 4 DOLLARS",
+        "StatusCode": "98",
+        "Status": "CONTACT MADE - COOPERATIVE",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "10",
+        "Instruction": "DIALING 4 DOLLARS",
+        "StatusCode": "99",
+        "Status": "CONTACT MADE - UNDER NEGOTIATION",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "11",
+        "Instruction": "(N/A)",
+        "StatusCode": "46",
+        "Status": "(N/A)",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "12",
+        "Instruction": "SETTLEMENT",
+        "StatusCode": "47",
+        "Status": "UPDATING FINANCIALS",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "12",
+        "Instruction": "SETTLEMENT",
+        "StatusCode": "48",
+        "Status": "AWAITING RECEIPT OF STATUTORY DECLORATION",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "12",
+        "Instruction": "SETTLEMENT",
+        "StatusCode": "49",
+        "Status": "AWAITING CLIENT AUTHORIZATION",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "12",
+        "Instruction": "SETTLEMENT",
+        "StatusCode": "62",
+        "Status": "ACCEPTED WITH IN AGENCY LIMITS",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "12",
+        "Instruction": "SETTLEMENT",
+        "StatusCode": "93",
+        "Status": "AUTHORIZED BY CLIENT - AWAITING PAYOUT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "12",
+        "Instruction": "SETTLEMENT",
+        "StatusCode": "109",
+        "Status": "SETTLEMENT OFFER UNACCEPTABLE AND DECLINED",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "115",
+        "Status": "PRE-APPROVAL - DOCUMENT REVIEW",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "116",
+        "Status": "PRE-APPROVAL - PPSA",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "117",
+        "Status": "MARGINING - GENERAL",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "118",
+        "Status": "MARGINING - AMBER ALERT REVIEW",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "119",
+        "Status": "MARGINING - MARGIN CALL REVIEW",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "120",
+        "Status": "SERVICING - TOP UP COLLATERAL",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "121",
+        "Status": "SERVICING - PAY OUT",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "122",
+        "Status": "SERVICING - PLC LIMIT REDUCTION",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "123",
+        "Status": "SERVICING - PARTIAL RELEASE",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "124",
+        "Status": "SERVICING - COLLATERAL SWAP",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "125",
+        "Status": "SERVICING - GIC RENEWAL",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "13",
+        "Instruction": "ABL",
+        "StatusCode": "129",
+        "Status": "CLOSED - PAID IN FULL (EXISTING)",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "14",
+        "Instruction": "RESTRUCTURE",
+        "StatusCode": "157",
+        "Status": "REVIEW – PENDING",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "14",
+        "Instruction": "RESTRUCTURE",
+        "StatusCode": "157",
+        "Status": "REVIEW - PENDING",
+        "SubmitWithdraw": "Submit"
+    }, {
+        "InstructionCode": "14",
+        "Instruction": "RESTRUCTURE",
+        "StatusCode": "158",
+        "Status": "APPROVED – PENDING PAYMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "14",
+        "Instruction": "RESTRUCTURE",
+        "StatusCode": "158",
+        "Status": "APPROVED - PENDING PAYMENT",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "14",
+        "Instruction": "RESTRUCTURE",
+        "StatusCode": "159",
+        "Status": "CLOSED – PAID",
+        "SubmitWithdraw": "Withdraw"
+    }, {
+        "InstructionCode": "14",
+        "Instruction": "RESTRUCTURE",
+        "StatusCode": "159",
+        "Status": "CLOSED - PAID",
+        "SubmitWithdraw": "Withdraw"
+    }
+]
