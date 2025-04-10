@@ -20,9 +20,9 @@
     "RetryNumberGetTransactionItem": "2",
     "RetryNumberSetTransactionStatus": "2",
 
-    "MinTimeOutSec": "15",
-    "MediumTimeOutSec": "30",
-    "MaxTimeOutSec": "60",
+    "MinTimeOutSec": "10",
+    "MediumTimeOutSec": "15",
+    "MaxTimeOutSec": "30",
     "RetryNumber": "3",
     "RetryInterval": "00:00:30",
     "IsCollectionHighwayIncognito": "false",
