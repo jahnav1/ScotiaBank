@@ -5,7 +5,7 @@
     <x:Property sap2010:Annotation.AnnotationText="This is optional argument. Enter the name of the config Asset to be used instead of main config asset" Name="in_ConfigAssetName" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1204,913.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,913.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -172,7 +172,7 @@
         <av:PointCollection x:Key="ConnectorLocation">70,76.34 100,76.34 100,77.88 249,77.88</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="716.8,8934.4" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="221.6,121.6" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="672,8514.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <TryCatch.Try>
@@ -1152,9 +1152,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="208,105.6" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="627.2,4206.4" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <Sequence sap2010:Annotation.AnnotationText="Retrieve a new transaction data to be processed.&#xA;The TransactionNumber variable holds the current transaction number and incrementing this variable makes the framework retrieve the next transaction. If the framework is retrying a failed transaction, this variable is not incremented until the maximum number of retry attempts is reached." DisplayName="Retrieve Data" sap:VirtualizedContainerService.HintSize="592,3464" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap2010:Annotation.AnnotationText="Retrieve a new transaction data to be processed.&#xA;The TransactionNumber variable holds the current transaction number and incrementing this variable makes the framework retrieve the next transaction. If the framework is retrying a failed transaction, this variable is not incremented until the maximum number of retry attempts is reached." DisplayName="Retrieve Data" sap:VirtualizedContainerService.HintSize="582.4,3786.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="ShouldStop" />
                   </Sequence.Variables>
@@ -1165,7 +1165,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log message for starting Get Transaction Data" sap:VirtualizedContainerService.HintSize="530,173" sap2010:WorkflowViewState.IdRef="LogMessage_21">
+                  <ui:LogMessage DisplayName="Log message for starting Get Transaction Data" sap:VirtualizedContainerService.HintSize="520,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_21">
                     <ui:LogMessage.Level>
                       <InArgument x:TypeArguments="ui:LogLevel">
                         <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_119">
@@ -1183,29 +1183,29 @@
                       </InArgument>
                     </ui:LogMessage.Message>
                   </ui:LogMessage>
-                  <ui:Comment DisplayName="Check Business Hours" sap:VirtualizedContainerService.HintSize="530,88" sap2010:WorkflowViewState.IdRef="Comment_47" Text="// Check Business Hours" />
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\CheckBusinessHours.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="530,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_46" UnSafe="False" WorkflowFileName="Utility\\CheckBusinessHours.xaml">
+                  <ui:Comment DisplayName="Check Business Hours" sap:VirtualizedContainerService.HintSize="520,56" sap2010:WorkflowViewState.IdRef="Comment_47" Text="// Check Business Hours" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Utility\\CheckBusinessHours.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="520,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_46" UnSafe="False" WorkflowFileName="Utility\\CheckBusinessHours.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsWithInBUHours">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_104">WithInBusinessHours</CSharpReference>
                       </OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <If DisplayName="If Outside Business Hours and Dry-Run Mode" sap:VirtualizedContainerService.HintSize="530,1278" sap2010:WorkflowViewState.IdRef="If_28">
+                  <If DisplayName="If Outside Business Hours and Dry-Run Mode" sap:VirtualizedContainerService.HintSize="520,1292.8" sap2010:WorkflowViewState.IdRef="If_28">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_347">!WithInBusinessHours || Convert.ToBoolean(GlobalVariables.g_Config["IsDryRun"].ToString())</CSharpValue>
                       </InArgument>
                     </If.Condition>
                     <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,627" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="476.8,632" sap2010:WorkflowViewState.IdRef="Sequence_83">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Comment DisplayName="Comment for Conditions" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="Comment_52" Text="// Outside business hours OR Dry Run Mode" />
-                        <Assign DisplayName="End Process (Stop process requested)" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_23">
+                        <ui:Comment DisplayName="Comment for Conditions" sap:VirtualizedContainerService.HintSize="433.6,56" sap2010:WorkflowViewState.IdRef="Comment_52" Text="// Outside business hours OR Dry Run Mode" />
+                        <Assign DisplayName="End Process (Stop process requested)" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_23">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">
                               <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_88">ShouldStop</CSharpReference>
@@ -1215,14 +1215,14 @@
                             <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:LogMessage DisplayName="Log message (DryRun process)" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Info">
+                        <ui:LogMessage DisplayName="Log message (DryRun process)" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Info">
                           <ui:LogMessage.Message>
                             <InArgument x:TypeArguments="x:Object">
                               <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_395">"Dry Run Mode : "+(Convert.ToBoolean( GlobalVariables.g_Config["IsDryRun"].ToString())? "Enabled" : "Disabled")</CSharpValue>
                             </InArgument>
                           </ui:LogMessage.Message>
                         </ui:LogMessage>
-                        <ui:LogMessage DisplayName="Log Message (BU Hours)" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_83">
+                        <ui:LogMessage DisplayName="Log Message (BU Hours)" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_83">
                           <ui:LogMessage.Level>
                             <InArgument x:TypeArguments="ui:LogLevel">
                               <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_396">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -1237,14 +1237,14 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,481" sap2010:WorkflowViewState.IdRef="Sequence_84">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="377.6,477.6" sap2010:WorkflowViewState.IdRef="Sequence_84">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Comment DisplayName="Comment about Business Hours" sap:VirtualizedContainerService.HintSize="354,107" sap2010:WorkflowViewState.IdRef="Comment_53" Text="// Within business hours AND Not Dry Run Mode" />
-                        <ui:LogMessage DisplayName="Log Message - BU Hours" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_71">
+                        <ui:Comment DisplayName="Comment about Business Hours" sap:VirtualizedContainerService.HintSize="334.4,75.2" sap2010:WorkflowViewState.IdRef="Comment_53" Text="// Within business hours AND Not Dry Run Mode" />
+                        <ui:LogMessage DisplayName="Log Message - BU Hours" sap:VirtualizedContainerService.HintSize="334.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_71">
                           <ui:LogMessage.Level>
                             <InArgument x:TypeArguments="ui:LogLevel">
                               <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_332">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -1256,7 +1256,7 @@
                             </InArgument>
                           </ui:LogMessage.Message>
                         </ui:LogMessage>
-                        <ui:ShouldStop DisplayName="Check Stop Signal" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="ShouldStop_2">
+                        <ui:ShouldStop DisplayName="Check Stop Signal" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="ShouldStop_2">
                           <ui:ShouldStop.Result>
                             <OutArgument x:TypeArguments="x:Boolean">
                               <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_89">ShouldStop</CSharpReference>
@@ -1266,7 +1266,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If sap2010:Annotation.AnnotationText="" DisplayName="Should Stop or Get Next" sap:VirtualizedContainerService.HintSize="530,1561" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If sap2010:Annotation.AnnotationText="" DisplayName="Should Stop or Get Next" sap:VirtualizedContainerService.HintSize="520,1803.2" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
                         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_331">ShouldStop</CSharpValue>
@@ -1280,21 +1280,21 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Orchestrator stop requested" sap:VirtualizedContainerService.HintSize="496,665" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence DisplayName="Orchestrator stop requested" sap:VirtualizedContainerService.HintSize="476.8,670.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Comment DisplayName="Comment for STOP Signal" sap:VirtualizedContainerService.HintSize="434,126" sap2010:WorkflowViewState.IdRef="Comment_54" Text="// Bot received STOP signal from Orchestrator OR Bot running in Dry-Run mode OR Bot not running in BU Hours" />
-                        <ui:LogMessage DisplayName="Log message (Stop process requested)" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+                        <ui:Comment DisplayName="Comment for STOP Signal" sap:VirtualizedContainerService.HintSize="433.6,94.4" sap2010:WorkflowViewState.IdRef="Comment_54" Text="// Bot received STOP signal from Orchestrator OR Bot running in Dry-Run mode OR Bot not running in BU Hours" />
+                        <ui:LogMessage DisplayName="Log message (Stop process requested)" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
                           <ui:LogMessage.Message>
                             <InArgument x:TypeArguments="x:Object">
                               <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_276">"Stop process requested : "+ShouldStop.ToString()</CSharpValue>
                             </InArgument>
                           </ui:LogMessage.Message>
                         </ui:LogMessage>
-                        <Assign DisplayName="End Process (Stop process requested)" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+                        <Assign DisplayName="End Process (Stop process requested)" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_4">
                           <Assign.To>
                             <OutArgument x:TypeArguments="ui:QueueItem">
                               <CSharpReference x:TypeArguments="ui:QueueItem" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">TransactionItem</CSharpReference>
@@ -1306,7 +1306,7 @@
                             </InArgument>
                           </Assign.Value>
                         </Assign>
-                        <ui:LogMessage DisplayName="Log message for ending &quot;Get Transaction Data&quot;" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_93">
+                        <ui:LogMessage DisplayName="Log message for ending &quot;Get Transaction Data&quot;" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_93">
                           <ui:LogMessage.Level>
                             <InArgument x:TypeArguments="ui:LogLevel">
                               <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_444">
@@ -1327,17 +1327,22 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <TryCatch DisplayName="Try Catch Get transaction item" sap:VirtualizedContainerService.HintSize="454,713" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                      <TryCatch DisplayName="Try Catch Get transaction item" sap:VirtualizedContainerService.HintSize="486.4,949.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                         <TryCatch.Try>
-                          <Sequence DisplayName="Sequence - Get Transaction Item" sap:VirtualizedContainerService.HintSize="416,485" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                          <Sequence DisplayName="Sequence - Get Transaction Item" sap:VirtualizedContainerService.HintSize="449.6,718.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:Comment DisplayName="Comment Get Transaction Data" sap:VirtualizedContainerService.HintSize="354,88" sap2010:WorkflowViewState.IdRef="Comment_51" Text="// Get Transaction Data from Queue" />
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetTransactionData workflow" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Framework\GetTransactionData.xaml">
+                            <ui:Comment DisplayName="Comment Get Transaction Data" sap:VirtualizedContainerService.HintSize="387.2,56" sap2010:WorkflowViewState.IdRef="Comment_51" Text="// Get Transaction Data from Queue" />
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CleanGlobalVariables - Invoke Workflow File (Utility\\CleanGlobalVariables.xaml)" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_56" UnSafe="False" WorkflowFileName="Utility\\CleanGlobalVariables.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetTransactionData workflow" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Framework\GetTransactionData.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">
                                   <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_325">TransactionNumber</CSharpValue>
@@ -1362,7 +1367,7 @@
                                 </InOutArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
-                            <ui:LogMessage DisplayName="Log message for transaction end" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_92">
+                            <ui:LogMessage DisplayName="Log message for transaction end" sap:VirtualizedContainerService.HintSize="387.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_92">
                               <ui:LogMessage.Level>
                                 <InArgument x:TypeArguments="ui:LogLevel">
                                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_446">
@@ -1383,7 +1388,7 @@
                           </Sequence>
                         </TryCatch.Try>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="452.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>

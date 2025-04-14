@@ -1,0 +1,297 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AddCustomizedLog" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_QueueReferenceNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_CaseStartProcessingTime" Type="InArgument(x:String)" />
+    <x:Property Name="in_CaseEndProcessingTime" Type="InArgument(x:String)" />
+    <x:Property Name="in_BotStatus" Type="InArgument(x:String)" />
+    <x:Property Name="in_BotNotes" Type="InArgument(x:String)" />
+    <x:Property Name="in_StateCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_ROOAmount" Type="InArgument(x:String)" />
+    <x:Property Name="in_DueAmount" Type="InArgument(x:String)" />
+    <x:Property Name="in_DHInstruction" Type="InArgument(x:String)" />
+    <x:Property Name="in_DHStatus" Type="InArgument(x:String)" />
+    <x:Property Name="in_AccountNum" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1240,1493.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Cryptography</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AddCustomizedLog" sap:VirtualizedContainerService.HintSize="572.8,1428.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Double" Name="ProcessingTimeinMin" />
+      <Variable x:TypeArguments="x:String" Name="SLAMet" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:MultipleAssign DisplayName="Multiple Assign-Calculate SLA and ProcessingTime" sap:VirtualizedContainerService.HintSize="510.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Double">
+                <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">ProcessingTimeinMin</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Double">
+                <CSharpValue x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">Math.Round(DateTime.Parse(in_CaseEndProcessingTime).Subtract(DateTime.Parse(in_CaseStartProcessingTime)).TotalMinutes,2)</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">SLAMet</CSharpReference>
+              </OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">ProcessingTimeinMin&gt;Convert.ToInt32(GlobalVariables.g_Config["CaseSLAInMins"])?"False":"True"</CSharpValue>
+              </InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:Comment DisplayName="Change Status Failed to Technical Exception" sap:VirtualizedContainerService.HintSize="510.4,75.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Change status &quot;Failed&quot; to &quot;Technical Exception&quot;." />
+    <Assign DisplayName="Assign value based on condition" sap:VirtualizedContainerService.HintSize="510.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">
+            <CSharpReference.Result>
+              <OutArgument x:TypeArguments="Location(x:String)" />
+            </CSharpReference.Result>in_BotStatus</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>in_BotStatus.Equals("Failed", StringComparison.OrdinalIgnoreCase) ? "Technical Exception" : in_BotStatus</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:Comment DisplayName="Set Notes to Max 1000 Characters" sap:VirtualizedContainerService.HintSize="510.4,56" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Set notes to max 1000 characters." />
+    <If DisplayName="If note more than 1000 characters" sap:VirtualizedContainerService.HintSize="510.4,354.4" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">in_BotNotes.Length&gt;=1000</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign substring of BotNotes" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">
+                  <CSharpReference.Result>
+                    <OutArgument x:TypeArguments="Location(x:String)" />
+                  </CSharpReference.Result>in_BotNotes</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">
+                  <CSharpValue.Result>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </CSharpValue.Result>in_BotNotes.Substring(0, 1000)</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:AddLogFields DisplayName="Add Log Fields for Process Logging" sap:VirtualizedContainerService.HintSize="510.4,89.6" sap2010:WorkflowViewState.IdRef="AddLogFields_1">
+      <ui:AddLogFields.Fields>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString1">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>in_QueueReferenceNumber</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString2">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>in_CaseStartProcessingTime</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString3">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>in_CaseEndProcessingTime</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString4">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>in_BotStatus</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString5">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>in_BotNotes</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString6">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">in_AccountNum</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString7">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">in_StateCode</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString8">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">in_ROOAmount</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString9">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">in_DueAmount</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString10">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">in_DHInstruction</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString11">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">in_DHStatus</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString12">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>ProcessingTimeinMin.ToString()</CSharpValue>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CustomString13">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:String" />
+            </CSharpValue.Result>SLAMet</CSharpValue>
+        </InArgument>
+      </ui:AddLogFields.Fields>
+    </ui:AddLogFields>
+    <ui:LogMessage DisplayName="Log a customized message with info level" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+      <ui:LogMessage.Level>
+        <InArgument x:TypeArguments="ui:LogLevel">
+          <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="ui:LogLevel" />
+            </CSharpValue.Result>UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Level>
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">
+            <CSharpValue.Result>
+              <OutArgument x:TypeArguments="x:Object" />
+            </CSharpValue.Result>"Customized Message Logged"</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
+    <ui:RemoveLogFields DisplayName="Remove custom log fields from log" sap:VirtualizedContainerService.HintSize="510.4,89.6" sap2010:WorkflowViewState.IdRef="RemoveLogFields_1">
+      <ui:RemoveLogFields.Fields>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="16">
+          <InArgument x:TypeArguments="x:String">CustomString1</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString2</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString3</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString4</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString5</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString6</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString7</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString8</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString9</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString10</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString11</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString12</InArgument>
+          <InArgument x:TypeArguments="x:String">CustomString13</InArgument>
+        </scg:List>
+      </ui:RemoveLogFields.Fields>
+    </ui:RemoveLogFields>
+  </Sequence>
+</Activity>

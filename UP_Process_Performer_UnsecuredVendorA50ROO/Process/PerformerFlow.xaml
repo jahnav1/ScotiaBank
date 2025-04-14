@@ -94,6 +94,8 @@
       <Variable x:TypeArguments="x:Boolean" Name="IsSubmit" />
       <Variable x:TypeArguments="x:String" Name="OutcomeReason" />
       <Variable x:TypeArguments="x:String" Name="CardNumber" />
+      <Variable x:TypeArguments="x:String" Name="ROOAmount" />
+      <Variable x:TypeArguments="x:String" Name="DueAmount" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -105,7 +107,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID8</x:Reference>
+      <x:Reference>__ReferenceID9</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID7">
       <sap:WorkflowViewStateService.ViewState>
@@ -196,33 +198,27 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <av:Point x:Key="ShapeLocation">131.20000000000002,526.4</av:Point>
                       <av:Size x:Key="ShapeSize">110.4,87.2</av:Size>
-                      <av:PointCollection x:Key="TrueConnector">131.20000000000002,570 101.20000000000005,570 101.20000000000005,669.9999999999999 310,669.9999999999999</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">131.20000000000002,570 100,570 100,643.6</av:PointCollection>
                       <av:PointCollection x:Key="FalseConnector">241.60000000000002,570 410,570 410,643.5999999999999</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
-                    <FlowStep x:Name="__ReferenceID0">
+                    <FlowStep x:Name="__ReferenceID3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">310,643.5999999999999</av:Point>
+                          <av:Point x:Key="ShapeLocation">0,643.6</av:Point>
                           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">410,696.3999999999999 410,736.4</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">200,670 310,669.9999999999999</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CollectionHighwayFlow - Invoke Workflow File (Process\\CollectionHighwayFlow.xaml)" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\\CollectionHighwayFlow.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetCardNumber - Invoke Workflow File (Process\\GetCardNumber.xaml)" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\\GetCardNumber.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_AccountNumber">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">string.IsNullOrWhiteSpace(CardNumber) ? ProductID : CardNumber</CSharpValue>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_ProductID">
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">ProductID</CSharpValue>
                           </InArgument>
-                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSubmit">
-                            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">IsSubmit</CSharpReference>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_CardNumber">
+                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">CardNumber</CSharpReference>
                           </OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="out_OutcomeReason">
-                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">OutcomeReason</CSharpReference>
-                          </OutArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StateCode">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">StateCode</CSharpValue>
-                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -231,57 +227,122 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
                       <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID4">
+                        <FlowStep x:Name="__ReferenceID0">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">310,736.4</av:Point>
+                              <av:Point x:Key="ShapeLocation">310,643.5999999999999</av:Point>
                               <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">410,789.1999999999999 410,826.4</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">410,696.3999999999999 410,736.4</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log CollectionHighway outcome" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
-                            <ui:LogMessage.Message>
-                              <InArgument x:TypeArguments="x:Object">
-                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"CollectionHighway outcome result is " + (IsSubmit ? "Submit" : "Withdraw") + " and the reason is " + OutcomeReason</CSharpValue>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CollectionHighwayFlow - Invoke Workflow File (Process\\CollectionHighwayFlow.xaml)" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\\CollectionHighwayFlow.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_AccountNumber">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">string.IsNullOrWhiteSpace(CardNumber) ? ProductID : CardNumber</CSharpValue>
                               </InArgument>
-                            </ui:LogMessage.Message>
+                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSubmit">
+                                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">IsSubmit</CSharpReference>
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_OutcomeReason">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">OutcomeReason</CSharpReference>
+                              </OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StateCode">
+                                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">StateCode</CSharpValue>
+                              </InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                          </ui:LogMessage>
+                          </ui:InvokeWorkflowFile>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID3">
+                            <FlowStep x:Name="__ReferenceID5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">310,826.4</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,75.2</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">410,901.6 410,942.4</av:PointCollection>
+                                  <av:Point x:Key="ShapeLocation">310,736.4</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">410,789.1999999999999 410,826.4</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:Comment sap:VirtualizedContainerService.HintSize="200,75.2" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Perform submit or withdraw.">
+                              <ui:LogMessage DisplayName="Log CollectionHighway outcome" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+                                <ui:LogMessage.Message>
+                                  <InArgument x:TypeArguments="x:Object">
+                                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"CollectionHighway outcome result is " + (IsSubmit ? "Submit" : "Withdraw") + " and the reason is " + OutcomeReason</CSharpValue>
+                                  </InArgument>
+                                </ui:LogMessage.Message>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                              </ui:Comment>
+                              </ui:LogMessage>
                               <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID5">
+                                <FlowStep x:Name="__ReferenceID4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">310,942.4</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,56</av:Size>
+                                      <av:Point x:Key="ShapeLocation">310,826.4</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,75.2</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">410,901.6 410,943.6</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:Comment sap:VirtualizedContainerService.HintSize="200,56" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Add to eod report.">
+                                  <ui:Comment sap:VirtualizedContainerService.HintSize="200,75.2" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Perform submit or withdraw.">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:Comment>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID8">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">310,943.6</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddCustomizedLog - Invoke Workflow File (Utility\\AddCustomizedLog.xaml)" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Utility\\AddCustomizedLog.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_QueueReferenceNumber">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">in_TransactionItem.Reference</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_CaseStartProcessingTime">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GlobalVariables.g_CaseStartProcessingTime</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_CaseEndProcessingTime">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">Success</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_BotNotes">
+                                            <Literal x:TypeArguments="x:String" Value="" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_StateCode">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">StateCode</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_ROOAmount">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">ROOAmount</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_DueAmount">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">DueAmount</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_DHInstruction">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">IsSubmit ? "Submit" : "Withdraw"</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_DHStatus">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">OutcomeReason</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_AccountNum">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">ProductID</CSharpValue>
+                                          </InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:InvokeWorkflowFile>
+                                    </FlowStep>
+                                  </FlowStep.Next>
                                 </FlowStep>
                               </FlowStep.Next>
                             </FlowStep>
@@ -305,46 +366,12 @@
     </FlowStep>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
-    <FlowStep>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">0,693.5999999999999</av:Point>
-          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,256" sap2010:WorkflowViewState.IdRef="Sequence_1">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetCardNumber - Invoke Workflow File (Process\\GetCardNumber.xaml)" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\\GetCardNumber.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_ProductID">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">ProductID</CSharpValue>
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_CardNumber">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">CardNumber</CSharpReference>
-                </OutArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:InvokeWorkflowFile>
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-    </FlowStep>
-    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
-    <FlowStep x:Name="__ReferenceID8">
+    <FlowStep x:Name="__ReferenceID9">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">83.19999999999999,117.7</av:Point>
@@ -437,5 +464,6 @@
         <x:Reference>__ReferenceID7</x:Reference>
       </FlowStep.Next>
     </FlowStep>
+    <x:Reference>__ReferenceID8</x:Reference>
   </Flowchart>
 </Activity>
