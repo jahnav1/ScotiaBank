@@ -742,8 +742,8 @@
                     <InArgument x:TypeArguments="x:Boolean" x:Key="in_QueueRetry">
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">QueueRetry</CSharpValue>
                     </InArgument>
-                    <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_Transaction">
-                      <CSharpValue x:TypeArguments="ui:QueueItem" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80">in_TransactionItem</CSharpValue>
+                    <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
+                      <CSharpValue x:TypeArguments="ui:QueueItem" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81">in_TransactionItem</CSharpValue>
                     </InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
