@@ -91,11 +91,13 @@
       <Variable x:TypeArguments="x:String" Name="ProductType" />
       <Variable x:TypeArguments="x:String" Name="ProductID" />
       <Variable x:TypeArguments="x:String" Name="StateCode" />
-      <Variable x:TypeArguments="x:Boolean" Name="IsSubmit" />
-      <Variable x:TypeArguments="x:String" Name="OutcomeReason" />
+      <Variable x:TypeArguments="x:Boolean" Name="DHIsSubmit" />
+      <Variable x:TypeArguments="x:String" Name="DHOutcomeReason" />
       <Variable x:TypeArguments="x:String" Name="CardNumber" />
       <Variable x:TypeArguments="x:String" Name="ROOAmount" />
       <Variable x:TypeArguments="x:String" Name="DueAmount" />
+      <Variable x:TypeArguments="x:String" Name="DHInstruction" />
+      <Variable x:TypeArguments="x:String" Name="DHStatus" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -143,7 +145,7 @@
                     </OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">A50</InArgument>
+                    <InArgument x:TypeArguments="x:String">G40</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -163,7 +165,7 @@
                     </OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">20009150070</InArgument>
+                    <InArgument x:TypeArguments="x:String">4538158888692</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>
@@ -241,14 +243,20 @@
                                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">string.IsNullOrWhiteSpace(CardNumber) ? ProductID : CardNumber</CSharpValue>
                               </InArgument>
                               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSubmit">
-                                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">IsSubmit</CSharpReference>
+                                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">DHIsSubmit</CSharpReference>
                               </OutArgument>
                               <OutArgument x:TypeArguments="x:String" x:Key="out_OutcomeReason">
-                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">OutcomeReason</CSharpReference>
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">DHOutcomeReason</CSharpReference>
                               </OutArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_StateCode">
                                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">StateCode</CSharpValue>
                               </InArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Instruction">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">DHInstruction</CSharpReference>
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_Status">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">DHStatus</CSharpReference>
+                              </OutArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -268,7 +276,7 @@
                               <ui:LogMessage DisplayName="Log CollectionHighway outcome" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
                                 <ui:LogMessage.Message>
                                   <InArgument x:TypeArguments="x:Object">
-                                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"CollectionHighway outcome result is " + (IsSubmit ? "Submit" : "Withdraw") + " and the reason is " + OutcomeReason</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"CollectionHighway outcome result is " + (DHIsSubmit ? "Submit" : "Withdraw") + " and the reason is " + DHOutcomeReason</CSharpValue>
                                   </InArgument>
                                 </ui:LogMessage.Message>
                                 <sap:WorkflowViewStateService.ViewState>
@@ -314,7 +322,7 @@
                                           </InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">Success</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_BotNotes">
-                                            <Literal x:TypeArguments="x:String" Value="" />
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">"CollectionHighway outcome result is " + (DHIsSubmit ? "Submit" : "Withdraw") + " and the reason is " + DHOutcomeReason</CSharpValue>
                                           </InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_StateCode">
                                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">StateCode</CSharpValue>
@@ -326,13 +334,13 @@
                                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">DueAmount</CSharpValue>
                                           </InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_DHInstruction">
-                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">IsSubmit ? "Submit" : "Withdraw"</CSharpValue>
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">DHInstruction</CSharpValue>
                                           </InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_DHStatus">
-                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">OutcomeReason</CSharpValue>
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">DHStatus</CSharpValue>
                                           </InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_AccountNum">
-                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">ProductID</CSharpValue>
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">string.IsNullOrWhiteSpace(CardNumber) ? ProductID : CardNumber</CSharpValue>
                                           </InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                         <sap:WorkflowViewStateService.ViewState>
@@ -381,7 +389,7 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:MultipleAssign DisplayName="Reset variables" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
         <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="x:String">
@@ -421,7 +429,7 @@
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="x:Boolean">
-                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">IsSubmit</CSharpReference>
+                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">DHIsSubmit</CSharpReference>
                 </OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
@@ -431,7 +439,7 @@
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">OutcomeReason</CSharpReference>
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">DHOutcomeReason</CSharpReference>
                 </OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
@@ -444,6 +452,54 @@
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="x:String">
                   <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">CardNumber</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">DHInstruction</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">DHStatus</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">ROOAmount</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">DueAmount</CSharpReference>
                 </OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
