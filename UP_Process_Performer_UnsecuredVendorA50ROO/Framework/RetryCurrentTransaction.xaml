@@ -8,7 +8,7 @@
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1240,1069.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1200,1069.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -176,22 +176,22 @@
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">in_SystemException.ToString()</CSharpValue>
                       </InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_StateCode">
-                        <Literal x:TypeArguments="x:String" Value="" />
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">GlobalVariables.g_StateCode</CSharpValue>
                       </InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_ROOAmount">
-                        <Literal x:TypeArguments="x:String" Value="" />
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">GlobalVariables.g_ROOAmount</CSharpValue>
                       </InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_DueAmount">
-                        <Literal x:TypeArguments="x:String" Value="" />
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">GlobalVariables.g_DueAmount</CSharpValue>
                       </InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_DHInstruction">
-                        <Literal x:TypeArguments="x:String" Value="" />
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">GlobalVariables.g_DHInstruction</CSharpValue>
                       </InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_DHStatus">
-                        <Literal x:TypeArguments="x:String" Value="" />
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">GlobalVariables.g_DHStatus</CSharpValue>
                       </InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_AccountNum">
-                        <Literal x:TypeArguments="x:String" Value="" />
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">GlobalVariables.g_AccountNum</CSharpValue>
                       </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
