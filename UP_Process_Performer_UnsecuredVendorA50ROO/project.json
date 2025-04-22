@@ -6,13 +6,14 @@
   "dependencies": {
     "UiPath.Cryptography.Activities": "[1.6.1]",
     "UiPath.DataService.Activities": "[23.10.0]",
-    "UiPath.Excel.Activities": "[2.23.4]",
+    "UiPath.Excel.Activities": "[2.24.4]",
     "UiPath.System.Activities": "[25.2.2]",
     "UiPath.Testing.Activities": "[24.10.0]",
     "UiPath.UIAutomation.Activities": "[24.10.0]",
     "UP_Lib_Adapter_CollectionHighway": "[1.0.0-alpha.546190]",
+    "UP_Lib_Adapter_PegaBPM": "[1.0.0-alpha.549663]",
     "UP_Lib_Connector_HashiCorpVault": "[1.0.2.461260]",
-    "UP_Lib_Connector_OpenAMAPI": "[1.0.0-alpha.535976]",
+    "UP_Lib_Connector_OpenAMAPI": "[1.0.0-alpha.544885]",
     "UP_Lib_Connector_TSYS": "[1.0.0-alpha.519891]"
   },
   "webServices": [],
