@@ -1,9 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="InitAllApplications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:up="clr-namespace:UP_Lib_Adapter_CollectionHighway.Public;assembly=UP_Lib_Adapter_CollectionHighway" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="InitAllApplications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:up="clr-namespace:UP_Lib_Adapter_Intralink.Public;assembly=UP_Lib_Adapter_Intralink" xmlns:up1="clr-namespace:UP_Lib_Adapter_CollectionHighway.Public;assembly=UP_Lib_Adapter_CollectionHighway" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1188,2508.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1485,2740</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -37,6 +37,14 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UP_Lib_Adapter_Intralink.Public</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -107,9 +115,31 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UP_Lib_Adapter_Intralink</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Cryptography.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="624,2444" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="610,2675" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CurrentPage" />
       <Variable x:TypeArguments="x:Boolean" Name="IsLoginSuccess" />
@@ -124,7 +154,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="561.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="548,173" sap2010:WorkflowViewState.IdRef="LogMessage_1">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">LogLevel.Trace</CSharpValue>
@@ -136,65 +166,171 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <up:CollectionHighway_Login DisplayName="CollectionHighway_Login (Login Actions)" sap:VirtualizedContainerService.HintSize="561.6,558.4" sap2010:WorkflowViewState.IdRef="CollectionHighway_Login_1">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <up:CollectionHighway_Login.in_CollectionHighwayURL>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GlobalVariables.g_Config["CollectionHighwayLoginURL"].ToString()</CSharpValue>
-        </InArgument>
-      </up:CollectionHighway_Login.in_CollectionHighwayURL>
-      <up:CollectionHighway_Login.in_IsIncognito>
-        <InArgument x:TypeArguments="x:Boolean">
-          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">Convert.ToBoolean(GlobalVariables.g_Config["IsCollectionHighwayIncognito"])</CSharpValue>
-        </InArgument>
-      </up:CollectionHighway_Login.in_IsIncognito>
-      <up:CollectionHighway_Login.in_MaxTimeout>
-        <InArgument x:TypeArguments="x:Int32">
-          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">Convert.ToInt32(GlobalVariables.g_Config["MaxTimeOutSec"])</CSharpValue>
-        </InArgument>
-      </up:CollectionHighway_Login.in_MaxTimeout>
-      <up:CollectionHighway_Login.in_MedTimeout>
-        <InArgument x:TypeArguments="x:Int32">
-          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">Convert.ToInt32(GlobalVariables.g_Config["MediumTimeOutSec"])</CSharpValue>
-        </InArgument>
-      </up:CollectionHighway_Login.in_MedTimeout>
-      <up:CollectionHighway_Login.in_Password>
-        <InArgument x:TypeArguments="ss:SecureString">
-          <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">GlobalVariables.g_SecurePasswordCollHigh</CSharpValue>
-        </InArgument>
-      </up:CollectionHighway_Login.in_Password>
-      <up:CollectionHighway_Login.in_UserName>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">GlobalVariables.g_UserNameCollHigh</CSharpValue>
-        </InArgument>
-      </up:CollectionHighway_Login.in_UserName>
-      <up:CollectionHighway_Login.in_WebArgument>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">GlobalVariables.g_Config["CollectionHighwayWebArg"].ToString()</CSharpValue>
-        </InArgument>
-      </up:CollectionHighway_Login.in_WebArgument>
-      <up:CollectionHighway_Login.out_CurrentPage>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">CurrentPage</CSharpReference>
-        </OutArgument>
-      </up:CollectionHighway_Login.out_CurrentPage>
-      <up:CollectionHighway_Login.out_IsLoginSuccess>
-        <OutArgument x:TypeArguments="x:Boolean">
-          <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">IsLoginSuccess</CSharpReference>
-        </OutArgument>
-      </up:CollectionHighway_Login.out_IsLoginSuccess>
-      <up:CollectionHighway_Login.out_LoginError>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">LoginError</CSharpReference>
-        </OutArgument>
-      </up:CollectionHighway_Login.out_LoginError>
-    </up:CollectionHighway_Login>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfPasswordRequiresUpdate - Invoke Workflow File (Process\\CheckIfPasswordRequiresUpdate.xaml)" sap:VirtualizedContainerService.HintSize="561.6,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\\CheckIfPasswordRequiresUpdate.xaml">
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="548,793" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,472" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kills all Windows processes representing applications used in this business process to assure that the execution starts in a clean state.&#xA;Since the applications are assumed to be already closed, CloseAllApplications is skipped and just KillAllProcess is invoked." DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="354,279" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_KillAppNames">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">GlobalVariables.g_Config["KillAppNames"].ToString()</CSharpValue>
+                </InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <up:IL_NavToApp DisplayName="IL_NavToApp-Login" sap:VirtualizedContainerService.HintSize="354,57" sap2010:WorkflowViewState.IdRef="IL_NavToApp_1" in_UseEdge="False" in_UseRedirect="False">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <up:IL_NavToApp.in_AppName>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">in_Config["PegaBPMAppName"].ToString()</CSharpValue>
+                </InArgument>
+              </up:IL_NavToApp.in_AppName>
+              <up:IL_NavToApp.in_Environment>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">in_Config["PegaBPMEnv"].ToString()</CSharpValue>
+                </InArgument>
+              </up:IL_NavToApp.in_Environment>
+              <up:IL_NavToApp.in_IntraLinkPassword>
+                <InArgument x:TypeArguments="ss:SecureString">
+                  <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">GlobalVariables.g_SecurePasswordIntralink</CSharpValue>
+                </InArgument>
+              </up:IL_NavToApp.in_IntraLinkPassword>
+              <up:IL_NavToApp.in_IntraLinkUserName>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">GlobalVariables.g_UserNameIntralink</CSharpValue>
+                </InArgument>
+              </up:IL_NavToApp.in_IntraLinkUserName>
+              <up:IL_NavToApp.in_IntralinkURL>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">in_Config["PegaBPMLoginURL"].ToString()</CSharpValue>
+                </InArgument>
+              </up:IL_NavToApp.in_IntralinkURL>
+              <up:IL_NavToApp.in_IsIncognito>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">Convert.ToBoolean(in_Config["IsBPMIncognito"])</CSharpValue>
+                </InArgument>
+              </up:IL_NavToApp.in_IsIncognito>
+              <up:IL_NavToApp.in_MaxTimeout>
+                <InArgument x:TypeArguments="x:Int32">
+                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">Convert.ToInt32(in_Config["MaxTimeOutSec"])</CSharpValue>
+                </InArgument>
+              </up:IL_NavToApp.in_MaxTimeout>
+              <up:IL_NavToApp.in_MedTimeout>
+                <InArgument x:TypeArguments="x:Int32">
+                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">Convert.ToInt32(in_Config["MediumTimeOutSec"])</CSharpValue>
+                </InArgument>
+              </up:IL_NavToApp.in_MedTimeout>
+              <up:IL_NavToApp.in_MinTimeout>
+                <InArgument x:TypeArguments="x:Int32">
+                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">Convert.ToInt32(in_Config["MinTimeOutSec"])</CSharpValue>
+                </InArgument>
+              </up:IL_NavToApp.in_MinTimeout>
+              <up:IL_NavToApp.in_Transit>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">in_Config["PegaBPMTransit"].ToString()</CSharpValue>
+                </InArgument>
+              </up:IL_NavToApp.in_Transit>
+              <up:IL_NavToApp.in_WebArgument>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" DisplayName="Literal&lt;String&gt;" Value="" />
+                </InArgument>
+              </up:IL_NavToApp.in_WebArgument>
+              <up:IL_NavToApp.out_Result>
+                <OutArgument x:TypeArguments="x:Boolean">
+                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">IsLoginSuccess</CSharpReference>
+                </OutArgument>
+              </up:IL_NavToApp.out_Result>
+            </up:IL_NavToApp>
+            <up1:CollectionHighway_Login DisplayName="CollectionHighway_Login (Login Actions)" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="CollectionHighway_Login_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <up1:CollectionHighway_Login.in_CollectionHighwayURL>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GlobalVariables.g_Config["CollectionHighwayLoginURL"].ToString()</CSharpValue>
+                </InArgument>
+              </up1:CollectionHighway_Login.in_CollectionHighwayURL>
+              <up1:CollectionHighway_Login.in_IsIncognito>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">Convert.ToBoolean(GlobalVariables.g_Config["IsCollectionHighwayIncognito"])</CSharpValue>
+                </InArgument>
+              </up1:CollectionHighway_Login.in_IsIncognito>
+              <up1:CollectionHighway_Login.in_MaxTimeout>
+                <InArgument x:TypeArguments="x:Int32">
+                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">Convert.ToInt32(GlobalVariables.g_Config["MaxTimeOutSec"])</CSharpValue>
+                </InArgument>
+              </up1:CollectionHighway_Login.in_MaxTimeout>
+              <up1:CollectionHighway_Login.in_MedTimeout>
+                <InArgument x:TypeArguments="x:Int32">
+                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">Convert.ToInt32(GlobalVariables.g_Config["MediumTimeOutSec"])</CSharpValue>
+                </InArgument>
+              </up1:CollectionHighway_Login.in_MedTimeout>
+              <up1:CollectionHighway_Login.in_Password>
+                <InArgument x:TypeArguments="ss:SecureString">
+                  <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">GlobalVariables.g_SecurePasswordCollHigh</CSharpValue>
+                </InArgument>
+              </up1:CollectionHighway_Login.in_Password>
+              <up1:CollectionHighway_Login.in_UserName>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">GlobalVariables.g_UserNameCollHigh</CSharpValue>
+                </InArgument>
+              </up1:CollectionHighway_Login.in_UserName>
+              <up1:CollectionHighway_Login.in_WebArgument>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">GlobalVariables.g_Config["CollectionHighwayWebArg"].ToString()</CSharpValue>
+                </InArgument>
+              </up1:CollectionHighway_Login.in_WebArgument>
+              <up1:CollectionHighway_Login.out_CurrentPage>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">CurrentPage</CSharpReference>
+                </OutArgument>
+              </up1:CollectionHighway_Login.out_CurrentPage>
+              <up1:CollectionHighway_Login.out_IsLoginSuccess>
+                <OutArgument x:TypeArguments="x:Boolean">
+                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">IsLoginSuccess</CSharpReference>
+                </OutArgument>
+              </up1:CollectionHighway_Login.out_IsLoginSuccess>
+              <up1:CollectionHighway_Login.out_LoginError>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">LoginError</CSharpReference>
+                </OutArgument>
+              </up1:CollectionHighway_Login.out_LoginError>
+            </up1:CollectionHighway_Login>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean">
+          <ui:CheckTrue DisplayName="Check True" ErrorMessage="Failed to launch applications" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="CheckTrue_1">
+            <ui:CheckTrue.Expression>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">IsLoginSuccess</CSharpValue>
+              </InArgument>
+            </ui:CheckTrue.Expression>
+          </ui:CheckTrue>
+        </ActivityFunc>
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfPasswordRequiresUpdate - Invoke Workflow File (Process\\CheckIfPasswordRequiresUpdate.xaml)" sap:VirtualizedContainerService.HintSize="548,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\\CheckIfPasswordRequiresUpdate.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsPwdUpdateReq">
           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">IsPwdUpdateReq</CSharpReference>
@@ -210,14 +346,14 @@
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="561.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="548,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Is Password Update Required: " + IsPwdUpdateReq.ToString()</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <If DisplayName="If - Pwd update required then change pwd" sap:VirtualizedContainerService.HintSize="561.6,1153.6" sap2010:WorkflowViewState.IdRef="If_1">
+    <If DisplayName="If - Pwd update required then change pwd" sap:VirtualizedContainerService.HintSize="548,1240" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">IsPwdUpdateReq</CSharpValue>
@@ -230,13 +366,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="528,970.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="514,976" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GeneratePasswordAddToHashiCorp - Invoke Workflow File (Process\\GeneratePasswordAddToHashiCorp.xaml)" sap:VirtualizedContainerService.HintSize="484.8,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\\GeneratePasswordAddToHashiCorp.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GeneratePasswordAddToHashiCorp - Invoke Workflow File (Process\\GeneratePasswordAddToHashiCorp.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\\GeneratePasswordAddToHashiCorp.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_UpperAlphaChars">ABCDEFGHIJKLMNOPQRSTUVWXYZ</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_LowerAlphaChars">abcdefghijklmnopqrstuvwxyz</InArgument>
@@ -252,28 +388,34 @@
               </OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,696.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,711" sap2010:WorkflowViewState.IdRef="CommentOut_1">
             <ui:CommentOut.Body>
-              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,618.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,609" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <up:CollectionHighway_ChangePassword in_CurrentPassword="{x:Null}" in_IsIncognito="{x:Null}" in_MedTimeout="{x:Null}" in_NewPassword="{x:Null}" in_UserName="{x:Null}" in_WorkArea="{x:Null}" out_IsPasswordChanged="{x:Null}" out_PasswordChangeError="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,506.4" sap2010:WorkflowViewState.IdRef="CollectionHighway_ChangePassword_1">
-                  <up:CollectionHighway_ChangePassword.in_MaxTimeout>
+                <up1:CollectionHighway_ChangePassword in_CurrentPassword="{x:Null}" in_IsIncognito="{x:Null}" in_MedTimeout="{x:Null}" in_NewPassword="{x:Null}" in_UserName="{x:Null}" in_WorkArea="{x:Null}" out_IsPasswordChanged="{x:Null}" out_PasswordChangeError="{x:Null}" sap:VirtualizedContainerService.HintSize="354,521" sap2010:WorkflowViewState.IdRef="CollectionHighway_ChangePassword_1">
+                  <up1:CollectionHighway_ChangePassword.in_MaxTimeout>
                     <InArgument x:TypeArguments="x:Int32">
                       <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">Convert.ToInt32(GlobalVariables.g_Config["MaxTimeOutSec"])</CSharpValue>
                     </InArgument>
-                  </up:CollectionHighway_ChangePassword.in_MaxTimeout>
-                </up:CollectionHighway_ChangePassword>
+                  </up1:CollectionHighway_ChangePassword.in_MaxTimeout>
+                </up1:CollectionHighway_ChangePassword>
               </Sequence>
             </ui:CommentOut.Body>
           </ui:CommentOut>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4" />
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
       </If.Else>
     </If>
   </Sequence>
