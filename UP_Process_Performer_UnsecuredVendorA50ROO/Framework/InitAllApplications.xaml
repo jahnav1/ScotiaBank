@@ -3,7 +3,7 @@
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1188,2196</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1188,5363.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -149,7 +149,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="553.6,2131.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="572.8,5298.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CurrentPage" />
       <Variable x:TypeArguments="x:Boolean" Name="IsLoginSuccess" />
@@ -170,7 +170,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="491.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">LogLevel.Trace</CSharpValue>
@@ -182,7 +182,7 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="491.2,1346.4" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="510.4,1346.4" sap2010:WorkflowViewState.IdRef="RetryScope_1">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
           <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="449.6,1055.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -346,7 +346,7 @@
         </ActivityFunc>
       </ui:RetryScope.Condition>
     </ui:RetryScope>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfPasswordRequiresUpdate - Invoke Workflow File (Process\\CheckIfPasswordRequiresUpdate.xaml)" sap:VirtualizedContainerService.HintSize="491.2,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\\CheckIfPasswordRequiresUpdate.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfPasswordRequiresUpdate - Invoke Workflow File (Process\\CheckIfPasswordRequiresUpdate.xaml)" sap:VirtualizedContainerService.HintSize="510.4,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\\CheckIfPasswordRequiresUpdate.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsPwdUpdateReq">
           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">IsPwdUpdateReq</CSharpReference>
@@ -362,263 +362,304 @@
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="491.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Is Password Update Required: " + IsPwdUpdateReq.ToString()</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="491.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <If DisplayName="If - Pwd update required then change pwd" sap:VirtualizedContainerService.HintSize="510.4,3220" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Condition>
+        <InArgument x:TypeArguments="x:Boolean">
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">IsPwdUpdateReq</CSharpValue>
+        </InArgument>
+      </If.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="476.8,3036.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If DisplayName="If - Pwd update required then change pwd" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="If_1">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GeneratePasswordAddToHashiCorp - Invoke Workflow File (Process\\GeneratePasswordAddToHashiCorp.xaml)" sap:VirtualizedContainerService.HintSize="433.6,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\\GeneratePasswordAddToHashiCorp.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_UpperAlphaChars">ABCDEFGHIJKLMNOPQRSTUVWXYZ</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LowerAlphaChars">abcdefghijklmnopqrstuvwxyz</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_NumericChars">0123456789</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SpecialChars">#?!@$%^&amp;*-</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_MinPasswordLength">8</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_LowerCharLength">1</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_UpperCharLength">1</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_NumericCharLength">1</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_SpecialCharLength">1</InArgument>
+              <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_NewPassword">
+                <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">NewPassword</CSharpReference>
+              </OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <up1:CollectionHighway_ChangePassword sap:VirtualizedContainerService.HintSize="433.6,506.4" sap2010:WorkflowViewState.IdRef="CollectionHighway_ChangePassword_2" in_WorkArea="Collection Agency">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <up1:CollectionHighway_ChangePassword.in_CurrentPassword>
+              <InArgument x:TypeArguments="ss:SecureString">
+                <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">GlobalVariables.g_SecurePasswordCollHigh</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_ChangePassword.in_CurrentPassword>
+            <up1:CollectionHighway_ChangePassword.in_IsIncognito>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">Convert.ToBoolean(GlobalVariables.g_Config["IsCollectionHighwayIncognito"])</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_ChangePassword.in_IsIncognito>
+            <up1:CollectionHighway_ChangePassword.in_MaxTimeout>
+              <InArgument x:TypeArguments="x:Int32">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">Convert.ToInt32(GlobalVariables.g_Config["MaxTimeOutSec"])</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_ChangePassword.in_MaxTimeout>
+            <up1:CollectionHighway_ChangePassword.in_MedTimeout>
+              <InArgument x:TypeArguments="x:Int32">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">Convert.ToInt32(GlobalVariables.g_Config["MediumTimeOutSec"])</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_ChangePassword.in_MedTimeout>
+            <up1:CollectionHighway_ChangePassword.in_NewPassword>
+              <InArgument x:TypeArguments="ss:SecureString">
+                <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">NewPassword</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_ChangePassword.in_NewPassword>
+            <up1:CollectionHighway_ChangePassword.in_UserName>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">GlobalVariables.g_UserNameCollHigh</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_ChangePassword.in_UserName>
+            <up1:CollectionHighway_ChangePassword.out_IsPasswordChanged>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">IsPasswordChanged</CSharpReference>
+              </OutArgument>
+            </up1:CollectionHighway_ChangePassword.out_IsPasswordChanged>
+            <up1:CollectionHighway_ChangePassword.out_PasswordChangeError>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">PasswordChangeError</CSharpReference>
+              </OutArgument>
+            </up1:CollectionHighway_ChangePassword.out_PasswordChangeError>
+          </up1:CollectionHighway_ChangePassword>
+          <If DisplayName="If - pwd not changed then throw error" sap:VirtualizedContainerService.HintSize="433.6,363.2" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Condition>
               <InArgument x:TypeArguments="x:Boolean">
-                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">IsPwdUpdateReq</CSharpValue>
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">!IsPasswordChanged</CSharpValue>
               </InArgument>
             </If.Condition>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="476.8,2438.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GeneratePasswordAddToHashiCorp - Invoke Workflow File (Process\\GeneratePasswordAddToHashiCorp.xaml)" sap:VirtualizedContainerService.HintSize="433.6,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\\GeneratePasswordAddToHashiCorp.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_UpperAlphaChars">ABCDEFGHIJKLMNOPQRSTUVWXYZ</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_LowerAlphaChars">abcdefghijklmnopqrstuvwxyz</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_NumericChars">0123456789</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_SpecialChars">#?!@$%^&amp;*-</InArgument>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="in_MinPasswordLength">8</InArgument>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="in_LowerCharLength">1</InArgument>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="in_UpperCharLength">1</InArgument>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="in_NumericCharLength">1</InArgument>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="in_SpecialCharLength">1</InArgument>
-                    <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_NewPassword">
-                      <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">NewPassword</CSharpReference>
-                    </OutArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:InvokeWorkflowFile>
-                <up1:CollectionHighway_ChangePassword sap:VirtualizedContainerService.HintSize="433.6,506.4" sap2010:WorkflowViewState.IdRef="CollectionHighway_ChangePassword_2" in_WorkArea="Collection Agency">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <up1:CollectionHighway_ChangePassword.in_CurrentPassword>
-                    <InArgument x:TypeArguments="ss:SecureString">
-                      <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">GlobalVariables.g_SecurePasswordCollHigh</CSharpValue>
-                    </InArgument>
-                  </up1:CollectionHighway_ChangePassword.in_CurrentPassword>
-                  <up1:CollectionHighway_ChangePassword.in_IsIncognito>
-                    <InArgument x:TypeArguments="x:Boolean">
-                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">Convert.ToBoolean(GlobalVariables.g_Config["IsCollectionHighwayIncognito"])</CSharpValue>
-                    </InArgument>
-                  </up1:CollectionHighway_ChangePassword.in_IsIncognito>
-                  <up1:CollectionHighway_ChangePassword.in_MaxTimeout>
-                    <InArgument x:TypeArguments="x:Int32">
-                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">Convert.ToInt32(GlobalVariables.g_Config["MaxTimeOutSec"])</CSharpValue>
-                    </InArgument>
-                  </up1:CollectionHighway_ChangePassword.in_MaxTimeout>
-                  <up1:CollectionHighway_ChangePassword.in_MedTimeout>
-                    <InArgument x:TypeArguments="x:Int32">
-                      <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">Convert.ToInt32(GlobalVariables.g_Config["MediumTimeOutSec"])</CSharpValue>
-                    </InArgument>
-                  </up1:CollectionHighway_ChangePassword.in_MedTimeout>
-                  <up1:CollectionHighway_ChangePassword.in_NewPassword>
-                    <InArgument x:TypeArguments="ss:SecureString">
-                      <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">NewPassword</CSharpValue>
-                    </InArgument>
-                  </up1:CollectionHighway_ChangePassword.in_NewPassword>
-                  <up1:CollectionHighway_ChangePassword.in_UserName>
-                    <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">GlobalVariables.g_UserNameCollHigh</CSharpValue>
-                    </InArgument>
-                  </up1:CollectionHighway_ChangePassword.in_UserName>
-                  <up1:CollectionHighway_ChangePassword.out_IsPasswordChanged>
-                    <OutArgument x:TypeArguments="x:Boolean">
-                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">IsPasswordChanged</CSharpReference>
-                    </OutArgument>
-                  </up1:CollectionHighway_ChangePassword.out_IsPasswordChanged>
-                  <up1:CollectionHighway_ChangePassword.out_PasswordChangeError>
-                    <OutArgument x:TypeArguments="x:String">
-                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">PasswordChangeError</CSharpReference>
-                    </OutArgument>
-                  </up1:CollectionHighway_ChangePassword.out_PasswordChangeError>
-                </up1:CollectionHighway_ChangePassword>
-                <If DisplayName="If - pwd not changed then throw error" sap:VirtualizedContainerService.HintSize="433.6,363.2" sap2010:WorkflowViewState.IdRef="If_2">
-                  <If.Condition>
-                    <InArgument x:TypeArguments="x:Boolean">
-                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">!IsPasswordChanged</CSharpValue>
-                    </InArgument>
-                  </If.Condition>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <Throw sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1">
-                        <InArgument x:TypeArguments="s:Exception">
-                          <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">new Exception("Failed to update password in CollectionHighway. " + PasswordChangeError)</CSharpValue>
-                        </InArgument>
-                      </Throw>
-                    </Sequence>
-                  </If.Then>
-                  <If.Else>
-                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9" />
-                  </If.Else>
-                </If>
-                <up2:PatchCredentialInVault sap:VirtualizedContainerService.HintSize="433.6,506.4" sap2010:WorkflowViewState.IdRef="PatchCredentialInVault_1" in_IsExistingCred="True">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <up2:PatchCredentialInVault.in_HashiCorpVaultSecretEndPoint>
-                    <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">in_Config["HashiCorpCollHighSecretEndPointURL"].ToString()</CSharpValue>
-                    </InArgument>
-                  </up2:PatchCredentialInVault.in_HashiCorpVaultSecretEndPoint>
-                  <up2:PatchCredentialInVault.in_SecureStringPassword>
-                    <InArgument x:TypeArguments="ss:SecureString">
-                      <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">NewPassword</CSharpValue>
-                    </InArgument>
-                  </up2:PatchCredentialInVault.in_SecureStringPassword>
-                  <up2:PatchCredentialInVault.in_SharedFolderPath>
-                    <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">in_Config["HashiCorpSharedFolderPath"].ToString()</CSharpValue>
-                    </InArgument>
-                  </up2:PatchCredentialInVault.in_SharedFolderPath>
-                  <up2:PatchCredentialInVault.in_Username>
-                    <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">GlobalVariables.g_UserNameCollHigh</CSharpValue>
-                    </InArgument>
-                  </up2:PatchCredentialInVault.in_Username>
-                  <up2:PatchCredentialInVault.out_Error>
-                    <OutArgument x:TypeArguments="x:String">
-                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">PatchCredError</CSharpReference>
-                    </OutArgument>
-                  </up2:PatchCredentialInVault.out_Error>
-                  <up2:PatchCredentialInVault.out_Exception>
-                    <OutArgument x:TypeArguments="s:Exception">
-                      <CSharpReference x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">PatchCredException</CSharpReference>
-                    </OutArgument>
-                  </up2:PatchCredentialInVault.out_Exception>
-                  <up2:PatchCredentialInVault.out_IsError>
-                    <OutArgument x:TypeArguments="x:Boolean">
-                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">PatchCredIsError</CSharpReference>
-                    </OutArgument>
-                  </up2:PatchCredentialInVault.out_IsError>
-                  <up2:PatchCredentialInVault.out_Result>
-                    <OutArgument x:TypeArguments="x:Boolean">
-                      <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">PatchCredResult</CSharpReference>
-                    </OutArgument>
-                  </up2:PatchCredentialInVault.out_Result>
-                </up2:PatchCredentialInVault>
-                <If DisplayName="If - pwd not patched then throw error" sap:VirtualizedContainerService.HintSize="433.6,363.2" sap2010:WorkflowViewState.IdRef="If_3">
-                  <If.Condition>
-                    <InArgument x:TypeArguments="x:Boolean">
-                      <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">PatchCredIsError</CSharpValue>
-                    </InArgument>
-                  </If.Condition>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <Throw sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_2">
-                        <InArgument x:TypeArguments="s:Exception">
-                          <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">new Exception("Failed to patch credential in Hashicorp Vault. " + PatchCredError)</CSharpValue>
-                        </InArgument>
-                      </Throw>
-                    </Sequence>
-                  </If.Then>
-                  <If.Else>
-                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11" />
-                  </If.Else>
-                </If>
-                <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="ss:SecureString">
-                      <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">GlobalVariables.g_SecurePasswordCollHigh</CSharpReference>
-                    </OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="ss:SecureString">
-                      <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">NewPassword</CSharpValue>
-                    </InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdatePasswordDate - Invoke Workflow File (Process\\UpdatePasswordDate.xaml)" sap:VirtualizedContainerService.HintSize="433.6,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\\UpdatePasswordDate.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Username">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">GlobalVariables.g_UserNameCollHigh</CSharpValue>
-                    </InArgument>
-                    <InArgument x:TypeArguments="s:DateTime" x:Key="in_NewDate">
-                      <CSharpValue x:TypeArguments="s:DateTime" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">DateTime.Today</CSharpValue>
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_PwdUpdateAssetName">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">GlobalVariables.g_Config["PwdUpdateAssetName"].ToString()</CSharpValue>
-                    </InArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                </ui:InvokeWorkflowFile>
+                <Throw sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1">
+                  <InArgument x:TypeArguments="s:Exception">
+                    <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">new Exception("Failed to update password in CollectionHighway. " + PasswordChangeError)</CSharpValue>
+                  </InArgument>
+                </Throw>
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9" />
+            </If.Else>
+          </If>
+          <up2:PatchCredentialInVault sap:VirtualizedContainerService.HintSize="433.6,506.4" sap2010:WorkflowViewState.IdRef="PatchCredentialInVault_1" in_IsExistingCred="True">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <up2:PatchCredentialInVault.in_HashiCorpVaultSecretEndPoint>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">in_Config["HashiCorpCollHighSecretEndPointURL"].ToString()</CSharpValue>
+              </InArgument>
+            </up2:PatchCredentialInVault.in_HashiCorpVaultSecretEndPoint>
+            <up2:PatchCredentialInVault.in_SecureStringPassword>
+              <InArgument x:TypeArguments="ss:SecureString">
+                <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">NewPassword</CSharpValue>
+              </InArgument>
+            </up2:PatchCredentialInVault.in_SecureStringPassword>
+            <up2:PatchCredentialInVault.in_SharedFolderPath>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">in_Config["HashiCorpSharedFolderPath"].ToString()</CSharpValue>
+              </InArgument>
+            </up2:PatchCredentialInVault.in_SharedFolderPath>
+            <up2:PatchCredentialInVault.in_Username>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">GlobalVariables.g_UserNameCollHigh</CSharpValue>
+              </InArgument>
+            </up2:PatchCredentialInVault.in_Username>
+            <up2:PatchCredentialInVault.out_Error>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">PatchCredError</CSharpReference>
+              </OutArgument>
+            </up2:PatchCredentialInVault.out_Error>
+            <up2:PatchCredentialInVault.out_Exception>
+              <OutArgument x:TypeArguments="s:Exception">
+                <CSharpReference x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">PatchCredException</CSharpReference>
+              </OutArgument>
+            </up2:PatchCredentialInVault.out_Exception>
+            <up2:PatchCredentialInVault.out_IsError>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">PatchCredIsError</CSharpReference>
+              </OutArgument>
+            </up2:PatchCredentialInVault.out_IsError>
+            <up2:PatchCredentialInVault.out_Result>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">PatchCredResult</CSharpReference>
+              </OutArgument>
+            </up2:PatchCredentialInVault.out_Result>
+          </up2:PatchCredentialInVault>
+          <If DisplayName="If - pwd not patched then throw error" sap:VirtualizedContainerService.HintSize="433.6,363.2" sap2010:WorkflowViewState.IdRef="If_3">
+            <If.Condition>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">PatchCredIsError</CSharpValue>
+              </InArgument>
+            </If.Condition>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <Throw sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_2">
+                  <InArgument x:TypeArguments="s:Exception">
+                    <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">new Exception("Failed to patch credential in Hashicorp Vault. " + PatchCredError)</CSharpValue>
+                  </InArgument>
+                </Throw>
               </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11" />
             </If.Else>
           </If>
+          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="ss:SecureString">
+                <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">GlobalVariables.g_SecurePasswordCollHigh</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="ss:SecureString">
+                <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">NewPassword</CSharpValue>
+              </InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdatePasswordDate - Invoke Workflow File (Process\\UpdatePasswordDate.xaml)" sap:VirtualizedContainerService.HintSize="433.6,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\\UpdatePasswordDate.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Username">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">GlobalVariables.g_UserNameCollHigh</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="s:DateTime" x:Key="in_NewDate">
+                <CSharpValue x:TypeArguments="s:DateTime" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">DateTime.Today</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_PwdUpdateAssetName">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">GlobalVariables.g_Config["PwdUpdateAssetName"].ToString()</CSharpValue>
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <up1:CollectionHighway_Login DisplayName="CollectionHighway_Login (Login Actions)" sap:VirtualizedContainerService.HintSize="433.6,558.4" sap2010:WorkflowViewState.IdRef="CollectionHighway_Login_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <up1:CollectionHighway_Login.in_CollectionHighwayURL>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">GlobalVariables.g_Config["CollectionHighwayLoginURL"].ToString()</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_Login.in_CollectionHighwayURL>
+            <up1:CollectionHighway_Login.in_IsIncognito>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">Convert.ToBoolean(GlobalVariables.g_Config["IsCollectionHighwayIncognito"])</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_Login.in_IsIncognito>
+            <up1:CollectionHighway_Login.in_MaxTimeout>
+              <InArgument x:TypeArguments="x:Int32">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">Convert.ToInt32(GlobalVariables.g_Config["MaxTimeOutSec"])</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_Login.in_MaxTimeout>
+            <up1:CollectionHighway_Login.in_MedTimeout>
+              <InArgument x:TypeArguments="x:Int32">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">Convert.ToInt32(GlobalVariables.g_Config["MediumTimeOutSec"])</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_Login.in_MedTimeout>
+            <up1:CollectionHighway_Login.in_Password>
+              <InArgument x:TypeArguments="ss:SecureString">
+                <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_55">GlobalVariables.g_SecurePasswordCollHigh</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_Login.in_Password>
+            <up1:CollectionHighway_Login.in_UserName>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">GlobalVariables.g_UserNameCollHigh</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_Login.in_UserName>
+            <up1:CollectionHighway_Login.in_WebArgument>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">GlobalVariables.g_Config["CollectionHighwayWebArg"].ToString()</CSharpValue>
+              </InArgument>
+            </up1:CollectionHighway_Login.in_WebArgument>
+            <up1:CollectionHighway_Login.out_CurrentPage>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">CurrentPage</CSharpReference>
+              </OutArgument>
+            </up1:CollectionHighway_Login.out_CurrentPage>
+            <up1:CollectionHighway_Login.out_IsLoginSuccess>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">IsLoginSuccess</CSharpReference>
+              </OutArgument>
+            </up1:CollectionHighway_Login.out_IsLoginSuccess>
+            <up1:CollectionHighway_Login.out_LoginError>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">LoginError</CSharpReference>
+              </OutArgument>
+            </up1:CollectionHighway_Login.out_LoginError>
+          </up1:CollectionHighway_Login>
         </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>
