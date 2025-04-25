@@ -387,15 +387,33 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GeneratePasswordAddToHashiCorp - Invoke Workflow File (Process\\GeneratePasswordAddToHashiCorp.xaml)" sap:VirtualizedContainerService.HintSize="434,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\\GeneratePasswordAddToHashiCorp.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_UpperAlphaChars">ABCDEFGHIJKLMNOPQRSTUVWXYZ</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_LowerAlphaChars">abcdefghijklmnopqrstuvwxyz</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_NumericChars">0123456789</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_SpecialChars">#?!@$%^&amp;*-</InArgument>
-              <InArgument x:TypeArguments="x:Int32" x:Key="in_MinPasswordLength">8</InArgument>
-              <InArgument x:TypeArguments="x:Int32" x:Key="in_LowerCharLength">1</InArgument>
-              <InArgument x:TypeArguments="x:Int32" x:Key="in_UpperCharLength">1</InArgument>
-              <InArgument x:TypeArguments="x:Int32" x:Key="in_NumericCharLength">1</InArgument>
-              <InArgument x:TypeArguments="x:Int32" x:Key="in_SpecialCharLength">1</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_UpperAlphaChars">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">GlobalVariables.g_Config["UpperAlphaChars"].ToString()</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LowerAlphaChars">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">GlobalVariables.g_Config["LowerAlphaChars"].ToString()</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_NumericChars">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">GlobalVariables.g_Config["NumericChars"].ToString()</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SpecialChars">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">GlobalVariables.g_Config["SpecialChars"].ToString()</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_MinPasswordLength">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">Convert.ToInt32(GlobalVariables.g_Config["MinPasswordLength"].ToString())</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_LowerCharLength">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">Convert.ToInt32(GlobalVariables.g_Config["LowerCharLength"].ToString())</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_UpperCharLength">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">Convert.ToInt32(GlobalVariables.g_Config["UpperCharLength"].ToString())</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_NumericCharLength">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_69">Convert.ToInt32(GlobalVariables.g_Config["NumericCharLength"].ToString())</CSharpValue>
+              </InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_SpecialCharLength">
+                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">Convert.ToInt32(GlobalVariables.g_Config["SpecialCharLength"].ToString())</CSharpValue>
+              </InArgument>
               <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_NewPassword">
                 <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">NewPassword</CSharpReference>
               </OutArgument>
