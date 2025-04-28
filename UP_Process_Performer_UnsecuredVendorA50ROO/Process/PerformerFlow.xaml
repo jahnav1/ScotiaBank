@@ -105,9 +105,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID12</x:Reference>
+      <x:Reference>__ReferenceID14</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID7" DisplayName="IsProductTypeBCP" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+    <FlowDecision x:Name="__ReferenceID6" DisplayName="IsProductTypeBCP" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <FlowDecision.Condition>
         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">GlobalVariables.g_ProductType.Equals("BCP", StringComparison.OrdinalIgnoreCase)</CSharpValue>
       </FlowDecision.Condition>
@@ -121,7 +121,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowDecision x:Name="__ReferenceID1" DisplayName="IsProductID11Digits" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+        <FlowDecision x:Name="__ReferenceID2" DisplayName="IsProductID11Digits" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
           <FlowDecision.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">GlobalVariables.g_ProductID.Trim().Length == 11</CSharpValue>
           </FlowDecision.Condition>
@@ -135,7 +135,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
-            <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+            <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">125,755</av:Point>
@@ -159,12 +159,12 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_9">
+                <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">285,835</av:Point>
                       <av:Size x:Key="ShapeSize">110,70</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">340,905 340,1195 545,1195 545,895 460,895 460,925</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">340,905 340,935</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:MultipleAssign DisplayName="Assign Account Number" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
@@ -191,12 +191,12 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:MultipleAssign>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                    <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">405,925</av:Point>
+                          <av:Point x:Key="ShapeLocation">285,935</av:Point>
                           <av:Size x:Key="ShapeSize">110,70</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">460,995 460,1015</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">340,1005 340,1025</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CollectionHighwayFlow - Invoke Workflow File (Process\\CollectionHighwayFlow.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Process\\CollectionHighwayFlow.xaml">
@@ -230,9 +230,9 @@
                         <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">405,1015</av:Point>
+                              <av:Point x:Key="ShapeLocation">285,1025</av:Point>
                               <av:Size x:Key="ShapeSize">110,70</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">460,1085 460,1105</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">340,1095 339.5,1095 339.5,1120</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:LogMessage DisplayName="Log CollectionHighway outcome" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
@@ -248,72 +248,144 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:LogMessage>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+                            <FlowDecision x:Name="__ReferenceID11" DisplayName="IsSubmit" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                              <FlowDecision.Condition>
+                                <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">GlobalVariables.g_DHIsSubmit</CSharpValue>
+                              </FlowDecision.Condition>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">405,1105</av:Point>
-                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">460,1175 460,1225</av:PointCollection>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <av:Point x:Key="ShapeLocation">310,1120</av:Point>
+                                  <av:Size x:Key="ShapeSize">59,59</av:Size>
+                                  <av:PointCollection x:Key="TrueConnector">310,1149.5 170,1149.5 170,1165</av:PointCollection>
+                                  <av:PointCollection x:Key="FalseConnector">369,1149.5 490,1149.5 490,1175</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:Comment sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Perform submit or withdraw.">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:Comment>
-                              <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_8">
+                              <FlowDecision.True>
+                                <FlowStep x:Name="__ReferenceID12">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">405,1225</av:Point>
+                                      <av:Point x:Key="ShapeLocation">115,1165</av:Point>
                                       <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">170,1235 170,1265 350,1265 350,1365</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddCustomizedLog - Invoke Workflow File (Utility\\AddCustomizedLog.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Utility\\AddCustomizedLog.xaml">
-                                    <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_QueueReferenceNumber">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">in_TransactionItem.Reference</CSharpValue>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_CaseStartProcessingTime">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GlobalVariables.g_CaseStartProcessingTime</CSharpValue>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_CaseEndProcessingTime">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")</CSharpValue>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">Success</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_BotNotes">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">"CollectionHighway outcome result is " + (GlobalVariables.g_DHIsSubmit ? "Submit" : "Withdraw") + " and the reason is " + GlobalVariables.g_DHOutcomeReason</CSharpValue>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_StateCode">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">GlobalVariables.g_StateCode</CSharpValue>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_ROOAmount">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">GlobalVariables.g_ROOAmount</CSharpValue>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_DueAmount">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">GlobalVariables.g_DueAmount</CSharpValue>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_DHInstruction">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">GlobalVariables.g_DHInstruction</CSharpValue>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_DHStatus">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">GlobalVariables.g_DHStatus</CSharpValue>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="in_AccountNum">
-                                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">GlobalVariables.g_AccountNum</CSharpValue>
-                                      </InArgument>
-                                    </ui:InvokeWorkflowFile.Arguments>
+                                  <up:PegaBPM_SubmitCase sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="PegaBPM_SubmitCase_1">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                  </ui:InvokeWorkflowFile>
+                                    <up:PegaBPM_SubmitCase.in_MaxTimeout>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">Convert.ToInt32(in_Config["MaxTimeOutSec"])</CSharpValue>
+                                      </InArgument>
+                                    </up:PegaBPM_SubmitCase.in_MaxTimeout>
+                                    <up:PegaBPM_SubmitCase.in_MedTimeout>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">Convert.ToInt32(in_Config["MediumTimeOutSec"])</CSharpValue>
+                                      </InArgument>
+                                    </up:PegaBPM_SubmitCase.in_MedTimeout>
+                                    <up:PegaBPM_SubmitCase.in_MinTimeout>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">Convert.ToInt32(in_Config["MinTimeOutSec"])</CSharpValue>
+                                      </InArgument>
+                                    </up:PegaBPM_SubmitCase.in_MinTimeout>
+                                  </up:PegaBPM_SubmitCase>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_8">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">295,1365</av:Point>
+                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddCustomizedLog - Invoke Workflow File (Utility\\AddCustomizedLog.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Utility\\AddCustomizedLog.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_QueueReferenceNumber">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">in_TransactionItem.Reference</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_CaseStartProcessingTime">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GlobalVariables.g_CaseStartProcessingTime</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_CaseEndProcessingTime">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_BotStatus">Success</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_BotNotes">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">"CollectionHighway outcome result is " + (GlobalVariables.g_DHIsSubmit ? "Submit" : "Withdraw") + " and the reason is " + GlobalVariables.g_DHOutcomeReason</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_StateCode">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">GlobalVariables.g_StateCode</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_ROOAmount">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">GlobalVariables.g_ROOAmount</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_DueAmount">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">GlobalVariables.g_DueAmount</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_DHInstruction">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">GlobalVariables.g_DHInstruction</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_DHStatus">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">GlobalVariables.g_DHStatus</CSharpValue>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_AccountNum">
+                                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">GlobalVariables.g_AccountNum</CSharpValue>
+                                          </InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:InvokeWorkflowFile>
+                                    </FlowStep>
+                                  </FlowStep.Next>
                                 </FlowStep>
-                              </FlowStep.Next>
-                            </FlowStep>
+                              </FlowDecision.True>
+                              <FlowDecision.False>
+                                <FlowStep x:Name="__ReferenceID13">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">435,1175</av:Point>
+                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">490,1245 490,1275 350,1275 350,1365</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <up:PegaBPM_WithdrawCase sap:VirtualizedContainerService.HintSize="334,243" sap2010:WorkflowViewState.IdRef="PegaBPM_WithdrawCase_1">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <up:PegaBPM_WithdrawCase.in_MaxTimeout>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">Convert.ToInt32(in_Config["MaxTimeOutSec"])</CSharpValue>
+                                      </InArgument>
+                                    </up:PegaBPM_WithdrawCase.in_MaxTimeout>
+                                    <up:PegaBPM_WithdrawCase.in_MedTimeout>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">Convert.ToInt32(in_Config["MediumTimeOutSec"])</CSharpValue>
+                                      </InArgument>
+                                    </up:PegaBPM_WithdrawCase.in_MedTimeout>
+                                    <up:PegaBPM_WithdrawCase.in_MinDelay>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">TimeSpan.Parse(GlobalVariables.g_Config["Delay"].ToString().Trim()).Seconds</CSharpValue>
+                                      </InArgument>
+                                    </up:PegaBPM_WithdrawCase.in_MinDelay>
+                                    <up:PegaBPM_WithdrawCase.in_MinTimeout>
+                                      <InArgument x:TypeArguments="x:Int32">
+                                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">Convert.ToInt32(in_Config["MinTimeOutSec"])</CSharpValue>
+                                      </InArgument>
+                                    </up:PegaBPM_WithdrawCase.in_MinTimeout>
+                                  </up:PegaBPM_WithdrawCase>
+                                  <FlowStep.Next>
+                                    <x:Reference>__ReferenceID0</x:Reference>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowDecision.False>
+                            </FlowDecision>
                           </FlowStep.Next>
                         </FlowStep>
                       </FlowStep.Next>
@@ -324,22 +396,21 @@
             </FlowStep>
           </FlowDecision.True>
           <FlowDecision.False>
-            <x:Reference>__ReferenceID0</x:Reference>
+            <x:Reference>__ReferenceID1</x:Reference>
           </FlowDecision.False>
         </FlowDecision>
       </FlowDecision.True>
       <FlowDecision.False>
-        <x:Reference>__ReferenceID0</x:Reference>
+        <x:Reference>__ReferenceID1</x:Reference>
       </FlowDecision.False>
     </FlowDecision>
-    <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
-    <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
-    <FlowStep x:Name="__ReferenceID12" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+    <x:Reference>__ReferenceID1</x:Reference>
+    <FlowStep x:Name="__ReferenceID14" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">365,75</av:Point>
@@ -385,7 +456,7 @@
         </up:PegaBPM_QuickSearch.out_IsCaseFound>
       </up:PegaBPM_QuickSearch>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID10" DisplayName="IsCaseFound" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+        <FlowDecision x:Name="__ReferenceID9" DisplayName="IsCaseFound" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
           <FlowDecision.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">IsCaseFound</CSharpValue>
           </FlowDecision.Condition>
@@ -399,7 +470,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
-            <FlowStep x:Name="__ReferenceID9">
+            <FlowStep x:Name="__ReferenceID8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">205,265</av:Point>
@@ -440,7 +511,7 @@
                 </up:PegaBPM_NavToTransactionProcessing.in_MinTimeout>
               </up:PegaBPM_NavToTransactionProcessing>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID8">
+                <FlowStep x:Name="__ReferenceID7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">205,345</av:Point>
@@ -486,21 +557,21 @@
                     </up:PegaBPM_GetA50ROOCaseDetails.out_TransactionAmount>
                   </up:PegaBPM_GetA50ROOCaseDetails>
                   <FlowStep.Next>
-                    <x:Reference>__ReferenceID7</x:Reference>
+                    <x:Reference>__ReferenceID6</x:Reference>
                   </FlowStep.Next>
                 </FlowStep>
               </FlowStep.Next>
             </FlowStep>
           </FlowDecision.True>
           <FlowDecision.False>
-            <FlowStep x:Name="__ReferenceID11">
+            <FlowStep x:Name="__ReferenceID10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">535,165</av:Point>
                   <av:Size x:Key="ShapeSize">110,70</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Throw DisplayName="Throw BE-No Case Found" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1">
+              <Throw DisplayName="Throw BE-No Case Found" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Throw_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -515,9 +586,12 @@
         </FlowDecision>
       </FlowStep.Next>
     </FlowStep>
+    <x:Reference>__ReferenceID7</x:Reference>
     <x:Reference>__ReferenceID8</x:Reference>
     <x:Reference>__ReferenceID9</x:Reference>
     <x:Reference>__ReferenceID10</x:Reference>
     <x:Reference>__ReferenceID11</x:Reference>
+    <x:Reference>__ReferenceID12</x:Reference>
+    <x:Reference>__ReferenceID13</x:Reference>
   </Flowchart>
 </Activity>
