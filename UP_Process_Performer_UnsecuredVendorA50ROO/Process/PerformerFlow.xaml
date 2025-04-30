@@ -91,11 +91,12 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Flowchart - PerformerFlow" sap:VirtualizedContainerService.HintSize="1545,568" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Flowchart - PerformerFlow" sap:VirtualizedContainerService.HintSize="1545,341" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsCaseFound" />
       <Variable x:TypeArguments="x:Boolean" Name="IsCaseLocked" />
       <Variable x:TypeArguments="x:Boolean" Name="IsCaseAbleRelease" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsCaseStatusBE" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -107,7 +108,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID16</x:Reference>
+      <x:Reference>__ReferenceID18</x:Reference>
     </Flowchart.StartNode>
     <FlowDecision x:Name="__ReferenceID6" DisplayName="IsProductTypeBCP" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <FlowDecision.Condition>
@@ -412,7 +413,7 @@
     <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
-    <FlowStep x:Name="__ReferenceID16" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+    <FlowStep x:Name="__ReferenceID18" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">595,75</av:Point>
@@ -420,7 +421,7 @@
           <av:PointCollection x:Key="ConnectorLocation">650,145 649.5,145 649.5,170</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <up:PegaBPM_QuickSearch DisplayName="PegaBPM_QuickSearch- Search Case" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="PegaBPM_QuickSearch_1" in_QuickSearchType="Case ID">
+      <up:PegaBPM_QuickSearch DisplayName="PegaBPM_QuickSearch- Search Case" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="PegaBPM_QuickSearch_1" in_QuickSearchType="Case ID" in_StatusFilter="New">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -451,6 +452,11 @@
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_42">in_TransactionItem.Reference</CSharpValue>
           </InArgument>
         </up:PegaBPM_QuickSearch.in_QuickSearchText>
+        <up:PegaBPM_QuickSearch.out_IsBE>
+          <InArgument x:TypeArguments="x:Boolean">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">IsCaseStatusBE</CSharpValue>
+          </InArgument>
+        </up:PegaBPM_QuickSearch.out_IsBE>
         <up:PegaBPM_QuickSearch.out_IsCaseFound>
           <OutArgument x:TypeArguments="x:Boolean">
             <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">IsCaseFound</CSharpReference>
@@ -467,149 +473,185 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">620,170</av:Point>
               <av:Size x:Key="ShapeSize">59,59</av:Size>
-              <av:PointCollection x:Key="TrueConnector">620,199.5 510,199.5 510,225</av:PointCollection>
+              <av:PointCollection x:Key="TrueConnector">620,199.5 299.5,199.5 299.5,220</av:PointCollection>
               <av:PointCollection x:Key="FalseConnector">679,199.5 709,199.5 709,200 765,200</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
-            <FlowStep x:Name="__ReferenceID8">
+            <FlowDecision x:Name="__ReferenceID17" DisplayName="IsCaseStatusBE" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+              <FlowDecision.Condition>
+                <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">IsCaseStatusBE</CSharpValue>
+              </FlowDecision.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">455,225</av:Point>
-                  <av:Size x:Key="ShapeSize">110,70</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">510,295 510,325 509.5,325 509.5,330</av:PointCollection>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <av:Point x:Key="ShapeLocation">270,220</av:Point>
+                  <av:Size x:Key="ShapeSize">59,59</av:Size>
+                  <av:PointCollection x:Key="TrueConnector">270,249.5 150,249.5 150,295</av:PointCollection>
+                  <av:PointCollection x:Key="FalseConnector">329,249.5 520,249.5 520,285</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <up:PegaBPM_NavToTransactionProcessing DisplayName="PegaBPM_NavToTransactionProcessing- Processing Page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="PegaBPM_NavToTransactionProcessing_1">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <up:PegaBPM_NavToTransactionProcessing.in_CaseId>
-                  <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">in_TransactionItem.Reference</CSharpValue>
-                  </InArgument>
-                </up:PegaBPM_NavToTransactionProcessing.in_CaseId>
-                <up:PegaBPM_NavToTransactionProcessing.in_MaxTimeout>
-                  <InArgument x:TypeArguments="x:Int32">
-                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">Convert.ToInt32(in_Config["MaxTimeOutSec"])</CSharpValue>
-                  </InArgument>
-                </up:PegaBPM_NavToTransactionProcessing.in_MaxTimeout>
-                <up:PegaBPM_NavToTransactionProcessing.in_MedTimeout>
-                  <InArgument x:TypeArguments="x:Int32">
-                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">Convert.ToInt32(in_Config["MediumTimeOutSec"])</CSharpValue>
-                  </InArgument>
-                </up:PegaBPM_NavToTransactionProcessing.in_MedTimeout>
-                <up:PegaBPM_NavToTransactionProcessing.in_MinDelay>
-                  <InArgument x:TypeArguments="x:Int32">
-                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">TimeSpan.Parse(GlobalVariables.g_Config["Delay"].ToString().Trim()).Seconds</CSharpValue>
-                  </InArgument>
-                </up:PegaBPM_NavToTransactionProcessing.in_MinDelay>
-                <up:PegaBPM_NavToTransactionProcessing.in_MinTimeout>
-                  <InArgument x:TypeArguments="x:Int32">
-                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">Convert.ToInt32(in_Config["MinTimeOutSec"])</CSharpValue>
-                  </InArgument>
-                </up:PegaBPM_NavToTransactionProcessing.in_MinTimeout>
-                <up:PegaBPM_NavToTransactionProcessing.out_IsCaseAbleRelease>
-                  <OutArgument x:TypeArguments="x:Boolean">
-                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_39">IsCaseAbleRelease</CSharpReference>
-                  </OutArgument>
-                </up:PegaBPM_NavToTransactionProcessing.out_IsCaseAbleRelease>
-                <up:PegaBPM_NavToTransactionProcessing.out_IsCaseLocked>
-                  <OutArgument x:TypeArguments="x:Boolean">
-                    <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">IsCaseLocked</CSharpReference>
-                  </OutArgument>
-                </up:PegaBPM_NavToTransactionProcessing.out_IsCaseLocked>
-              </up:PegaBPM_NavToTransactionProcessing>
-              <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID14" DisplayName="IsCaseLocked" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                  <FlowDecision.Condition>
-                    <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">IsCaseLocked &amp;&amp; !IsCaseAbleRelease</CSharpValue>
-                  </FlowDecision.Condition>
+              <FlowDecision.True>
+                <FlowStep x:Name="__ReferenceID16">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <av:Point x:Key="ShapeLocation">480,330</av:Point>
-                      <av:Size x:Key="ShapeSize">59,59</av:Size>
-                      <av:PointCollection x:Key="TrueConnector">480,359.5 330,359.5 330,475</av:PointCollection>
-                      <av:PointCollection x:Key="FalseConnector">539,359.5 700,359.5 700,465</av:PointCollection>
+                      <av:Point x:Key="ShapeLocation">95,295</av:Point>
+                      <av:Size x:Key="ShapeSize">110,70</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <FlowDecision.True>
-                    <FlowStep x:Name="__ReferenceID15">
+                  <Throw DisplayName="Throw BE-No Case Found" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Throw_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <InArgument x:TypeArguments="s:Exception">
+                      <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">new BusinessRuleException("Pega Case ID: "+in_TransactionItem.Reference+" found, but case status is not in the filter list")</CSharpValue>
+                    </InArgument>
+                  </Throw>
+                </FlowStep>
+              </FlowDecision.True>
+              <FlowDecision.False>
+                <FlowStep x:Name="__ReferenceID8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">465,285</av:Point>
+                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">520,355 520,385 519.5,385 519.5,400</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <up:PegaBPM_NavToTransactionProcessing DisplayName="PegaBPM_NavToTransactionProcessing- Processing Page" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="PegaBPM_NavToTransactionProcessing_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <up:PegaBPM_NavToTransactionProcessing.in_CaseId>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">in_TransactionItem.Reference</CSharpValue>
+                      </InArgument>
+                    </up:PegaBPM_NavToTransactionProcessing.in_CaseId>
+                    <up:PegaBPM_NavToTransactionProcessing.in_MaxTimeout>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">Convert.ToInt32(in_Config["MaxTimeOutSec"])</CSharpValue>
+                      </InArgument>
+                    </up:PegaBPM_NavToTransactionProcessing.in_MaxTimeout>
+                    <up:PegaBPM_NavToTransactionProcessing.in_MedTimeout>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">Convert.ToInt32(in_Config["MediumTimeOutSec"])</CSharpValue>
+                      </InArgument>
+                    </up:PegaBPM_NavToTransactionProcessing.in_MedTimeout>
+                    <up:PegaBPM_NavToTransactionProcessing.in_MinDelay>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">TimeSpan.Parse(GlobalVariables.g_Config["Delay"].ToString().Trim()).Seconds</CSharpValue>
+                      </InArgument>
+                    </up:PegaBPM_NavToTransactionProcessing.in_MinDelay>
+                    <up:PegaBPM_NavToTransactionProcessing.in_MinTimeout>
+                      <InArgument x:TypeArguments="x:Int32">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">Convert.ToInt32(in_Config["MinTimeOutSec"])</CSharpValue>
+                      </InArgument>
+                    </up:PegaBPM_NavToTransactionProcessing.in_MinTimeout>
+                    <up:PegaBPM_NavToTransactionProcessing.out_IsCaseAbleRelease>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_39">IsCaseAbleRelease</CSharpReference>
+                      </OutArgument>
+                    </up:PegaBPM_NavToTransactionProcessing.out_IsCaseAbleRelease>
+                    <up:PegaBPM_NavToTransactionProcessing.out_IsCaseLocked>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">IsCaseLocked</CSharpReference>
+                      </OutArgument>
+                    </up:PegaBPM_NavToTransactionProcessing.out_IsCaseLocked>
+                  </up:PegaBPM_NavToTransactionProcessing>
+                  <FlowStep.Next>
+                    <FlowDecision x:Name="__ReferenceID14" DisplayName="IsCaseLocked" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                      <FlowDecision.Condition>
+                        <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">IsCaseLocked &amp;&amp; !IsCaseAbleRelease</CSharpValue>
+                      </FlowDecision.Condition>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">275,475</av:Point>
-                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">490,400</av:Point>
+                          <av:Size x:Key="ShapeSize">59,59</av:Size>
+                          <av:PointCollection x:Key="TrueConnector">490,429.5 330,429.5 330,475</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">549,429.5 700,429.5 700,465</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Throw DisplayName="Throw BE-Case is locked" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Throw_2">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <InArgument x:TypeArguments="s:Exception">
-                          <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">new BusinessRuleException("Pega Case ID: "+in_TransactionItem.Reference+" Is Locked By Another User")</CSharpValue>
-                        </InArgument>
-                      </Throw>
-                    </FlowStep>
-                  </FlowDecision.True>
-                  <FlowDecision.False>
-                    <FlowStep x:Name="__ReferenceID7">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">645,465</av:Point>
-                          <av:Size x:Key="ShapeSize">110,70</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">700,535 700,565 699.5,565 699.5,580</av:PointCollection>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <up:PegaBPM_GetA50ROOCaseDetails DisplayName="PegaBPM_GetA50ROOCaseDetails - get details" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="PegaBPM_GetA50ROOCaseDetails_1">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <up:PegaBPM_GetA50ROOCaseDetails.in_MedTimeout>
-                          <InArgument x:TypeArguments="x:Int32">
-                            <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">Convert.ToInt32(in_Config["MediumTimeOutSec"])</CSharpValue>
-                          </InArgument>
-                        </up:PegaBPM_GetA50ROOCaseDetails.in_MedTimeout>
-                        <up:PegaBPM_GetA50ROOCaseDetails.out_CACSStateCode>
-                          <OutArgument x:TypeArguments="x:String">
-                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">GlobalVariables.g_StateCode</CSharpReference>
-                          </OutArgument>
-                        </up:PegaBPM_GetA50ROOCaseDetails.out_CACSStateCode>
-                        <up:PegaBPM_GetA50ROOCaseDetails.out_ProductId>
-                          <OutArgument x:TypeArguments="x:String">
-                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">GlobalVariables.g_ProductID</CSharpReference>
-                          </OutArgument>
-                        </up:PegaBPM_GetA50ROOCaseDetails.out_ProductId>
-                        <up:PegaBPM_GetA50ROOCaseDetails.out_ProductType>
-                          <OutArgument x:TypeArguments="x:String">
-                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">GlobalVariables.g_ProductType</CSharpReference>
-                          </OutArgument>
-                        </up:PegaBPM_GetA50ROOCaseDetails.out_ProductType>
-                        <up:PegaBPM_GetA50ROOCaseDetails.out_TotalDueAmount>
-                          <OutArgument x:TypeArguments="x:String">
-                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">GlobalVariables.g_DueAmount</CSharpReference>
-                          </OutArgument>
-                        </up:PegaBPM_GetA50ROOCaseDetails.out_TotalDueAmount>
-                        <up:PegaBPM_GetA50ROOCaseDetails.out_TransactionAmount>
-                          <OutArgument x:TypeArguments="x:String">
-                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">GlobalVariables.g_ROOAmount</CSharpReference>
-                          </OutArgument>
-                        </up:PegaBPM_GetA50ROOCaseDetails.out_TransactionAmount>
-                      </up:PegaBPM_GetA50ROOCaseDetails>
-                      <FlowStep.Next>
-                        <x:Reference>__ReferenceID6</x:Reference>
-                      </FlowStep.Next>
-                    </FlowStep>
-                  </FlowDecision.False>
-                </FlowDecision>
-              </FlowStep.Next>
-            </FlowStep>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID15">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">275,475</av:Point>
+                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Throw DisplayName="Throw BE-Case is locked" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Throw_2">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <InArgument x:TypeArguments="s:Exception">
+                              <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">new BusinessRuleException("Pega Case ID: "+in_TransactionItem.Reference+" Is Locked By Another User")</CSharpValue>
+                            </InArgument>
+                          </Throw>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">645,465</av:Point>
+                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">700,535 700,565 699.5,565 699.5,580</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <up:PegaBPM_GetA50ROOCaseDetails DisplayName="PegaBPM_GetA50ROOCaseDetails - get details" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="PegaBPM_GetA50ROOCaseDetails_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <up:PegaBPM_GetA50ROOCaseDetails.in_MedTimeout>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">Convert.ToInt32(in_Config["MediumTimeOutSec"])</CSharpValue>
+                              </InArgument>
+                            </up:PegaBPM_GetA50ROOCaseDetails.in_MedTimeout>
+                            <up:PegaBPM_GetA50ROOCaseDetails.out_CACSStateCode>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">GlobalVariables.g_StateCode</CSharpReference>
+                              </OutArgument>
+                            </up:PegaBPM_GetA50ROOCaseDetails.out_CACSStateCode>
+                            <up:PegaBPM_GetA50ROOCaseDetails.out_ProductId>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">GlobalVariables.g_ProductID</CSharpReference>
+                              </OutArgument>
+                            </up:PegaBPM_GetA50ROOCaseDetails.out_ProductId>
+                            <up:PegaBPM_GetA50ROOCaseDetails.out_ProductType>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">GlobalVariables.g_ProductType</CSharpReference>
+                              </OutArgument>
+                            </up:PegaBPM_GetA50ROOCaseDetails.out_ProductType>
+                            <up:PegaBPM_GetA50ROOCaseDetails.out_TotalDueAmount>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">GlobalVariables.g_DueAmount</CSharpReference>
+                              </OutArgument>
+                            </up:PegaBPM_GetA50ROOCaseDetails.out_TotalDueAmount>
+                            <up:PegaBPM_GetA50ROOCaseDetails.out_TransactionAmount>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">GlobalVariables.g_ROOAmount</CSharpReference>
+                              </OutArgument>
+                            </up:PegaBPM_GetA50ROOCaseDetails.out_TransactionAmount>
+                          </up:PegaBPM_GetA50ROOCaseDetails>
+                          <FlowStep.Next>
+                            <x:Reference>__ReferenceID6</x:Reference>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowDecision.False>
+            </FlowDecision>
           </FlowDecision.True>
           <FlowDecision.False>
             <FlowStep x:Name="__ReferenceID10">
@@ -643,5 +685,7 @@
     <x:Reference>__ReferenceID13</x:Reference>
     <x:Reference>__ReferenceID14</x:Reference>
     <x:Reference>__ReferenceID15</x:Reference>
+    <x:Reference>__ReferenceID16</x:Reference>
+    <x:Reference>__ReferenceID17</x:Reference>
   </Flowchart>
 </Activity>
