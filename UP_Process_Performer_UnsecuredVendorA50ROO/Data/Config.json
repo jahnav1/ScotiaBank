@@ -13,7 +13,7 @@
     "CookiesFilePath": "Google\\Chrome\\User Data\\Default\\Network\\Cookies",
     "CacheFolderPath": "Google\\Chrome\\User Data\\Default\\Cache",
     "Delay": "00:00:02",
-    "MaxRetryNumber": "0",
+    "MaxRetryNumber": "3",
     "MinTimeOut": "30000",
     "MediumTimeOut": "60000",
     "MaxTimeOut": "120000",
