@@ -10,7 +10,7 @@
     "UiPath.System.Activities": "[25.2.2]",
     "UiPath.Testing.Activities": "[24.10.0]",
     "UiPath.UIAutomation.Activities": "[24.10.0]",
-    "UP_Lib_Adapter_CollectionHighway": "[1.0.0-alpha.553045]",
+    "UP_Lib_Adapter_CollectionHighway": "[1.0.0-alpha.553431]",
     "UP_Lib_Adapter_Intralink": "[1.0.0.519801]",
     "UP_Lib_Adapter_PegaBPM": "[1.0.0-alpha.553051]",
     "UP_Lib_Connector_HashiCorpVault": "[1.0.2.461260]",
