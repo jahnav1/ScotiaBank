@@ -51,9 +51,9 @@
     "MinPasswordLength": "8",
 	
 	"IsEmailingEnabled": "True",
-	"EmailAddressRPA": "mark.saygan@scotiabank.com",
+	"EmailAddressRPA": "Yubin.zhou@scotiabank.com",
     "EmailExceptionSubject": "437 - Unsecured Vendor (A50 ROO) 2.0 - Performer - Automated Exception Email",
-    "EmailExceptionBody": "This is an automated message. The process failed due to the following exception: {0}",
+    "EmailExceptionBody": "This is an automated message. The process has moved the pega case id: {0} to exception workbasket",
     "SMTPHostServer": "appmailrelay.glb.bns",
     "SMTPSenderFrom": "437.SmartAutomationNotifications@scotiabank.com",
 
