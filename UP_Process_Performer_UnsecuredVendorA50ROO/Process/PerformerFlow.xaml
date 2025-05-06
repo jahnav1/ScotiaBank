@@ -93,7 +93,7 @@
       <AssemblyReference>UP_Lib_Adapter_PegaBPM</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Flowchart - PerformerFlow" sap:VirtualizedContainerService.HintSize="1534,568" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Flowchart - PerformerFlow" sap:VirtualizedContainerService.HintSize="1534,688" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsCaseFound" />
       <Variable x:TypeArguments="x:Boolean" Name="IsCaseLocked" />
@@ -643,7 +643,7 @@
           <av:PointCollection x:Key="ConnectorLocation">650,145 649.5,145 649.5,170</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <up:PegaBPM_QuickSearch sap:VirtualizedContainerService.HintSize="334,498" sap2010:WorkflowViewState.IdRef="PegaBPM_QuickSearch_2" in_QuickSearchType="Case ID" in_StatusFilter="NEW">
+      <up:PegaBPM_QuickSearch sap:VirtualizedContainerService.HintSize="334,498" sap2010:WorkflowViewState.IdRef="PegaBPM_QuickSearch_2" in_QuickSearchType="Case ID">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -674,6 +674,11 @@
             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">in_TransactionItem.Reference</CSharpValue>
           </InArgument>
         </up:PegaBPM_QuickSearch.in_QuickSearchText>
+        <up:PegaBPM_QuickSearch.in_StatusFilter>
+          <InArgument x:TypeArguments="x:String">
+            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80">in_Config["PegaBPMCaseStatus"].ToString()</CSharpValue>
+          </InArgument>
+        </up:PegaBPM_QuickSearch.in_StatusFilter>
         <up:PegaBPM_QuickSearch.out_IsBE>
           <OutArgument x:TypeArguments="x:Boolean">
             <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_41">IsCaseStatusBE</CSharpReference>

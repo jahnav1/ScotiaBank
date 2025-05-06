@@ -31,6 +31,7 @@
 	"PegaBPMTransit":"07112",
 	"PegaBPMEnv":"uat16",
 	"PegaBPMAppName":"Pega CARS",
+	"PegaBPMCaseStatus":"New",
     "IsCollectionHighwayIncognito": "false",
     "CollectionHighwayLoginURL": "https://uat1.collectionhighway.com/go.aspx",
     "CollectionHighwayWebArg": "",
@@ -128,18 +129,6 @@
             "EndTime": "23:59"
         }
     ],
-    "Email":
-    [{
-            "EmailType": "SystemException",
-            "EmailToAddress": "xxx@scotiabank.com",
-            "EmailSubject": "[Performer Bot]: RPA Support Investigation Required SE",
-            "EmailBody": "<html><BODY><p><i>Hello,</i><br/><i>The bot has shutdown due to a fatal technical exception.Kindly see errors below.</i><br/><i> Failure type: {0} </i><br/><i> Failure reason: {1} </b></i><br/><br/>The bot will continue to shutdown each day until the issue has been resolved</i><br/><br/><i>Do not reply to this message. This mailbox is not monitored. Thank you. </i></p></BODY></font></html>"
-        }, {
-            "EmailType": "BusinessException",
-            "EmailToAddress": "xxx@scotiabank.com",
-            "EmailSubject": "[Performer Bot]: Input File Not Found",
-            "EmailBody": "<html><BODY><p><i>Hello,</i><br/><br/><i>The bot encountered an error and was unable to complete your request.Kindly see errors below.</i><br/><br/><i>More information about this error may be seen below:</i><br/><br/><i>{0}</i><br/><br/><i>Regards,</i><br/><i>Smart Automation Team</i><br/><br/><i><br/><br/><i>Do not reply to this message. This mailbox is not monitored. Thank you. </i></i></p></BODY></font></html>"
-        }
-    ]
+
 
 }
