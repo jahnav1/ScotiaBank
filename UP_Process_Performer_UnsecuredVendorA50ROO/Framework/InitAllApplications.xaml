@@ -3,7 +3,7 @@
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1197.6,5764.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,5846</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -151,7 +151,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="572.8,5700" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="608,5781" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CurrentPage" />
       <Variable x:TypeArguments="x:Boolean" Name="IsLoginSuccess" />
@@ -172,7 +172,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_1">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">LogLevel.Trace</CSharpValue>
@@ -184,16 +184,16 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="510.4,2060" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+    <ui:RetryScope DisplayName="Retry Scope-init" sap:VirtualizedContainerService.HintSize="546,2045" sap2010:WorkflowViewState.IdRef="RetryScope_1">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="449.6,1768.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,1724" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kills all Windows processes representing applications used in this business process to assure that the execution starts in a clean state.&#xA;Since the applications are assumed to be already closed, CloseAllApplications is skipped and just KillAllProcess is invoked." DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="387.2,252" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kills all Windows processes representing applications used in this business process to assure that the execution starts in a clean state.&#xA;Since the applications are assumed to be already closed, CloseAllApplications is skipped and just KillAllProcess is invoked." DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="354,279" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_KillAppNames">
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">GlobalVariables.g_Config["KillAppNames"].ToString()</CSharpValue>
@@ -207,7 +207,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
-            <up:IL_NavToApp DisplayName="IL_NavToApp-Login" sap:VirtualizedContainerService.HintSize="387.2,766.4" sap2010:WorkflowViewState.IdRef="IL_NavToApp_1" in_UseEdge="False" in_UseRedirect="False">
+            <up:IL_NavToApp DisplayName="IL_NavToApp-Login" sap:VirtualizedContainerService.HintSize="354,785" sap2010:WorkflowViewState.IdRef="IL_NavToApp_1" in_UseEdge="False" in_UseRedirect="False">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -275,7 +275,7 @@
                 </OutArgument>
               </up:IL_NavToApp.out_Result>
             </up:IL_NavToApp>
-            <up1:CollectionHighway_Login DisplayName="CollectionHighway_Login (Login Actions)" sap:VirtualizedContainerService.HintSize="387.2,558.4" sap2010:WorkflowViewState.IdRef="CollectionHighway_Login_3">
+            <up1:CollectionHighway_Login DisplayName="CollectionHighway_Login (Login Actions)" sap:VirtualizedContainerService.HintSize="354,572" sap2010:WorkflowViewState.IdRef="CollectionHighway_Login_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -338,7 +338,7 @@
       </ui:RetryScope.ActivityBody>
       <ui:RetryScope.Condition>
         <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:CheckTrue DisplayName="Check True" ErrorMessage="Failed to launch applications" sap:VirtualizedContainerService.HintSize="333.6,131.2" sap2010:WorkflowViewState.IdRef="CheckTrue_1">
+          <ui:CheckTrue DisplayName="Check True-IsLoginSuccess" ErrorMessage="Failed to launch applications" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="CheckTrue_1">
             <ui:CheckTrue.Expression>
               <InArgument x:TypeArguments="x:Boolean">
                 <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">IsLoginSuccess</CSharpValue>
@@ -348,7 +348,7 @@
         </ActivityFunc>
       </ui:RetryScope.Condition>
     </ui:RetryScope>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfPasswordRequiresUpdate - Invoke Workflow File (Process\\CheckIfPasswordRequiresUpdate.xaml)" sap:VirtualizedContainerService.HintSize="510.4,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\\CheckIfPasswordRequiresUpdate.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfPasswordRequiresUpdate - Invoke Workflow File (Process\\CheckIfPasswordRequiresUpdate.xaml)" sap:VirtualizedContainerService.HintSize="546,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Process\\CheckIfPasswordRequiresUpdate.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsPwdUpdateReq">
           <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">IsPwdUpdateReq</CSharpReference>
@@ -361,14 +361,14 @@
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+    <ui:LogMessage DisplayName="Log Message-Password Update" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Is Password Update Required: " + IsPwdUpdateReq.ToString()</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <If DisplayName="If - Pwd update required then change pwd" sap:VirtualizedContainerService.HintSize="510.4,2908" sap2010:WorkflowViewState.IdRef="If_4">
+    <If DisplayName="If - Pwd update required then change pwd" sap:VirtualizedContainerService.HintSize="546,3094" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">IsPwdUpdateReq</CSharpValue>
@@ -381,7 +381,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="476.8,2724.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,2830" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="IsRefreshWorkAreaSuccess" />
           </Sequence.Variables>
@@ -390,7 +390,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GeneratePasswordAddToHashiCorp - Invoke Workflow File (Process\\GeneratePasswordAddToHashiCorp.xaml)" sap:VirtualizedContainerService.HintSize="433.6,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\\GeneratePasswordAddToHashiCorp.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GeneratePasswordAddToHashiCorp - Invoke Workflow File (Process\\GeneratePasswordAddToHashiCorp.xaml)" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Process\\GeneratePasswordAddToHashiCorp.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_UpperAlphaChars">
                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">GlobalVariables.g_Config["UpperAlphaChars"].ToString()</CSharpValue>
@@ -430,7 +430,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <up1:CollectionHighway_ChangePassword sap:VirtualizedContainerService.HintSize="433.6,506.4" sap2010:WorkflowViewState.IdRef="CollectionHighway_ChangePassword_2" in_WorkArea="Collection Agency">
+          <up1:CollectionHighway_ChangePassword DisplayName="CollectionHighway_ChangePassword-DH" sap:VirtualizedContainerService.HintSize="450,530" sap2010:WorkflowViewState.IdRef="CollectionHighway_ChangePassword_2" in_WorkArea="Collection Agency">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -478,7 +478,7 @@
               </OutArgument>
             </up1:CollectionHighway_ChangePassword.out_PasswordChangeError>
           </up1:CollectionHighway_ChangePassword>
-          <If DisplayName="If - pwd not changed then throw error" sap:VirtualizedContainerService.HintSize="433.6,363.2" sap2010:WorkflowViewState.IdRef="If_2">
+          <If DisplayName="If - pwd not changed then throw error" sap:VirtualizedContainerService.HintSize="450,474" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Condition>
               <InArgument x:TypeArguments="x:Boolean">
                 <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">!IsPasswordChanged</CSharpValue>
@@ -491,13 +491,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Throw sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1">
+                <Throw DisplayName="Throw-TE" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1">
                   <InArgument x:TypeArguments="s:Exception">
                     <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">new Exception("Failed to update password in CollectionHighway. " + PasswordChangeError)</CSharpValue>
                   </InArgument>
@@ -514,7 +514,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <up2:PatchCredentialInVault sap:VirtualizedContainerService.HintSize="433.6,506.4" sap2010:WorkflowViewState.IdRef="PatchCredentialInVault_1" in_IsExistingCred="True">
+          <up2:PatchCredentialInVault DisplayName="PatchCredentialInVault-Cred" sap:VirtualizedContainerService.HintSize="450,530" sap2010:WorkflowViewState.IdRef="PatchCredentialInVault_1" in_IsExistingCred="True">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -562,7 +562,7 @@
               </OutArgument>
             </up2:PatchCredentialInVault.out_Result>
           </up2:PatchCredentialInVault>
-          <If DisplayName="If - pwd not patched then throw error" sap:VirtualizedContainerService.HintSize="433.6,363.2" sap2010:WorkflowViewState.IdRef="If_3">
+          <If DisplayName="If - pwd not patched then throw error" sap:VirtualizedContainerService.HintSize="450,474" sap2010:WorkflowViewState.IdRef="If_3">
             <If.Condition>
               <InArgument x:TypeArguments="x:Boolean">
                 <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">PatchCredIsError</CSharpValue>
@@ -575,13 +575,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Throw sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_2">
+                <Throw DisplayName="Throw-TE" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_2">
                   <InArgument x:TypeArguments="s:Exception">
                     <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">new Exception("Failed to patch credential in Hashicorp Vault. " + PatchCredError)</CSharpValue>
                   </InArgument>
@@ -598,7 +598,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Assign-TE" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="ss:SecureString">
                 <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">GlobalVariables.g_SecurePasswordCollHigh</CSharpReference>
@@ -610,7 +610,7 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdatePasswordDate - Invoke Workflow File (Process\\UpdatePasswordDate.xaml)" sap:VirtualizedContainerService.HintSize="433.6,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\\UpdatePasswordDate.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdatePasswordDate - Invoke Workflow File (Process\\UpdatePasswordDate.xaml)" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Process\\UpdatePasswordDate.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_Username">
                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">GlobalVariables.g_UserNameCollHigh</CSharpValue>
@@ -620,7 +620,7 @@
               </InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <up1:CollectionHighway_RefreshWorkArea sap:VirtualizedContainerService.HintSize="433.6,246.4" sap2010:WorkflowViewState.IdRef="CollectionHighway_RefreshWorkArea_1">
+          <up1:CollectionHighway_RefreshWorkArea DisplayName="CollectionHighway_RefreshWorkArea-DH" sap:VirtualizedContainerService.HintSize="450,266" sap2010:WorkflowViewState.IdRef="CollectionHighway_RefreshWorkArea_1">
             <up1:CollectionHighway_RefreshWorkArea.in_IsIncognito>
               <InArgument x:TypeArguments="x:Boolean">
                 <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">Convert.ToBoolean(GlobalVariables.g_Config["IsCollectionHighwayIncognito"])</CSharpValue>

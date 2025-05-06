@@ -135,7 +135,7 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Manage the retrying mechanism for the framework and it is invoked in SetTransactionStatus.xaml when a system exception occurs. &#xA;The retrying method is based on the configurations defined in Config.xlsx." DisplayName="Retry Current Transaction" sap:VirtualizedContainerService.HintSize="1534,568" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+  <Flowchart sap2010:Annotation.AnnotationText="Manage the retrying mechanism for the framework and it is invoked in SetTransactionStatus.xaml when a system exception occurs. &#xA;The retrying method is based on the configurations defined in Config.xlsx." DisplayName="Retry Current Transaction" sap:VirtualizedContainerService.HintSize="1534,688" sap2010:WorkflowViewState.IdRef="Flowchart_2">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsRouteExWBSuccess" />
       <Variable x:TypeArguments="x:Boolean" Name="IsEmailSent" />
@@ -241,7 +241,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <up:PegaBPM_RouteCaseToExWB sap:VirtualizedContainerService.HintSize="434,224" sap2010:WorkflowViewState.IdRef="PegaBPM_RouteCaseToExWB_2">
+                          <up:PegaBPM_RouteCaseToExWB DisplayName="PegaBPM_RouteCaseToExWB-Pega" sap:VirtualizedContainerService.HintSize="434,224" sap2010:WorkflowViewState.IdRef="PegaBPM_RouteCaseToExWB_2">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -277,10 +277,10 @@
                       </Sequence>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502,436" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="562,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -339,7 +339,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">90,715 90,745 199.5,745 199.5,760</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch DisplayName="send email" sap:VirtualizedContainerService.HintSize="534,598" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                          <TryCatch DisplayName="send email" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -546,7 +546,7 @@
                                         <ui:LogMessage DisplayName="Log Message-Unable route case to ex" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info">
                                           <ui:LogMessage.Message>
                                             <InArgument x:TypeArguments="x:Object">
-                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">"Failed to route pega case: "+in_TransactionItem.Reference+" to exception WB, trying to close case properly"</CSharpValue>
+                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_123">"Failed to send email pega case: "+in_TransactionItem.Reference+ "trying to close case properly"</CSharpValue>
                                             </InArgument>
                                           </ui:LogMessage.Message>
                                         </ui:LogMessage>
@@ -588,7 +588,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:InvokeWorkflowFile>
-                                        <up:PegaBPM_CloseCase sap:VirtualizedContainerService.HintSize="354,317" sap2010:WorkflowViewState.IdRef="PegaBPM_CloseCase_3">
+                                        <up:PegaBPM_CloseCase DisplayName="PegaBPM_CloseCase-Pega" sap:VirtualizedContainerService.HintSize="354,317" sap2010:WorkflowViewState.IdRef="PegaBPM_CloseCase_3">
                                           <up:PegaBPM_CloseCase.in_DelayAfter>
                                             <InArgument x:TypeArguments="x:Int32">
                                               <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_113">TimeSpan.Parse(GlobalVariables.g_Config["Delay"].ToString().Trim()).Seconds</CSharpValue>
@@ -618,10 +618,10 @@
                                       </Sequence>
                                     </TryCatch.Try>
                                     <TryCatch.Catches>
-                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,211" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -629,6 +629,13 @@
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                           </ActivityAction.Argument>
+                                          <ui:LogMessage DisplayName="Log Message-close case" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Warn">
+                                            <ui:LogMessage.Message>
+                                              <InArgument x:TypeArguments="x:Object">
+                                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_124">"failed to close properly"</CSharpValue>
+                                              </InArgument>
+                                            </ui:LogMessage.Message>
+                                          </ui:LogMessage>
                                         </ActivityAction>
                                       </Catch>
                                     </TryCatch.Catches>
@@ -651,7 +658,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">380,715 380,965 300,965 300,995</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch DisplayName="Add failed customized log and close case" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                          <TryCatch DisplayName="Add failed customized log and close case" sap:VirtualizedContainerService.HintSize="434,373" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                             <TryCatch.Try>
                               <Sequence sap:VirtualizedContainerService.HintSize="416,755" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -704,7 +711,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:InvokeWorkflowFile>
-                                <up:PegaBPM_CloseCase sap:VirtualizedContainerService.HintSize="354,317" sap2010:WorkflowViewState.IdRef="PegaBPM_CloseCase_2">
+                                <up:PegaBPM_CloseCase DisplayName="PegaBPM_CloseCase-Pega" sap:VirtualizedContainerService.HintSize="354,317" sap2010:WorkflowViewState.IdRef="PegaBPM_CloseCase_2">
                                   <up:PegaBPM_CloseCase.in_DelayAfter>
                                     <InArgument x:TypeArguments="x:Int32">
                                       <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81">TimeSpan.Parse(GlobalVariables.g_Config["Delay"].ToString().Trim()).Seconds</CSharpValue>
@@ -734,10 +741,10 @@
                               </Sequence>
                             </TryCatch.Try>
                             <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,211" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -745,6 +752,13 @@
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                   </ActivityAction.Argument>
+                                  <ui:LogMessage DisplayName="Log Message-Exception" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Warn">
+                                    <ui:LogMessage.Message>
+                                      <InArgument x:TypeArguments="x:Object">
+                                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_125">"Failed to close case properly"</CSharpValue>
+                                      </InArgument>
+                                    </ui:LogMessage.Message>
+                                  </ui:LogMessage>
                                 </ActivityAction>
                               </Catch>
                             </TryCatch.Catches>
