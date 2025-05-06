@@ -2,7 +2,10 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-# this Pipeline template last updated on 2024-11-01
+# this Pipeline template last updated on
+#       2024-10-21, include hotfix/* branch in trigger
+#       2024-11-01, added Checkmarx task
+#       2024-11-29, use UiPathPack version 5 (use .NET 8 CLI), https://docs.uipath.com/automation-ops/automation-cloud/latest/user-guide/azure-devops-extension-release-notes
 
 trigger:
   branches:
@@ -46,7 +49,7 @@ steps:
     echo ProjectName='$(ProjectName)'
     echo CheckmarxProjectName='AD::$(BNS.CollectionName).$(system.teamProject)::$(Build.Repository.Name)'
 
-- task: UiPathPack@4
+- task: UiPathPack@5
   condition: or(eq(variables['Build.SourceBranchName'], 'develop'),
                 startswith(variables['Build.SourceBranch'], 'refs/heads/hotfix/'))
   displayName: 'UiPathPack for develop/hotfix'
@@ -58,7 +61,7 @@ steps:
     outputPath: '$(Build.ArtifactStagingDirectory)\output'
     traceLevel: 'Verbose'
 
-- task: UiPathPack@4
+- task: UiPathPack@5
   condition: and(ne(variables['Build.SourceBranchName'], 'develop'),
                  not(startswith(variables['Build.SourceBranch'], 'refs/heads/hotfix/')))
   displayName: 'UiPathPack for release'
