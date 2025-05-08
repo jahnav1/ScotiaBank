@@ -12,7 +12,7 @@
     "UiPath.UIAutomation.Activities": "[24.10.0]",
     "UP_Lib_Adapter_CollectionHighway": "[1.0.0-alpha.554611]",
     "UP_Lib_Adapter_Intralink": "[1.0.0.519801]",
-    "UP_Lib_Adapter_PegaBPM": "[1.0.0-alpha.554613]",
+    "UP_Lib_Adapter_PegaBPM": "[1.0.0-alpha.554898]",
     "UP_Lib_Connector_HashiCorpVault": "[1.0.2.461260]",
     "UP_Lib_Connector_OpenAMAPI": "[1.0.0-alpha.544885]",
     "UP_Lib_Connector_TSYS": "[1.0.0-alpha.519891]"
