@@ -51,6 +51,8 @@
     "NumericCharLength": "1",
     "SpecialCharLength": "1",
     "MinPasswordLength": "8",
+	"CollectionAgency": ["A03", "A50"],
+	"Contingency": ["G40"],
 	
 	"IsEmailingEnabled": "True",
 	"EmailAddressRPA": "Yubin.zhou@scotiabank.com",
