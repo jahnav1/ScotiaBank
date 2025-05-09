@@ -196,7 +196,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">160,455 160,485</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log message (Max retries reached)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+              <ui:LogMessage DisplayName="Log message (Max retries reached)" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_1">
                 <ui:LogMessage.Level>
                   <InArgument x:TypeArguments="ui:LogLevel">
                     <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">LogLevel.Error</CSharpValue>
@@ -204,7 +204,7 @@
                 </ui:LogMessage.Level>
                 <ui:LogMessage.Message>
                   <InArgument x:TypeArguments="x:Object">
-                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">in_Config["LogMessage_ApplicationException"].ToString()+" Max number of retries reached. "+in_SystemException.Message+" at Source: "+in_SystemException.Source</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_143">in_Config["LogMessage_ApplicationException"].ToString()+" Max number of retries reached. Intralink ID: " + GlobalVariables.g_UserNameIntralink+"Collection Highway ID: "+ GlobalVariables.g_UserNameCollHigh+". "+in_SystemException.Message+" at Source: "+in_SystemException.Source</CSharpValue>
                   </InArgument>
                 </ui:LogMessage.Message>
                 <sap:WorkflowViewStateService.ViewState>
