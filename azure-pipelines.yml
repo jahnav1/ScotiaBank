@@ -79,6 +79,7 @@ steps:
       ren $(build.artifactstagingdirectory)\output\*.nupkg $(EPM)-$(ProjectName)-$(Build.BuildNumber)-$(Build.BuildId).nupkg
 
 - task: Checkmarx AST@2
+  name: Checkmarx
   inputs:
     CheckmarxService: 'CheckmarxOne-SCORE'
     projectName: 'AD::$(BNS.CollectionName).$(system.teamProject)::$(Build.Repository.Name)'
