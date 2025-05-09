@@ -80,7 +80,7 @@ steps:
 
 - task: Checkmarx AST@2
   inputs:
-    CheckmarxService: 'CheckmarxOne-SCORE'
+    CheckmarxService: 'CheckmarxOne'
     projectName: 'AD::$(BNS.CollectionName).$(system.teamProject)::$(Build.Repository.Name)'
     branchName: '$(Build.SourceBranchName)'
     tenantName: 'bns'
