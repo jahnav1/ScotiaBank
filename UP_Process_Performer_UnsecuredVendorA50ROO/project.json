@@ -10,12 +10,12 @@
     "UiPath.System.Activities": "[25.2.2]",
     "UiPath.Testing.Activities": "[24.10.0]",
     "UiPath.UIAutomation.Activities": "[24.10.0]",
-    "UP_Lib_Adapter_CollectionHighway": "[1.0.0-alpha.555935]",
+    "UP_Lib_Adapter_CollectionHighway": "[1.0.0.557367]",
     "UP_Lib_Adapter_Intralink": "[1.0.0.519801]",
-    "UP_Lib_Adapter_PegaBPM": "[1.0.0-alpha.556356]",
+    "UP_Lib_Adapter_PegaBPM": "[1.0.0.557234]",
     "UP_Lib_Connector_HashiCorpVault": "[1.0.2.461260]",
-    "UP_Lib_Connector_OpenAMAPI": "[1.0.0-alpha.544885]",
-    "UP_Lib_Connector_TSYS": "[1.0.0-alpha.519891]"
+    "UP_Lib_Connector_OpenAMAPI": "[1.0.0.535978]",
+    "UP_Lib_Connector_TSYS": "[1.0.0.519911]"
   },
   "webServices": [],
   "entitiesStores": [
