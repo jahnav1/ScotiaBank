@@ -6,6 +6,7 @@
 #       2024-10-21, include hotfix/* branch in trigger
 #       2024-11-01, added Checkmarx task
 #       2024-11-29, use UiPathPack version 5 (use .NET 8 CLI), https://docs.uipath.com/automation-ops/automation-cloud/latest/user-guide/azure-devops-extension-release-notes
+#       2025-05-09, Update Checkmarx task with version 3 and name parameter.  This is a new requirement as of 2025-05-09.  https://confluence.agile.bns/display/SCM/How+to+perform+Checkmarx+scan
 
 trigger:
   branches:
@@ -78,7 +79,7 @@ steps:
     script:
       ren $(build.artifactstagingdirectory)\output\*.nupkg $(EPM)-$(ProjectName)-$(Build.BuildNumber)-$(Build.BuildId).nupkg
 
-- task: Checkmarx AST@2
+- task: Checkmarx AST@3
   name: Checkmarx
   inputs:
     CheckmarxService: 'CheckmarxOne-SCORE'
@@ -103,3 +104,8 @@ steps:
     artifactoryService: 'JFrogArtifactory-SCORE'
     targetRepo: 'local-release-tfs'
     TargetPath: '$(System.TeamProject)/$(EPM)/$(ProjectName)/$(Build.BuildNumber)/$(Build.BuildId)'
+
+
+
+
+
