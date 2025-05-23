@@ -165,6 +165,7 @@
       <Variable x:TypeArguments="x:Boolean" Name="PatchCredIsError" />
       <Variable x:TypeArguments="x:String" Name="PatchCredError" />
       <Variable x:TypeArguments="s:Exception" Name="PatchCredException" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsDHLoginSuccess" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -324,7 +325,7 @@
               </up1:CollectionHighway_Login.out_CurrentPage>
               <up1:CollectionHighway_Login.out_IsLoginSuccess>
                 <OutArgument x:TypeArguments="x:Boolean">
-                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">IsLoginSuccess</CSharpReference>
+                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">IsDHLoginSuccess</CSharpReference>
                 </OutArgument>
               </up1:CollectionHighway_Login.out_IsLoginSuccess>
               <up1:CollectionHighway_Login.out_LoginError>
@@ -338,10 +339,15 @@
       </ui:RetryScope.ActivityBody>
       <ui:RetryScope.Condition>
         <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:CheckTrue DisplayName="Check True-IsLoginSuccess" ErrorMessage="Failed to launch applications" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="CheckTrue_1">
+          <ui:CheckTrue DisplayName="Check True-IsLoginSuccess" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="CheckTrue_1">
+            <ui:CheckTrue.ErrorMessage>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">"Failed to launch applications, Intralink: "+IsLoginSuccess+" DH: "+IsDHLoginSuccess</CSharpValue>
+              </InArgument>
+            </ui:CheckTrue.ErrorMessage>
             <ui:CheckTrue.Expression>
               <InArgument x:TypeArguments="x:Boolean">
-                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">IsLoginSuccess</CSharpValue>
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_74">IsLoginSuccess&amp;&amp;IsDHLoginSuccess</CSharpValue>
               </InArgument>
             </ui:CheckTrue.Expression>
           </ui:CheckTrue>
