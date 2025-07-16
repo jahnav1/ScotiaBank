@@ -857,6 +857,12 @@
         "Status": "CONTACT MADE - UNDER NEGOTIATION",
         "SubmitWithdraw": "Submit"
     }, {
+        "InstructionCode": "10",
+        "Instruction": "DIALING 4 DOLLARS",
+        "StatusCode": "162",
+        "Status": "LEFT MESSAGE",
+        "SubmitWithdraw": "Submit"
+    }, {
         "InstructionCode": "11",
         "Instruction": "(N/A)",
         "StatusCode": "46",
