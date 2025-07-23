@@ -121,7 +121,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart DisplayName="Flowchart - Collection Highway flow" sap:VirtualizedContainerService.HintSize="925.6,659.2" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Flowchart - Collection Highway flow" sap:VirtualizedContainerService.HintSize="1224.8,779.2" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsWorkAreaSelected" />
       <Variable x:TypeArguments="x:String" Name="WorkAreaError" />
@@ -403,7 +403,7 @@
                                       </ui:AssignOperation.To>
                                       <ui:AssignOperation.Value>
                                         <InArgument x:TypeArguments="x:String">
-                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_128">GlobalVariables.g_ProductType.Equals("SPL", StringComparison.OrdinalIgnoreCase) ? in_AccountNumber.TrimStart('0') : in_AccountNumber</CSharpValue>
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_129">GlobalVariables.g_ProductType.Equals("SPL", StringComparison.OrdinalIgnoreCase) ? in_AccountNumber.TrimStart('0') : in_AccountNumber.Trim()</CSharpValue>
                                         </InArgument>
                                       </ui:AssignOperation.Value>
                                     </ui:AssignOperation>
@@ -433,7 +433,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <up:CollectionHighway_PerformLookup.in_AccountNumber>
                                       <InArgument x:TypeArguments="ss:SecureString">
-                                        <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_127">new System.Net.NetworkCredential(string.Empty, in_AccountNumber.TrimStart('0')).SecurePassword</CSharpValue>
+                                        <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_130">new System.Net.NetworkCredential(string.Empty, in_AccountNumber).SecurePassword</CSharpValue>
                                       </InArgument>
                                     </up:CollectionHighway_PerformLookup.in_AccountNumber>
                                     <up:CollectionHighway_PerformLookup.in_IsIncognito>
