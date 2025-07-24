@@ -33,7 +33,7 @@
 	"PegaBPMAppName":"Pega CARS",
 	"PegaBPMCaseStatus":"New",
 	"ProductTypeList":"BCP,SPL,Mortgage",
-    "IsCollectionHighwayIncognito": "false",
+    "IsCollectionHighwayIncognito": "true",
     "CollectionHighwayLoginURL": "https://uat1.collectionhighway.com/go.aspx",
     "CollectionHighwayWebArg": "",
     "StorageBucketName": "437-CollectionHighwayStatus",
