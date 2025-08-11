@@ -93,7 +93,7 @@
       <AssemblyReference>UP_Lib_Adapter_PegaBPM</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Flowchart - PerformerFlow" sap:VirtualizedContainerService.HintSize="1557,485" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Flowchart - PerformerFlow" sap:VirtualizedContainerService.HintSize="1314,778.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="IsCaseFound" />
       <Variable x:TypeArguments="x:Boolean" Name="IsCaseLocked" />
@@ -113,7 +113,7 @@
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID23</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID6" DisplayName="IsProductTypeBCP" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+    <FlowDecision x:Name="__ReferenceID6" DisplayName="IsProductTypeBCP" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
       <FlowDecision.Condition>
         <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">GlobalVariables.g_ProductType.Equals("BCP", StringComparison.OrdinalIgnoreCase)</CSharpValue>
       </FlowDecision.Condition>
@@ -121,13 +121,13 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">670,750</av:Point>
-          <av:Size x:Key="ShapeSize">59,59</av:Size>
+          <av:Size x:Key="ShapeSize">60,60</av:Size>
           <av:PointCollection x:Key="TrueConnector">670,779.5 579.5,779.5 579.5,850</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">729,779.5 759,779.5 759,1015 640,1015 640,1045</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">730,780 760,780 760,1015 640,1015 640,1045</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowDecision x:Name="__ReferenceID2" DisplayName="IsProductID11Digits" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+        <FlowDecision x:Name="__ReferenceID2" DisplayName="IsProductID11Digits" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
           <FlowDecision.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">GlobalVariables.g_ProductID.Trim().Length == 11</CSharpValue>
           </FlowDecision.Condition>
@@ -135,9 +135,9 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">550,850</av:Point>
-              <av:Size x:Key="ShapeSize">59,59</av:Size>
+              <av:Size x:Key="ShapeSize">60,60</av:Size>
               <av:PointCollection x:Key="TrueConnector">550,879.5 480,879.5 480,965</av:PointCollection>
-              <av:PointCollection x:Key="FalseConnector">609,879.5 640,879.5 640,1045</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">610,880 640,880 640,1045</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
@@ -254,7 +254,7 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:LogMessage>
                           <FlowStep.Next>
-                            <FlowDecision x:Name="__ReferenceID9" DisplayName="IsSubmit" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                            <FlowDecision x:Name="__ReferenceID9" DisplayName="IsSubmit" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                               <FlowDecision.Condition>
                                 <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">GlobalVariables.g_DHIsSubmit</CSharpValue>
                               </FlowDecision.Condition>
@@ -262,9 +262,9 @@
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <av:Point x:Key="ShapeLocation">610,1330</av:Point>
-                                  <av:Size x:Key="ShapeSize">59,59</av:Size>
+                                  <av:Size x:Key="ShapeSize">60,60</av:Size>
                                   <av:PointCollection x:Key="TrueConnector">610,1359.5 470,1359.5 470,1375</av:PointCollection>
-                                  <av:PointCollection x:Key="FalseConnector">669,1359.5 790,1359.5 790,1385</av:PointCollection>
+                                  <av:PointCollection x:Key="FalseConnector">670,1360 790,1360 790,1385</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <FlowDecision.True>
@@ -312,7 +312,7 @@
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <av:Point x:Key="ShapeLocation">510,1510</av:Point>
-                                          <av:Size x:Key="ShapeSize">59,59</av:Size>
+                                          <av:Size x:Key="ShapeSize">59.2,59.2</av:Size>
                                           <av:PointCollection x:Key="TrueConnector">539.5,1569 539.5,1599 730,1599 730,1625</av:PointCollection>
                                           <av:PointCollection x:Key="FalseConnector">510,1539.5 340,1539.5 340,1575</av:PointCollection>
                                         </scg:Dictionary>
@@ -531,7 +531,7 @@
         </up:PegaBPM_GetA50ROOCaseDetails.out_TransactionAmount>
       </up:PegaBPM_GetA50ROOCaseDetails>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID17" DisplayName="IsInProductTypeList" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
+        <FlowDecision x:Name="__ReferenceID17" DisplayName="IsInProductTypeList" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
           <FlowDecision.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_103">in_Config["ProductTypeList"].ToString().Contains(GlobalVariables.g_ProductType)</CSharpValue>
           </FlowDecision.Condition>
@@ -539,9 +539,9 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">780,590</av:Point>
-              <av:Size x:Key="ShapeSize">59,59</av:Size>
+              <av:Size x:Key="ShapeSize">60,60</av:Size>
               <av:PointCollection x:Key="TrueConnector">780,619.5 699.5,619.5 699.5,750</av:PointCollection>
-              <av:PointCollection x:Key="FalseConnector">839,619.5 869,619.5 869,620 955,620</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">840,620 955,620</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
@@ -621,7 +621,7 @@
         </up:PegaBPM_NavToTransactionProcessing.out_IsCaseLocked>
       </up:PegaBPM_NavToTransactionProcessing>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID12" DisplayName="IsCaseLocked" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+        <FlowDecision x:Name="__ReferenceID12" DisplayName="IsCaseLocked" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
           <FlowDecision.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">IsCaseLocked &amp;&amp; !IsCaseAbleRelease</CSharpValue>
           </FlowDecision.Condition>
@@ -629,9 +629,9 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">490,400</av:Point>
-              <av:Size x:Key="ShapeSize">59,59</av:Size>
+              <av:Size x:Key="ShapeSize">60,60</av:Size>
               <av:PointCollection x:Key="TrueConnector">490,429.5 350,429.5 350,475</av:PointCollection>
-              <av:PointCollection x:Key="FalseConnector">549,429.5 810,429.5 810,465</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">550,430 810,430 810,465</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
@@ -698,7 +698,7 @@
         </FlowDecision>
       </FlowStep.Next>
     </FlowStep>
-    <FlowDecision x:Name="__ReferenceID14" DisplayName="IsCaseFound" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
+    <FlowDecision x:Name="__ReferenceID14" DisplayName="IsCaseFound" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
       <FlowDecision.Condition>
         <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">IsCaseFound</CSharpValue>
       </FlowDecision.Condition>
@@ -706,13 +706,13 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">620,170</av:Point>
-          <av:Size x:Key="ShapeSize">59,59</av:Size>
+          <av:Size x:Key="ShapeSize">60,60</av:Size>
           <av:PointCollection x:Key="TrueConnector">620,199.5 299.5,199.5 299.5,220</av:PointCollection>
-          <av:PointCollection x:Key="FalseConnector">679,199.5 709,199.5 709,200 795,200</av:PointCollection>
+          <av:PointCollection x:Key="FalseConnector">680,200 795,200</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowDecision x:Name="__ReferenceID13" DisplayName="IsCaseStatusBE" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+        <FlowDecision x:Name="__ReferenceID13" DisplayName="IsCaseStatusBE" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
           <FlowDecision.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">IsCaseStatusBE</CSharpValue>
           </FlowDecision.Condition>
@@ -720,9 +720,9 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">270,220</av:Point>
-              <av:Size x:Key="ShapeSize">59,59</av:Size>
+              <av:Size x:Key="ShapeSize">60,60</av:Size>
               <av:PointCollection x:Key="TrueConnector">270,249.5 240,249.5 240,250 165,250</av:PointCollection>
-              <av:PointCollection x:Key="FalseConnector">329,249.5 520,249.5 520,285</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">330,250 520,250 520,285</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
@@ -898,14 +898,19 @@
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">85,495</av:Point>
+          <av:Point x:Key="ShapeLocation">85,475</av:Point>
           <av:Size x:Key="ShapeSize">110,70</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:CommentOut sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_1">
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddCustomizedLog - Invoke Workflow File (Utility\\AddCustomizedLog.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Utility\\AddCustomizedLog.xaml">
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,256.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddCustomizedLog - Invoke Workflow File (Utility\\AddCustomizedLog.xaml)" sap:VirtualizedContainerService.HintSize="354,168.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Utility\\AddCustomizedLog.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_QueueReferenceNumber">
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_105">in_TransactionItem.Reference</CSharpValue>
@@ -940,6 +945,7 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
