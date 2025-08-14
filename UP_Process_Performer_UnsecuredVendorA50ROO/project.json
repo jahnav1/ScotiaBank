@@ -13,7 +13,7 @@
     "UP_Lib_Adapter_CollectionHighway": "[1.0.1]",
     "UP_Lib_Adapter_Intralink": "[1.0.2]",
     "UP_Lib_Adapter_PegaBPM": "[1.0.9355.30256]",
-    "UP_Lib_Connector_HashiCorpVault": "[1.0.14-alpha.2]",
+    "UP_Lib_Connector_HashiCorpVault": "[1.0.2]",
     "UP_Lib_Connector_OpenAMAPI": "[1.0.4]",
     "UP_Lib_Connector_TSYS": "[1.0.1]"
   },
@@ -28,7 +28,7 @@
   ],
   "schemaVersion": "4.0",
   "studioVersion": "23.10.3.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
